@@ -1,5 +1,6 @@
+'use client';
+
 import React from 'react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   Code,
@@ -9,20 +10,13 @@ import {
   Server,
   Bot,
   ArrowRight,
-  ArrowUpRight,
   CheckCircle2,
-  HelpCircle,
 } from 'lucide-react';
 import { services, processStages } from '@/data/services';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { ConsultationCta } from '@/components/sections/ConsultationCta';
-
-export const metadata: Metadata = {
-  title: 'Engineering Services & Working Process',
-  description:
-    'Custom WordPress theme development, Laravel web applications, WooCommerce speed tuning, server operations, and AI workflow integrations engineered by Ahmed Razu.',
-};
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export default function ServicesPage() {
   const serviceIcons = [Code, Database, ShoppingBag, Zap, Server, Bot];
@@ -49,158 +43,176 @@ export default function ServicesPage() {
         <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
 
         {/* Page Header */}
-        <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF]">
-            Technical Capabilities
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
-            Specialized engineering for ambitious businesses.
-          </h1>
-          <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
-            I help businesses transition away from fragile, slow, and bloated software. From bespoke WordPress architectures to scalable Laravel web platforms and server infrastructure, every solution is built for endurance.
-          </p>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="max-w-3xl space-y-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              Technical Capabilities
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
+              Specialized engineering for ambitious businesses.
+            </h1>
+            <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
+              I help businesses transition away from fragile, slow, and bloated software. From bespoke WordPress architectures to scalable Laravel web platforms and server infrastructure, every solution is built for endurance.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* 6 In-Depth Services Breakdown */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = serviceIcons[index % serviceIcons.length];
             return (
-              <div
-                key={service.id}
-                id={service.id}
-                className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div className="space-y-6">
-                  {/* Top Bar with Number & Icon */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-[#315CFF] bg-[#EEF2FF] px-2.5 py-1 rounded border border-[#C7D2FE]">
-                      Service {service.number}
-                    </span>
-                    <div className="w-9 h-9 rounded-md bg-[#F7F7F4] text-[#141413] flex items-center justify-center border border-[#E4E4DF] group-hover:bg-[#315CFF] group-hover:text-white transition-colors">
-                      <Icon className="w-4 h-4" />
+              <ScrollReveal key={service.id} direction="up" delay={index * 80}>
+                <div
+                  id={service.id}
+                  className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group h-full"
+                >
+                  <div className="space-y-6">
+                    {/* Top Bar with Number & Icon */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold text-[#315CFF] bg-[#EEF2FF] px-2.5 py-1 rounded border border-[#C7D2FE]">
+                        Service {service.number}
+                      </span>
+                      <div className="w-9 h-9 rounded-md bg-[#F7F7F4] text-[#141413] flex items-center justify-center border border-[#E4E4DF] group-hover:bg-[#315CFF] group-hover:text-white transition-colors duration-200">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-bold text-[#141413] tracking-tight mb-2 font-['Montserrat'] group-hover:text-[#315CFF] transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-[#5F5F58] leading-relaxed font-['Lato']">
+                        {service.fullDesc}
+                      </p>
+                    </div>
+
+                    {/* Deliverables */}
+                    <div className="space-y-2 pt-2 border-t border-[#EFEFED]">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#141413]">
+                        Deliverables:
+                      </h4>
+                      <ul className="space-y-1.5 text-xs text-[#5F5F58] font-['Lato']">
+                        {service.deliverables.map((item, dIdx) => (
+                          <li key={dIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#315CFF] shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
 
-                  <div>
-                    <h3 className="text-xl font-bold text-[#141413] tracking-tight mb-2 font-['Montserrat']">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-[#5F5F58] leading-relaxed font-['Lato']">
-                      {service.fullDesc}
-                    </p>
-                  </div>
+                  {/* Bottom Value & Stack */}
+                  <div className="pt-6 border-t border-[#EFEFED] space-y-4 mt-6">
+                    <div className="text-xs font-mono text-[#141413] bg-[#F7F7F4] p-3 rounded border border-[#E4E4DF]">
+                      <span className="text-[#315CFF] font-semibold">Business Value: </span>
+                      <span className="text-[#5F5F58] font-['Lato']">{service.businessValue}</span>
+                    </div>
 
-                  {/* Deliverables */}
-                  <div className="space-y-2 pt-2 border-t border-[#EFEFED]">
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#141413]">
-                      Deliverables:
-                    </h4>
-                    <ul className="space-y-1.5 text-xs text-[#5F5F58] font-['Lato']">
-                      {service.deliverables.map((item, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#315CFF] shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
+                    <div className="flex flex-wrap gap-1">
+                      {service.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-[10px] font-mono px-2 py-0.5 bg-[#EFEFED] text-[#5F5F58] rounded"
+                        >
+                          {tech}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
+
+                    <Button
+                      href="/contact"
+                      variant="outline"
+                      size="sm"
+                      className="group/btn w-full text-xs font-['Montserrat'] font-semibold hover:border-[#315CFF]"
+                    >
+                      <span>Inquire About This Service</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                    </Button>
                   </div>
                 </div>
-
-                {/* Bottom Value & Stack */}
-                <div className="pt-6 border-t border-[#EFEFED] space-y-4 mt-6">
-                  <div className="text-xs font-mono text-[#141413] bg-[#F7F7F4] p-3 rounded border border-[#E4E4DF]">
-                    <span className="text-[#315CFF] font-semibold">Business Value: </span>
-                    <span className="text-[#5F5F58] font-['Lato']">{service.businessValue}</span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1">
-                    {service.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[10px] font-mono px-2 py-0.5 bg-[#EFEFED] text-[#5F5F58] rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Button href="/contact" variant="outline" size="sm" className="w-full text-xs font-['Montserrat'] font-semibold">
-                    <span>Inquire About This Service</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Button>
-                </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
         {/* 4-Stage Delivery Workflow */}
         <div className="pt-12 border-t border-[#E4E4DF] space-y-12">
-          <div className="max-w-2xl space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF]">
-              Delivery Methodology
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
-              A disciplined four-stage engineering process.
-            </h2>
-            <p className="text-base text-[#5F5F58] font-['Lato']">
-              No guesswork. Every engagement follows a transparent roadmap from audit to deployment with clear checkpoints.
-            </p>
-          </div>
+          <ScrollReveal direction="up">
+            <div className="max-w-2xl space-y-3">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+                Delivery Methodology
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
+                A disciplined four-stage engineering process.
+              </h2>
+              <p className="text-base text-[#5F5F58] font-['Lato']">
+                No guesswork. Every engagement follows a transparent roadmap from audit to deployment with clear checkpoints.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processStages.map((stage) => (
-              <div
-                key={stage.step}
-                className="p-6 rounded-xl bg-white border border-[#E4E4DF] space-y-4 relative shadow-2xs"
-              >
-                <div className="text-2xl font-black font-mono text-[#315CFF]">
-                  {stage.step}
-                </div>
-                <h3 className="text-lg font-bold text-[#141413] font-['Montserrat']">
-                  {stage.title}
-                </h3>
-                <p className="text-xs text-[#5F5F58] leading-relaxed font-['Lato']">
-                  {stage.summary}
-                </p>
-                <div className="pt-2 border-t border-[#EFEFED] space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#888880] block">
-                    Key Outputs:
-                  </span>
-                  {stage.deliverables.map((item, i) => (
-                    <div key={i} className="text-xs text-[#141413] flex items-center gap-1.5 font-mono">
-                      <span className="w-1 h-1 rounded-full bg-[#059669]" />
-                      <span>{item}</span>
+            {processStages.map((stage, idx) => (
+              <ScrollReveal key={stage.step} direction="up" delay={idx * 100}>
+                <div className="group p-6 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-4 relative h-full flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="text-2xl font-black font-mono text-[#315CFF] flex items-center justify-between">
+                      <span>{stage.step}</span>
+                      <span className="w-2 h-2 rounded-full bg-[#E4E4DF] group-hover:bg-[#315CFF] transition-colors" />
                     </div>
-                  ))}
+                    <h3 className="text-lg font-bold text-[#141413] font-['Montserrat'] group-hover:text-[#315CFF] transition-colors">
+                      {stage.title}
+                    </h3>
+                    <p className="text-xs text-[#5F5F58] leading-relaxed font-['Lato']">
+                      {stage.summary}
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-[#EFEFED] space-y-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#888880] block">
+                      Key Outputs:
+                    </span>
+                    {stage.deliverables.map((item, i) => (
+                      <div key={i} className="text-xs text-[#141413] flex items-center gap-1.5 font-mono">
+                        <span className="w-1 h-1 rounded-full bg-[#059669]" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
         {/* Services FAQ */}
         <div className="pt-12 border-t border-[#E4E4DF] space-y-8">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF]">
-              Client Questions
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
-              Frequently Asked Questions
-            </h2>
-          </div>
+          <ScrollReveal direction="up">
+            <div className="max-w-2xl space-y-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF]">
+                Client Questions
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
+                Frequently Asked Questions
+              </h2>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {serviceFaqs.map((faq, i) => (
-              <div key={i} className="p-6 rounded-xl bg-white border border-[#E4E4DF] space-y-3">
-                <h3 className="text-sm font-bold text-[#141413] font-['Montserrat']">
-                  {faq.q}
-                </h3>
-                <p className="text-xs text-[#5F5F58] leading-relaxed font-['Lato']">
-                  {faq.a}
-                </p>
-              </div>
+              <ScrollReveal key={i} direction="up" delay={i * 100}>
+                <div className="p-6 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 hover:shadow-md transition-all duration-300 space-y-3 h-full">
+                  <h3 className="text-sm font-bold text-[#141413] font-['Montserrat']">
+                    {faq.q}
+                  </h3>
+                  <p className="text-xs text-[#5F5F58] leading-relaxed font-['Lato']">
+                    {faq.a}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

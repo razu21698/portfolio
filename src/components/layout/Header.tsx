@@ -25,13 +25,17 @@ export function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  const isDarkHero = pathname === '/' && !scrolled;
+
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-200 border-b',
-        scrolled
-          ? 'bg-[#F7F7F4]/95 backdrop-blur-md border-[#E4E4DF] shadow-xs'
-          : 'bg-[#F7F7F4] border-transparent'
+        'sticky top-0 z-50 w-full transition-all duration-300 border-b',
+        isDarkHero
+          ? 'bg-[#09090c]/80 backdrop-blur-md border-white/10 text-white'
+          : scrolled
+          ? 'bg-[#F7F7F4]/95 backdrop-blur-md border-[#E4E4DF] shadow-xs text-[#141413]'
+          : 'bg-[#F7F7F4] border-transparent text-[#141413]'
       )}
     >
       <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
@@ -41,15 +45,32 @@ export function Header() {
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#315CFF] rounded py-1"
           aria-label="Ahmed Razu — Homepage"
         >
-          <div className="w-8 h-8 rounded bg-[#141413] text-white flex items-center justify-center font-bold text-sm tracking-wider group-hover:bg-[#315CFF] transition-colors transition-craft font-mono">
+          <div
+            className={cn(
+              'w-8 h-8 rounded flex items-center justify-center font-bold text-sm tracking-wider transition-colors transition-craft font-mono',
+              isDarkHero
+                ? 'bg-white text-[#09090c] group-hover:bg-[#315CFF] group-hover:text-white'
+                : 'bg-[#141413] text-white group-hover:bg-[#315CFF]'
+            )}
+          >
             R
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold tracking-tight text-base sm:text-lg text-[#141413] leading-none flex items-center gap-1.5 font-['Montserrat']">
+            <span
+              className={cn(
+                "font-extrabold tracking-tight text-base sm:text-lg leading-none flex items-center gap-1.5 font-['Montserrat']",
+                isDarkHero ? 'text-white' : 'text-[#141413]'
+              )}
+            >
               AHMED RAZU
               <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#696969] mt-0.5">
+            <span
+              className={cn(
+                'text-[10px] font-mono uppercase tracking-widest mt-0.5',
+                isDarkHero ? 'text-[#888899]' : 'text-[#696969]'
+              )}
+            >
               WordPress &amp; Laravel
             </span>
           </div>
@@ -58,7 +79,12 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav
           aria-label="Main Navigation"
-          className="hidden md:flex items-center gap-1 bg-white/90 border border-[#E4E4DF] rounded-full px-4 py-1.5 shadow-2xs"
+          className={cn(
+            'hidden md:flex items-center gap-1 rounded-full px-4 py-1.5 transition-colors duration-200',
+            isDarkHero
+              ? 'bg-white/10 border border-white/15 backdrop-blur-md'
+              : 'bg-white/90 border border-[#E4E4DF] shadow-2xs'
+          )}
         >
           {siteConfig.navItems.map((item) => {
             const isActive =
@@ -70,7 +96,11 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   'text-xs uppercase tracking-wider font-semibold px-4 py-1.5 rounded-full transition-all transition-craft relative',
-                  isActive
+                  isDarkHero
+                    ? isActive
+                      ? 'text-white bg-white/20'
+                      : 'text-[#A0A0B0] hover:text-white hover:bg-white/10'
+                    : isActive
                     ? 'text-[#141413] bg-[#EFEFED] shadow-2xs'
                     : 'text-[#5F5F58] hover:text-[#141413] hover:bg-[#F7F7F4]'
                 )}
@@ -83,12 +113,24 @@ export function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-[#5F5F58] bg-white px-3 py-1.5 rounded-md border border-[#E4E4DF]">
+          <div
+            className={cn(
+              'hidden lg:flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-md border transition-colors',
+              isDarkHero
+                ? 'bg-white/10 border-white/15 text-[#D0D0E0]'
+                : 'bg-white border-[#E4E4DF] text-[#5F5F58]'
+            )}
+          >
             <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
             <span>Available Q4/Q1</span>
           </div>
 
-          <Button href="/contact" variant="primary" size="sm" className="font-semibold text-xs tracking-wide">
+          <Button
+            href="/contact"
+            variant="primary"
+            size="sm"
+            className="font-semibold text-xs tracking-wide shadow-md shadow-[#315CFF]/30"
+          >
             <span>Let&apos;s Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Button>
@@ -98,24 +140,27 @@ export function Header() {
         <div className="flex items-center gap-2 md:hidden">
           <Button href="/contact" variant="primary" size="sm" className="text-xs px-2.5 py-1.5">
             <span>Talk</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
           </Button>
+
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-md border border-[#E4E4DF] bg-white text-[#141413] hover:bg-[#F7F7F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#315CFF]"
+            className={cn(
+              'p-2 rounded-md transition-colors',
+              isDarkHero ? 'text-white hover:bg-white/10' : 'text-[#141413] hover:bg-[#EFEFED]'
+            )}
             aria-expanded={mobileMenuOpen}
-            aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+            aria-label="Toggle navigation drawer"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 text-[#141413]" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#E4E4DF] bg-[#F7F7F4] px-4 pt-3 pb-6 animate-in slide-in-from-top-2 duration-150">
-          <nav aria-label="Mobile Navigation" className="flex flex-col gap-1 mb-4">
+        <div className="md:hidden bg-white border-b border-[#E4E4DF] px-4 pt-4 pb-6 space-y-4 shadow-lg text-[#141413]">
+          <nav className="flex flex-col space-y-1">
             {siteConfig.navItems.map((item) => {
               const isActive =
                 pathname === item.href ||
@@ -125,28 +170,29 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'text-base font-semibold px-4 py-3 rounded-lg flex items-center justify-between transition-colors',
+                    'text-sm font-semibold py-2.5 px-3 rounded-lg transition-colors font-mono',
                     isActive
-                      ? 'bg-white text-[#315CFF] border border-[#E4E4DF]'
-                      : 'text-[#141413] hover:bg-white/60'
+                      ? 'bg-[#141413] text-white'
+                      : 'text-[#5F5F58] hover:bg-[#F7F7F4] hover:text-[#141413]'
                   )}
                 >
-                  <span>{item.label}</span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />}
+                  {item.label}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="pt-3 border-t border-[#E4E4DF] flex flex-col gap-3">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#5F5F58] px-1">
-              <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
-              <span>Available for contract &amp; client work</span>
+          <div className="pt-2 border-t border-[#E4E4DF] flex items-center justify-between">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#5F5F58]">
+              <span className="w-2 h-2 rounded-full bg-[#059669]" />
+              <span>Available for Work</span>
             </div>
-            <Button href="/contact" variant="primary" size="md" className="w-full">
-              <span>Start Project Discussion</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Button>
+            <Link
+              href="/contact"
+              className="text-xs font-bold text-[#315CFF] font-['Montserrat'] uppercase tracking-wider"
+            >
+              Get In Touch →
+            </Link>
           </div>
         </div>
       )}

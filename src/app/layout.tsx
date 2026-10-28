@@ -3,6 +3,7 @@ import { Montserrat, Lato, JetBrains_Mono } from 'next/font/google';
 import '@/styles/globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { siteConfig } from '@/data/siteConfig';
 
 const montserrat = Montserrat({
@@ -113,6 +114,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#F7F7F4] text-[#141413] antialiased flex flex-col min-h-screen selection:bg-[#315CFF] selection:text-white">
+        <ScrollProgress />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

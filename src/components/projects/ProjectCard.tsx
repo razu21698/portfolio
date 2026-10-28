@@ -12,14 +12,14 @@ export interface ProjectCardProps {
 
 export function ProjectCard({ project, featuredLayout = false }: ProjectCardProps) {
   return (
-    <article className="group bg-white rounded-xl border border-[#E4E4DF] hover:border-[#C7C7BF] overflow-hidden transition-all duration-300 hover:shadow-md flex flex-col h-full">
+    <article className="group bg-white rounded-xl border border-[#E4E4DF] hover:border-[#315CFF]/60 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
       {/* Visual Preview Container */}
       <div className="relative aspect-[16/10] bg-[#141416] overflow-hidden border-b border-[#E4E4DF]">
         <Image
           src={project.coverImage}
           alt={`${project.title} technical architecture and preview`}
           fill
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         
