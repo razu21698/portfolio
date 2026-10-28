@@ -71,8 +71,8 @@ export function CoreSpecialties() {
         <ScrollReveal direction="up">
           <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#E4E4DF] pb-8 gap-6">
             <div className="space-y-3 max-w-2xl">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#141413] font-bold flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                 Services Matrix
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
@@ -105,15 +105,15 @@ export function CoreSpecialties() {
                   {/* Number and Title with Icon */}
                   <div className="lg:col-span-4 space-y-2.5">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-[#F7F7F4] border border-[#E4E4DF] flex items-center justify-center text-[#315CFF] group-hover:bg-[#315CFF] group-hover:text-white transition-colors duration-200">
+                      <div className="w-8 h-8 rounded-lg bg-[#F7F7F4] border border-[#E4E4DF] flex items-center justify-center text-[#141413] group-hover:bg-[#141413] group-hover:text-white transition-colors duration-200">
                         <IconComponent className="w-4 h-4" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-[#315CFF]">
+                      <span className="text-xs font-mono font-bold text-[#141413]">
                         SERVICE {service.num}
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#141413] font-['Montserrat'] tracking-tight group-hover:text-[#315CFF] transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#141413] font-['Montserrat'] tracking-tight group-hover:underline transition-all">
                       <Link href={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
                         {service.title}
                       </Link>
@@ -132,7 +132,7 @@ export function CoreSpecialties() {
                       <span>{service.problem}</span>
                     </div>
                     <div className="p-3 rounded-lg bg-white border border-[#E4E4DF]/60">
-                      <strong className="text-[#315CFF] text-xs font-mono uppercase tracking-wider block mb-1">
+                      <strong className="text-[#141413] text-xs font-mono uppercase tracking-wider block mb-1">
                         My Technical Approach:
                       </strong>
                       <span>{service.approach}</span>
@@ -153,7 +153,7 @@ export function CoreSpecialties() {
                     <div>
                       <Link
                         href={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold font-['Montserrat'] text-[#315CFF] hover:text-[#1e44d6] uppercase tracking-wider group-hover:underline"
+                        className="inline-flex items-center gap-1 text-xs font-bold font-['Montserrat'] text-[#141413] hover:underline uppercase tracking-wider"
                       >
                         <span>Details</span>
                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

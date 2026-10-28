@@ -106,7 +106,7 @@ export function ContactForm() {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href={getMailtoLink()}
-              className="inline-flex items-center justify-center gap-2 text-xs font-bold font-['Montserrat'] uppercase tracking-wider px-5 py-3 rounded-md bg-[#315CFF] text-white hover:bg-[#1E44D6] transition-colors"
+              className="inline-flex items-center justify-center gap-2 text-xs font-bold font-['Montserrat'] uppercase tracking-wider px-5 py-3 rounded-md bg-[#141413] text-white hover:bg-[#2A2A28] transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span>Open in Email App (Backup)</span>
@@ -164,7 +164,7 @@ export function ContactForm() {
                 className={`w-full px-3.5 py-2.5 rounded-md bg-white border text-sm text-[#141413] placeholder-[#A0A0A0] transition-colors font-['Lato'] focus:outline-none ${
                   errors.name
                     ? 'border-[#DC2626] focus:border-[#DC2626]'
-                    : 'border-[#E4E4DF] focus:border-[#315CFF]'
+                    : 'border-[#E4E4DF] focus:border-[#141413]'
                 }`}
               />
               {errors.name && (
@@ -190,7 +190,7 @@ export function ContactForm() {
                 className={`w-full px-3.5 py-2.5 rounded-md bg-white border text-sm text-[#141413] placeholder-[#A0A0A0] transition-colors font-['Lato'] focus:outline-none ${
                   errors.email
                     ? 'border-[#DC2626] focus:border-[#DC2626]'
-                    : 'border-[#E4E4DF] focus:border-[#315CFF]'
+                    : 'border-[#E4E4DF] focus:border-[#141413]'
                 }`}
               />
               {errors.email && (
@@ -214,7 +214,7 @@ export function ContactForm() {
                 placeholder="company.com"
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-md bg-white border border-[#E4E4DF] focus:border-[#315CFF] text-sm text-[#141413] placeholder-[#A0A0A0] focus:outline-none font-['Lato']"
+                className="w-full px-3.5 py-2.5 rounded-md bg-white border border-[#E4E4DF] focus:border-[#141413] text-sm text-[#141413] placeholder-[#A0A0A0] focus:outline-none font-['Lato']"
               />
             </div>
 
@@ -227,7 +227,7 @@ export function ContactForm() {
                 id="projectType"
                 value={formData.projectType}
                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-md bg-white border border-[#E4E4DF] focus:border-[#315CFF] text-sm text-[#141413] focus:outline-none font-['Lato']"
+                className="w-full px-3.5 py-2.5 rounded-md bg-white border border-[#E4E4DF] focus:border-[#141413] text-sm text-[#141413] focus:outline-none font-['Lato']"
               >
                 <option value="WordPress Custom Theme">WordPress Custom Theme / Plugin</option>
                 <option value="Laravel Web Application">Laravel Web Application / API</option>
@@ -275,7 +275,7 @@ export function ContactForm() {
                     onClick={() => setFormData({ ...formData, timeline: t })}
                     className={`py-2 px-2 text-xs font-mono rounded border text-center transition-all cursor-pointer ${
                       formData.timeline === t
-                        ? 'bg-[#315CFF] text-white border-[#315CFF] font-bold shadow-xs'
+                        ? 'bg-[#141413] text-white border-[#141413] font-bold shadow-xs'
                         : 'bg-[#F7F7F4] text-[#5F5F58] border-[#E4E4DF] hover:border-[#C7C7BF]'
                     }`}
                   >
@@ -301,7 +301,7 @@ export function ContactForm() {
               className={`w-full px-3.5 py-2.5 rounded-md bg-white border text-sm text-[#141413] placeholder-[#A0A0A0] transition-colors focus:outline-none resize-y font-['Lato'] ${
                 errors.message
                   ? 'border-[#DC2626] focus:border-[#DC2626]'
-                  : 'border-[#E4E4DF] focus:border-[#315CFF]'
+                  : 'border-[#E4E4DF] focus:border-[#141413]'
               }`}
             />
             {errors.message && (

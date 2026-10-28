@@ -18,7 +18,7 @@ export function Footer() {
           {/* Brand & Value Statement */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded bg-[#315CFF] text-white flex items-center justify-center font-bold text-xs font-mono">
+              <div className="w-7 h-7 rounded bg-white text-[#111111] flex items-center justify-center font-bold text-xs font-mono">
                 R
               </div>
               <span className="font-extrabold tracking-tight text-xl text-white font-['Montserrat']">
@@ -44,7 +44,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[#D4D4D4] hover:text-[#315CFF] transition-colors"
+                    className="text-[#D4D4D4] hover:text-[#D4FF00] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -84,9 +84,9 @@ export function Footer() {
             <div className="space-y-2 text-xs text-[#A0A0A0] font-['Lato']">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2 text-white hover:text-[#315CFF] transition-colors group"
+                className="flex items-center gap-2 text-white hover:text-[#D4FF00] transition-colors group"
               >
-                <Mail className="w-4 h-4 text-[#737373] group-hover:text-[#315CFF]" />
+                <Mail className="w-4 h-4 text-[#737373] group-hover:text-[#D4FF00]" />
                 <span className="break-all font-mono">{siteConfig.email}</span>
               </a>
               <a
@@ -132,7 +132,7 @@ export function Footer() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#315CFF]"
+            className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D4FF00]"
             aria-label="Back to top"
           >
             <span>Back to top</span>

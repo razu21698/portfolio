@@ -40,20 +40,20 @@ export function ProofBar() {
               <div className="group space-y-3 relative p-4 rounded-xl border border-transparent hover:border-[#E4E4DF] hover:bg-[#FBFBFA] transition-all duration-300">
                 {/* Animated Top Accent Line on Hover */}
                 <div className="absolute top-0 left-4 right-4 h-[2px] bg-transparent overflow-hidden rounded-full">
-                  <div className="h-full bg-[#315CFF] w-0 group-hover:w-full transition-all duration-400 ease-out" />
+                  <div className="h-full bg-[#141413] w-0 group-hover:w-full transition-all duration-400 ease-out" />
                 </div>
 
                 <div className="flex items-center justify-between border-b border-[#E4E4DF] pb-2.5">
-                  <span className="text-xs font-mono font-bold text-[#315CFF] flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <span className="text-xs font-mono font-bold text-[#141413] flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#141413] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     {item.num}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#888880] px-2 py-0.5 rounded bg-[#F7F7F4] border border-[#E4E4DF] group-hover:border-[#315CFF]/30 transition-colors">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#888880] px-2 py-0.5 rounded bg-[#F7F7F4] border border-[#E4E4DF] group-hover:border-[#141413]/40 transition-colors">
                     {item.badge}
                   </span>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-[#141413] tracking-tight font-['Montserrat'] group-hover:text-[#315CFF] transition-colors duration-200">
+                <h3 className="text-base sm:text-lg font-bold text-[#141413] tracking-tight font-['Montserrat'] transition-colors duration-200">
                   {item.title}
                 </h3>
 

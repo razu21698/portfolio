@@ -22,8 +22,8 @@ export default function WorkPage() {
         {/* Page Header */}
         <ScrollReveal direction="up">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#141413] font-bold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
               Verified Project Archive
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">

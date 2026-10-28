@@ -131,7 +131,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-2 rounded bg-[#315CFF] text-white hover:bg-[#1E44D6] transition-colors shadow-xs"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-2 rounded bg-[#141413] text-white hover:bg-[#282828] transition-colors shadow-xs"
                 >
                   <span>Live Site</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -163,7 +163,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {project.results.map((res, i) => (
                 <div
                   key={i}
-                  className="p-6 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 hover:shadow-md transition-all duration-300 space-y-1 text-center sm:text-left"
+                  className="p-6 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413] hover:shadow-md transition-all duration-300 space-y-1 text-center sm:text-left"
                 >
                   <span className="text-3xl font-extrabold text-[#141413] block">
                     {res.metric}
@@ -207,7 +207,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <ScrollReveal direction="up" delay={240}>
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-[#141413] tracking-tight font-['Montserrat'] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                 Architecture &amp; System Telemetry
               </h3>
               <div className="group relative aspect-[16/10] rounded-xl overflow-hidden border border-[#E4E4DF] shadow-md bg-[#141416]">
@@ -231,7 +231,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {project.keyHighlights.map((highlight, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#315CFF] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
                   <span className="text-sm text-[#5F5F58] leading-relaxed font-['Lato']">
                     {highlight}
                   </span>
@@ -251,7 +251,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs font-mono px-3 py-1.5 bg-white text-[#141413] rounded-md border border-[#E4E4DF] shadow-2xs hover:border-[#315CFF]/40 transition-colors"
+                  className="text-xs font-mono px-3 py-1.5 bg-white text-[#141413] rounded-md border border-[#E4E4DF] shadow-2xs hover:border-[#141413] transition-colors"
                 >
                   {tech}
                 </span>
@@ -270,7 +270,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 </h3>
                 <Link
                   href="/work"
-                  className="text-xs font-mono text-[#315CFF] hover:underline flex items-center gap-1"
+                  className="text-xs font-mono text-[#141413] font-bold hover:underline flex items-center gap-1"
                 >
                   View all projects →
                 </Link>
@@ -281,14 +281,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   <Link
                     key={rel.slug}
                     href={`/work/${rel.slug}`}
-                    className="p-5 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF] hover:shadow-md transition-all group block"
+                    className="p-5 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413] hover:shadow-md transition-all group block"
                   >
-                    <span className="text-[11px] font-mono text-[#315CFF] block mb-1">
+                    <span className="text-[11px] font-mono text-[#141413] font-bold block mb-1">
                       {rel.categoryLabel}
                     </span>
-                    <h4 className="text-base font-bold text-[#141413] group-hover:text-[#315CFF] transition-colors flex items-center justify-between font-['Montserrat']">
+                    <h4 className="text-base font-bold text-[#141413] group-hover:underline transition-colors flex items-center justify-between font-['Montserrat']">
                       <span>{rel.title}</span>
-                      <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#315CFF] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#141413] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </h4>
                     <p className="text-xs text-[#5F5F58] mt-1 line-clamp-2 font-['Lato']">
                       {rel.tagline}

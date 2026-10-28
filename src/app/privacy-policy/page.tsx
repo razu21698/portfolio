@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
         <Breadcrumbs items={[{ label: 'Privacy Policy', href: '/privacy-policy' }]} />
 
         <div className="space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#059669]">
             Transparency First
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-lg font-bold text-[#141413] font-['Montserrat']">4. Direct Contact</h2>
           <p>
             If you have questions regarding this privacy policy or your data, you can reach out directly via email at{' '}
-            <a href={`mailto:${siteConfig.email}`} className="text-[#315CFF] underline font-mono">
+            <a href={`mailto:${siteConfig.email}`} className="text-[#141413] hover:text-[#059669] underline font-mono transition-colors">
               {siteConfig.email}
             </a>
             .

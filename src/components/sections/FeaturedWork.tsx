@@ -22,8 +22,8 @@ export function FeaturedWork() {
         <ScrollReveal direction="up">
           <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#E4E4DF] pb-8 gap-6">
             <div className="space-y-3 max-w-2xl">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#141413] font-bold flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                 Editorial Project Showcase
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
@@ -38,7 +38,7 @@ export function FeaturedWork() {
               href="/work"
               variant="outline"
               size="md"
-              className="group self-start md:self-end font-['Montserrat'] text-xs font-semibold hover:border-[#315CFF]"
+              className="group self-start md:self-end font-['Montserrat'] text-xs font-semibold hover:border-[#141413]"
             >
               <span>View All ({projects.length}) Projects</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -48,7 +48,7 @@ export function FeaturedWork() {
 
         {/* Showcase Item 1: Large Left Visual, Right Narrative (Cambridge Car Audio) */}
         <ScrollReveal direction="up" delay={100}>
-          <div className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-2xl border border-[#E4E4DF] p-6 sm:p-10 shadow-xs hover:border-[#315CFF]/50 hover:shadow-lg transition-all duration-300">
+          <div className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-2xl border border-[#E4E4DF] p-6 sm:p-10 shadow-xs hover:border-[#141413] hover:shadow-lg transition-all duration-300">
             <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-[#E4E4DF] bg-[#141416]">
               <Image
                 src={p1.coverImage}
@@ -67,7 +67,7 @@ export function FeaturedWork() {
                   href={p1.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-4 right-4 z-10 p-2 rounded-md bg-[#111111]/85 hover:bg-[#315CFF] text-white transition-colors"
+                  className="absolute top-4 right-4 z-10 p-2 rounded-md bg-[#111111]/85 hover:bg-[#141413] text-white transition-colors"
                   aria-label={`Visit live site for ${p1.title}`}
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -82,7 +82,7 @@ export function FeaturedWork() {
                   <span>{p1.role}</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#141413] tracking-tight font-['Montserrat']">
-                  <Link href={`/work/${p1.slug}`} className="hover:text-[#315CFF] transition-colors">
+                  <Link href={`/work/${p1.slug}`} className="hover:underline transition-colors">
                     {p1.title}
                   </Link>
                 </h3>
@@ -94,7 +94,7 @@ export function FeaturedWork() {
               {/* Metrics with subtle hover fill */}
               <div className="grid grid-cols-3 gap-2 py-3 border-y border-[#EFEFED] font-mono text-center">
                 {p1.results.map((res, i) => (
-                  <div key={i} className="p-2 bg-[#F7F7F4] rounded border border-[#E4E4DF] hover:border-[#315CFF]/30 transition-colors">
+                  <div key={i} className="p-2 bg-[#F7F7F4] rounded border border-[#E4E4DF] hover:border-[#141413]/30 transition-colors">
                     <span className="text-sm sm:text-base font-extrabold text-[#141413] block">
                       {res.metric}
                     </span>
@@ -116,7 +116,7 @@ export function FeaturedWork() {
 
                 <Link
                   href={`/work/${p1.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#315CFF] hover:text-[#1e44d6] shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#141413] hover:underline shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
                 >
                   <span>Read Case Study</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -128,7 +128,7 @@ export function FeaturedWork() {
 
         {/* Showcase Item 2: Reversed Composition (STC360 LMS Platform) */}
         <ScrollReveal direction="up" delay={150}>
-          <div className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-2xl border border-[#E4E4DF] p-6 sm:p-10 shadow-xs hover:border-[#315CFF]/50 hover:shadow-lg transition-all duration-300">
+          <div className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-2xl border border-[#E4E4DF] p-6 sm:p-10 shadow-xs hover:border-[#141413] hover:shadow-lg transition-all duration-300">
             <div className="lg:col-span-5 space-y-6 order-2 lg:order-1">
               <div className="space-y-2">
                 <div className="text-xs font-mono text-[#888880] uppercase tracking-wider flex items-center justify-between">
@@ -136,7 +136,7 @@ export function FeaturedWork() {
                   <span>{p2.role}</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#141413] tracking-tight font-['Montserrat']">
-                  <Link href={`/work/${p2.slug}`} className="hover:text-[#315CFF] transition-colors">
+                  <Link href={`/work/${p2.slug}`} className="hover:underline transition-colors">
                     {p2.title}
                   </Link>
                 </h3>
@@ -148,7 +148,7 @@ export function FeaturedWork() {
               {/* Metrics */}
               <div className="grid grid-cols-3 gap-2 py-3 border-y border-[#EFEFED] font-mono text-center">
                 {p2.results.map((res, i) => (
-                  <div key={i} className="p-2 bg-[#F7F7F4] rounded border border-[#E4E4DF] hover:border-[#315CFF]/30 transition-colors">
+                  <div key={i} className="p-2 bg-[#F7F7F4] rounded border border-[#E4E4DF] hover:border-[#141413]/30 transition-colors">
                     <span className="text-sm sm:text-base font-extrabold text-[#141413] block">
                       {res.metric}
                     </span>
@@ -170,7 +170,7 @@ export function FeaturedWork() {
 
                 <Link
                   href={`/work/${p2.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#315CFF] hover:text-[#1e44d6] shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#141413] hover:underline shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
                 >
                   <span>Read Case Study</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -196,7 +196,7 @@ export function FeaturedWork() {
                   href={p2.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-4 right-4 z-10 p-2 rounded-md bg-[#111111]/85 hover:bg-[#315CFF] text-white transition-colors"
+                  className="absolute top-4 right-4 z-10 p-2 rounded-md bg-[#111111]/85 hover:bg-[#141413] text-white transition-colors"
                   aria-label={`Visit live site for ${p2.title}`}
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -210,7 +210,7 @@ export function FeaturedWork() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[p3, p4].map((proj, index) => (
             <ScrollReveal key={proj.slug} direction="up" delay={200 + index * 100}>
-              <div className="group bg-white rounded-2xl border border-[#E4E4DF] p-6 sm:p-8 shadow-xs hover:border-[#315CFF]/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+              <div className="group bg-white rounded-2xl border border-[#E4E4DF] p-6 sm:p-8 shadow-xs hover:border-[#141413] hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
                 <div className="space-y-4">
                   <div className="relative aspect-[16/9] rounded-xl overflow-hidden border border-[#E4E4DF] bg-[#141416]">
                     <Image
@@ -233,7 +233,7 @@ export function FeaturedWork() {
                       <span>{proj.role}</span>
                     </div>
                     <h4 className="text-xl sm:text-2xl font-bold text-[#141413] tracking-tight font-['Montserrat']">
-                      <Link href={`/work/${proj.slug}`} className="hover:text-[#315CFF] transition-colors">
+                      <Link href={`/work/${proj.slug}`} className="hover:underline transition-colors">
                         {proj.title}
                       </Link>
                     </h4>
@@ -254,7 +254,7 @@ export function FeaturedWork() {
 
                   <Link
                     href={`/work/${proj.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#315CFF] hover:text-[#1e44d6] font-['Montserrat'] uppercase tracking-wider"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#141413] hover:underline font-['Montserrat'] uppercase tracking-wider"
                   >
                     <span>Case Study</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

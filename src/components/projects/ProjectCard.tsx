@@ -12,7 +12,7 @@ export interface ProjectCardProps {
 
 export function ProjectCard({ project, featuredLayout = false }: ProjectCardProps) {
   return (
-    <article className="group bg-white rounded-xl border border-[#E4E4DF] hover:border-[#315CFF]/60 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+    <article className="group bg-white rounded-xl border border-[#E4E4DF] hover:border-[#141413] overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
       {/* Visual Preview Container */}
       <div className="relative aspect-[16/10] bg-[#141416] overflow-hidden border-b border-[#E4E4DF]">
         <Image
@@ -36,7 +36,7 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute top-3 right-3 z-10 p-1.5 rounded-md bg-[#111111]/85 hover:bg-[#315CFF] text-white transition-colors border border-white/10"
+            className="absolute top-3 right-3 z-10 p-1.5 rounded-md bg-[#111111]/85 hover:bg-[#141413] text-white transition-colors border border-white/10"
             aria-label={`Visit live site for ${project.title}`}
           >
             <ExternalLink className="w-3.5 h-3.5" />
@@ -54,11 +54,11 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
           </div>
 
           {/* Project Title */}
-          <h3 className="text-xl font-bold text-[#141413] tracking-tight group-hover:text-[#315CFF] transition-colors flex items-center justify-between font-['Montserrat']">
+          <h3 className="text-xl font-bold text-[#141413] tracking-tight group-hover:underline transition-all flex items-center justify-between font-['Montserrat']">
             <Link href={`/work/${project.slug}`} className="focus-visible:outline-none focus-visible:underline">
               {project.title}
             </Link>
-            <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#315CFF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+            <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#141413] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
           </h3>
 
           {/* Tagline / Summary */}
@@ -103,7 +103,7 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
 
           <Link
             href={`/work/${project.slug}`}
-            className="text-xs font-bold text-[#315CFF] hover:underline flex items-center gap-1 shrink-0 ml-auto font-['Montserrat'] uppercase tracking-wider"
+            className="text-xs font-bold text-[#141413] hover:underline flex items-center gap-1 shrink-0 ml-auto font-['Montserrat'] uppercase tracking-wider"
           >
             Case Study →
           </Link>

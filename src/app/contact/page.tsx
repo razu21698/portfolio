@@ -33,13 +33,13 @@ export default function ContactPage() {
         {/* Page Header */}
         <ScrollReveal direction="up">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#059669] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#059669]" />
               Direct Inquiries
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
               Have a project in mind?{' '}
-              <span className="text-[#315CFF]">Let&apos;s engineer a solution.</span>
+              <span className="underline decoration-[#10B981] decoration-4 underline-offset-8">Let&apos;s engineer a solution.</span>
             </h1>
             <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
               Tell me about what you are building, where your current website or application is falling short, or what operational bottlenecks you need to solve.
@@ -60,7 +60,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-8">
             {/* Direct Contact Card */}
             <ScrollReveal direction="left" delay={150}>
-              <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 hover:shadow-md transition-all duration-300 space-y-6">
+              <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413]/40 hover:shadow-md transition-all duration-300 space-y-6">
                 <h3 className="text-lg font-bold text-[#141413] font-['Montserrat']">
                   Direct Contact Channels
                 </h3>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     </span>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="font-mono text-[#315CFF] hover:underline break-all font-medium text-xs sm:text-sm"
+                      className="font-mono text-[#141413] hover:text-[#059669] underline break-all font-medium text-xs sm:text-sm transition-colors"
                     >
                       {siteConfig.email}
                     </a>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                     </span>
                     <a
                       href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
-                      className="font-mono text-[#141413] hover:text-[#315CFF] text-xs sm:text-sm transition-colors"
+                      className="font-mono text-[#141413] hover:text-[#059669] text-xs sm:text-sm transition-colors"
                     >
                       {siteConfig.phone}
                     </a>
@@ -126,7 +126,7 @@ export default function ContactPage() {
 
             {/* Inbound FAQ */}
             <ScrollReveal direction="left" delay={250}>
-              <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/30 transition-all duration-300 space-y-6">
+              <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413]/30 transition-all duration-300 space-y-6">
                 <h3 className="text-base font-bold text-[#141413] flex items-center gap-2 font-['Montserrat']">
                   <ShieldCheck className="w-4 h-4 text-[#059669]" />
                   <span>Frequently Asked Questions</span>

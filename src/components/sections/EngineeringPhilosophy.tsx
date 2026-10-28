@@ -63,15 +63,15 @@ export function EngineeringPhilosophy() {
       <div
         className="pointer-events-none absolute -inset-px opacity-30 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(650px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(49, 92, 255, 0.15), transparent 80%)`,
+          background: `radial-gradient(650px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(212, 255, 0, 0.08), transparent 80%)`,
         }}
       />
 
       <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         <ScrollReveal direction="up">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4FF00] flex items-center gap-2 font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00]" />
               Engineering Philosophy
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-['Montserrat']">
@@ -88,18 +88,18 @@ export function EngineeringPhilosophy() {
             const Icon = p.icon;
             return (
               <ScrollReveal key={idx} direction="up" delay={idx * 70}>
-                <div className="group relative p-8 rounded-xl bg-[#161616] border border-[#262626] hover:border-[#315CFF]/70 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(49,92,255,0.15)] transition-all duration-300 space-y-4 h-full flex flex-col justify-between">
+                <div className="group relative p-8 rounded-xl bg-[#161616] border border-[#262626] hover:border-[#D4FF00]/50 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(212,255,0,0.1)] transition-all duration-300 space-y-4 h-full flex flex-col justify-between">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-[#222222] text-[#315CFF] flex items-center justify-center border border-[#333333] group-hover:bg-[#315CFF] group-hover:text-white transition-all duration-300">
+                      <div className="w-10 h-10 rounded-lg bg-[#222222] text-[#D4FF00] flex items-center justify-center border border-[#333333] group-hover:bg-[#D4FF00] group-hover:text-[#09090c] transition-all duration-300">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-[#444444] group-hover:text-[#315CFF] transition-colors">
+                      <span className="text-xs font-mono font-bold text-[#555555] group-hover:text-[#D4FF00] transition-colors">
                         RULE {p.num}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-white font-['Montserrat'] tracking-tight group-hover:text-[#82A0FF] transition-colors">
+                    <h3 className="text-lg font-bold text-white font-['Montserrat'] tracking-tight group-hover:text-[#D4FF00] transition-colors">
                       {p.title}
                     </h3>
 
@@ -110,7 +110,7 @@ export function EngineeringPhilosophy() {
 
                   <div className="pt-4 border-t border-[#222222] text-[11px] font-mono text-[#555555] flex items-center justify-between">
                     <span>Verified Production Standard</span>
-                    <span className="text-[#315CFF]">Active</span>
+                    <span className="text-[#D4FF00] font-bold">Active</span>
                   </div>
                 </div>
               </ScrollReveal>

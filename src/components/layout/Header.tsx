@@ -42,15 +42,15 @@ export function Header() {
         {/* Editorial Wordmark */}
         <Link
           href="/"
-          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#315CFF] rounded py-1"
+          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#141413] rounded py-1"
           aria-label="Ahmed Razu — Homepage"
         >
           <div
             className={cn(
               'w-8 h-8 rounded flex items-center justify-center font-bold text-sm tracking-wider transition-colors transition-craft font-mono',
               isDarkHero
-                ? 'bg-white text-[#09090c] group-hover:bg-[#315CFF] group-hover:text-white'
-                : 'bg-[#141413] text-white group-hover:bg-[#315CFF]'
+                ? 'bg-white text-[#09090c] group-hover:bg-[#D4FF00] group-hover:text-[#09090c]'
+                : 'bg-[#141413] text-white group-hover:bg-[#282828]'
             )}
           >
             R
@@ -63,7 +63,7 @@ export function Header() {
               )}
             >
               AHMED RAZU
-              <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
             </span>
             <span
               className={cn(
@@ -129,7 +129,7 @@ export function Header() {
             href="/contact"
             variant="primary"
             size="sm"
-            className="font-semibold text-xs tracking-wide shadow-md shadow-[#315CFF]/30"
+            className="font-semibold text-xs tracking-wide shadow-md"
           >
             <span>Let&apos;s Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -189,7 +189,7 @@ export function Header() {
             </div>
             <Link
               href="/contact"
-              className="text-xs font-bold text-[#315CFF] font-['Montserrat'] uppercase tracking-wider"
+              className="text-xs font-bold text-[#141413] hover:underline font-['Montserrat'] uppercase tracking-wider"
             >
               Get In Touch →
             </Link>

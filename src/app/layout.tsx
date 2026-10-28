@@ -113,7 +113,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F7F7F4] text-[#141413] antialiased flex flex-col min-h-screen selection:bg-[#315CFF] selection:text-white">
+      <body className="bg-[#F7F7F4] text-[#141413] antialiased flex flex-col min-h-screen selection:bg-[#D4FF00] selection:text-[#09090c]">
         <ScrollProgress />
         <Header />
         <main className="flex-grow">{children}</main>

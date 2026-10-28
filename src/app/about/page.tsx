@@ -30,14 +30,14 @@ export default function AboutPage() {
           {/* Left Bio Column */}
           <div className="lg:col-span-7 space-y-6">
             <ScrollReveal direction="up">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#141413] font-bold flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                 Engineering Background
               </span>
 
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat'] mt-2">
                 Good development is more than code.{' '}
-                <span className="text-[#315CFF]">It is engineered business value.</span>
+                <span className="underline decoration-[#141413]/30 underline-offset-8">It is engineered business value.</span>
               </h1>
             </ScrollReveal>
 
@@ -62,20 +62,20 @@ export default function AboutPage() {
                   My Core Engineering Principles
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#5F5F58] font-['Lato']">
-                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 transition-colors">
-                    <CheckCircle2 className="w-4 h-4 text-[#315CFF] shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#141413] transition-colors">
+                    <CheckCircle2 className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
                     <span><strong>Zero Bloat:</strong> Custom lightweight code over 80+ conflicting plugins.</span>
                   </div>
-                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 transition-colors">
-                    <CheckCircle2 className="w-4 h-4 text-[#315CFF] shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#141413] transition-colors">
+                    <CheckCircle2 className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
                     <span><strong>Sub-Second Speed:</strong> Strict adherence to Google Core Web Vitals.</span>
                   </div>
-                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 transition-colors">
-                    <CheckCircle2 className="w-4 h-4 text-[#315CFF] shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#141413] transition-colors">
+                    <CheckCircle2 className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
                     <span><strong>Infrastructure Security:</strong> Hardened Nginx, SSL, automated backups.</span>
                   </div>
-                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 transition-colors">
-                    <CheckCircle2 className="w-4 h-4 text-[#315CFF] shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2 p-3.5 rounded-lg bg-white border border-[#E4E4DF] hover:border-[#141413] transition-colors">
+                    <CheckCircle2 className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
                     <span><strong>Transparent Delivery:</strong> Clear communication, Git versioning, honest audits.</span>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                     <h2 className="text-xl font-bold text-[#141413] font-['Montserrat']">
                       Md. Razib Ahmed Razu
                     </h2>
-                    <p className="text-xs font-mono text-[#315CFF]">
+                    <p className="text-xs font-mono text-[#141413] font-semibold">
                       WordPress &amp; Laravel Engineer
                     </p>
                     <p className="text-xs text-[#888880] mt-0.5 font-['Lato']">
@@ -121,14 +121,14 @@ export default function AboutPage() {
                 <div className="space-y-3 pt-4 border-t border-[#EFEFED] text-xs font-['Lato']">
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-2.5 text-[#141413] hover:text-[#315CFF] transition-colors p-2 rounded hover:bg-[#F7F7F4]"
+                    className="flex items-center gap-2.5 text-[#141413] hover:underline transition-colors p-2 rounded hover:bg-[#F7F7F4]"
                   >
                     <Mail className="w-4 h-4 text-[#888880] shrink-0" />
-                    <span className="break-all font-mono">{siteConfig.email}</span>
+                    <span className="break-all font-mono font-medium">{siteConfig.email}</span>
                   </a>
                   <a
                     href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
-                    className="flex items-center gap-2.5 text-[#141413] hover:text-[#315CFF] transition-colors p-2 rounded hover:bg-[#F7F7F4]"
+                    className="flex items-center gap-2.5 text-[#141413] hover:underline transition-colors p-2 rounded hover:bg-[#F7F7F4]"
                   >
                     <Phone className="w-4 h-4 text-[#888880] shrink-0" />
                     <span className="font-mono">{siteConfig.phone}</span>
@@ -165,9 +165,9 @@ export default function AboutPage() {
 
             {/* Academic Education Box */}
             <ScrollReveal direction="left" delay={200}>
-              <div className="p-6 rounded-xl bg-white border border-[#E4E4DF] space-y-4 hover:border-[#315CFF]/30 transition-colors">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#315CFF]">
-                  <GraduationCap className="w-4 h-4" />
+              <div className="p-6 rounded-xl bg-white border border-[#E4E4DF] space-y-4 hover:border-[#141413]/40 transition-colors">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#141413]">
+                  <GraduationCap className="w-4 h-4 text-[#059669]" />
                   <span>Academic Education</span>
                 </div>
                 {educationList.map((edu, idx) => (
@@ -175,7 +175,7 @@ export default function AboutPage() {
                     <h4 className="text-sm font-bold text-[#141413] font-['Montserrat']">
                       {edu.degree}
                     </h4>
-                    <p className="text-xs text-[#315CFF] font-medium mt-0.5 font-['Montserrat']">
+                    <p className="text-xs text-[#5F5F58] font-semibold mt-0.5 font-['Montserrat']">
                       {edu.institution}
                     </p>
                     <p className="text-[11px] font-mono text-[#888880] mt-1">
@@ -197,8 +197,8 @@ export default function AboutPage() {
         <div className="pt-12 border-t border-[#E4E4DF] space-y-8">
           <ScrollReveal direction="up">
             <div className="max-w-2xl space-y-2">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#059669] flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#059669]" />
                 Professional Experience
               </span>
               <h2 className="text-3xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
@@ -213,13 +213,13 @@ export default function AboutPage() {
           <div className="space-y-6">
             {workExperience.map((exp, index) => (
               <ScrollReveal key={index} direction="up" delay={index * 100}>
-                <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/50 hover:shadow-md transition-all duration-300 space-y-4">
+                <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413]/40 hover:shadow-md transition-all duration-300 space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#EFEFED] pb-4">
                     <div>
                       <h3 className="text-xl font-bold text-[#141413] font-['Montserrat']">
                         {exp.role}
                       </h3>
-                      <div className="text-sm font-semibold text-[#315CFF] font-['Montserrat']">
+                      <div className="text-sm font-semibold text-[#141413] font-['Montserrat']">
                         {exp.company}
                       </div>
                     </div>
@@ -231,7 +231,7 @@ export default function AboutPage() {
                   <ul className="space-y-2 text-sm text-[#5F5F58] leading-relaxed font-['Lato']">
                     {exp.highlights.map((h, hIdx) => (
                       <li key={hIdx} className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF] mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#141413] mt-2 shrink-0" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -257,8 +257,8 @@ export default function AboutPage() {
         <div className="pt-12 border-t border-[#E4E4DF] space-y-8">
           <ScrollReveal direction="up">
             <div className="max-w-2xl space-y-2">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#315CFF] flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF]" />
+              <span className="text-xs font-mono uppercase tracking-widest text-[#059669] flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#059669]" />
                 Competency Matrix
               </span>
               <h2 className="text-3xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
@@ -273,7 +273,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((cat, idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 120}>
-                <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#315CFF]/40 hover:shadow-md transition-all duration-300 space-y-5 h-full">
+                <div className="p-8 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413]/30 hover:shadow-md transition-all duration-300 space-y-5 h-full">
                   <div>
                     <h3 className="text-lg font-bold text-[#141413] font-['Montserrat']">
                       {cat.title}
@@ -287,7 +287,7 @@ export default function AboutPage() {
                     {cat.skills.map((skill, sIdx) => (
                       <div
                         key={sIdx}
-                        className="p-3.5 rounded-lg bg-[#F7F7F4] border border-[#E4E4DF] hover:border-[#315CFF]/30 transition-colors space-y-1"
+                        className="p-3.5 rounded-lg bg-[#F7F7F4] border border-[#E4E4DF] hover:border-[#141413]/30 transition-colors space-y-1"
                       >
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-bold text-[#141413] font-mono">

@@ -66,7 +66,7 @@ export function ProjectFilter({ initialProjects }: ProjectFilterProps) {
           <button
             type="button"
             onClick={() => setActiveCategory('all')}
-            className="text-xs font-mono text-[#315CFF] underline cursor-pointer"
+            className="text-xs font-mono text-[#141413] font-bold underline cursor-pointer"
           >
             Reset to All Projects
           </button>

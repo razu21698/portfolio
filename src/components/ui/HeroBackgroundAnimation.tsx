@@ -56,21 +56,21 @@ export function HeroBackgroundAnimation() {
     origPositions.set(posAttr.array);
 
     const planeMat = new THREE.MeshBasicMaterial({
-      color: 0x315cff,
+      color: 0x334155,
       wireframe: true,
       transparent: true,
-      opacity: 0.38,
+      opacity: 0.45,
     });
     const waveMesh = new THREE.Mesh(planeGeo, planeMat);
     waveMesh.position.y = -1.2;
     scene.add(waveMesh);
 
-    // Secondary overlapping glowing accent line grid
+    // Secondary overlapping glowing accent line grid (Volt Neon highlight)
     const secondaryMat = new THREE.MeshBasicMaterial({
-      color: 0x00f0ff,
+      color: 0xd4ff00,
       wireframe: true,
       transparent: true,
-      opacity: 0.15,
+      opacity: 0.2,
     });
     const secondaryWave = new THREE.Mesh(planeGeo.clone(), secondaryMat);
     secondaryWave.position.y = -1.22;
@@ -88,7 +88,7 @@ export function HeroBackgroundAnimation() {
     const particleGeo = new THREE.BufferGeometry();
     particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
     const particleMat = new THREE.PointsMaterial({
-      color: 0x82a0ff,
+      color: 0xffffff,
       size: 0.05,
       transparent: true,
       opacity: 0.75,

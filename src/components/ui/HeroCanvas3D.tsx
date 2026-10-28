@@ -359,7 +359,7 @@ export function HeroCanvas3D({ className = '' }: HeroCanvas3DProps) {
           </span>
           <span className="text-[#3A3A3A]">|</span>
           <span>
-            X: <strong className="text-[#315CFF]">{coords.x}</strong> Y: <strong className="text-[#315CFF]">{coords.y}</strong>
+            X: <strong className="text-[#D4FF00]">{coords.x}</strong> Y: <strong className="text-[#D4FF00]">{coords.y}</strong>
           </span>
           <span className="text-[#3A3A3A]">|</span>
           <span className="text-[#10B981]">GPU 60Hz</span>
@@ -369,13 +369,13 @@ export function HeroCanvas3D({ className = '' }: HeroCanvas3DProps) {
       {/* Bottom Floating Controls & Engineering Legend */}
       <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono z-10">
         <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#181818]/90 backdrop-blur-md border border-[#2e2e2e] text-[#A0A0A0]">
-          <Sparkles className="w-3.5 h-3.5 text-[#315CFF]" />
+          <Sparkles className="w-3.5 h-3.5 text-[#D4FF00]" />
           <span>Interactive 3D Matrix • Drag to Orbit</span>
         </div>
 
         <div className="flex items-center gap-2">
           <div className="hidden md:flex items-center gap-2 px-2 py-1 rounded-md bg-[#181818]/90 backdrop-blur-md border border-[#2e2e2e] text-[#888880]">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#315CFF]" />
+            <span className="inline-block w-2 h-2 rounded-full bg-[#D4FF00]" />
             <span>Architecture</span>
             <span className="inline-block w-2 h-2 rounded-full bg-[#059669]" />
             <span>Rest APIs</span>
