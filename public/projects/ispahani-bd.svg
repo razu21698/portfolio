@@ -1,0 +1,38 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#1C1814"/>
+  <rect x="100" y="75" width="1000" height="600" rx="12" fill="#241F1A" stroke="#3D342C" stroke-width="2"/>
+  
+  <rect x="100" y="75" width="1000" height="44" rx="12" fill="#302923"/>
+  <circle cx="128" cy="97" r="6" fill="#EF4444"/>
+  <circle cx="148" cy="97" r="6" fill="#F59E0B"/>
+  <circle cx="168" cy="97" r="6" fill="#10B981"/>
+  <rect x="350" y="85" width="500" height="24" rx="6" fill="#1C1814"/>
+  <text x="600" y="101" fill="#D97706" font-family="monospace" font-size="12" text-anchor="middle">https://ispahanibd.com • Consumer Brand &amp; Heritage</text>
+
+  <!-- Content -->
+  <g transform="translate(140, 160)">
+    <text x="0" y="35" fill="#F59E0B" font-family="sans-serif" font-weight="700" font-size="14" letter-spacing="2">HISTORIC CONSUMER BRAND PLATFORM</text>
+    <text x="0" y="80" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="34">Ispahani Group Digital Presence</text>
+    <text x="0" y="120" fill="#D1D5DB" font-family="sans-serif" font-size="16">Modernizing a multi-generation consumer tea and agro brand with high-speed performance and nationwide dealer lookup.</text>
+  </g>
+
+  <g transform="translate(140, 320)">
+    <rect width="920" height="280" rx="8" fill="#1C1814" stroke="#3D342C"/>
+    <text x="35" y="45" fill="#FFFFFF" font-family="sans-serif" font-weight="700" font-size="18">Key Engineering Deliverables</text>
+    
+    <g transform="translate(35, 75)">
+      <circle cx="6" cy="12" r="4" fill="#F59E0B"/>
+      <text x="25" y="16" fill="#E5E7EB" font-family="sans-serif" font-size="15">Custom WordPress theme adhering strictly to high accessibility and responsive guidelines.</text>
+      
+      <circle cx="6" cy="52" r="4" fill="#F59E0B"/>
+      <text x="25" y="56" fill="#E5E7EB" font-family="sans-serif" font-size="15">Nationwide distributor mapping interface with geolocation search filters.</text>
+      
+      <circle cx="6" cy="92" r="4" fill="#F59E0B"/>
+      <text x="25" y="96" fill="#E5E7EB" font-family="sans-serif" font-size="15">Core Web Vitals tuning elevating desktop PageSpeed ratings to 95+.</text>
+
+      <circle cx="6" cy="132" r="4" fill="#F59E0B"/>
+      <text x="25" y="136" fill="#E5E7EB" font-family="sans-serif" font-size="15">Comprehensive technical SEO schema for brand provenance and organic search rank retention.</text>
+    </g>
+  </g>
+</svg>
+

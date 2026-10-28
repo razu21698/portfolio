@@ -1,0 +1,67 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#171216"/>
+  <defs>
+    <linearGradient id="beauty-glow" x1="0" y1="0" x2="1200" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EC4899" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#315CFF" stop-opacity="0.10"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="750" fill="url(#beauty-glow)"/>
+
+  <!-- Browser Window -->
+  <g transform="translate(100, 75)">
+    <rect width="1000" height="600" rx="12" fill="#201722" stroke="#3A283C" stroke-width="2"/>
+    
+    <!-- Window Bar -->
+    <rect width="1000" height="44" rx="12" fill="#2B1E2E"/>
+    <circle cx="28" cy="22" r="6" fill="#EF4444"/>
+    <circle cx="48" cy="22" r="6" fill="#F59E0B"/>
+    <circle cx="68" cy="22" r="6" fill="#10B981"/>
+    <rect x="250" y="10" width="500" height="24" rx="6" fill="#181119"/>
+    <text x="500" y="26" fill="#A78BFA" font-family="monospace" font-size="12" text-anchor="middle">https://bdbudgetbeauty.com • WooCommerce Flash-Sale Engine</text>
+
+    <!-- Top Promo / Metrics -->
+    <g transform="translate(40, 70)">
+      <rect width="920" height="130" rx="8" fill="#181119" stroke="#3A283C"/>
+      <g transform="translate(30, 25)">
+        <text x="0" y="20" fill="#F472B6" font-family="sans-serif" font-weight="700" font-size="13">FLASH SALE INFRASTRUCTURE</text>
+        <text x="0" y="58" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="28">High-Concurrency Checkout Optimization</text>
+        <text x="0" y="88" fill="#D1D5DB" font-family="sans-serif" font-size="14">Eliminated 4.2-second cart latency spikes through Redis Object Caching &amp; query profiling.</text>
+      </g>
+    </g>
+
+    <!-- 3 Stat Blocks -->
+    <g transform="translate(40, 220)">
+      <rect width="285" height="120" rx="8" fill="#181119" stroke="#3A283C"/>
+      <text x="24" y="38" fill="#9CA3AF" font-family="sans-serif" font-size="13">Checkout Drop-off</text>
+      <text x="24" y="82" fill="#10B981" font-family="sans-serif" font-weight="800" font-size="36">-55%</text>
+      <text x="24" y="105" fill="#6EE7B7" font-family="sans-serif" font-size="12">Streamlined 1-step funnel</text>
+    </g>
+
+    <g transform="translate(355, 220)">
+      <rect width="285" height="120" rx="8" fill="#181119" stroke="#3A283C"/>
+      <text x="24" y="38" fill="#9CA3AF" font-family="sans-serif" font-size="13">Flash Spike Capacity</text>
+      <text x="24" y="82" fill="#EC4899" font-family="sans-serif" font-weight="800" font-size="36">3.5x</text>
+      <text x="24" y="105" fill="#F472B6" font-family="sans-serif" font-size="12">Zero database deadlocks</text>
+    </g>
+
+    <g transform="translate(675, 220)">
+      <rect width="285" height="120" rx="8" fill="#181119" stroke="#3A283C"/>
+      <text x="24" y="38" fill="#9CA3AF" font-family="sans-serif" font-size="13">Mobile Page Load</text>
+      <text x="24" y="82" fill="#60A5FA" font-family="sans-serif" font-weight="800" font-size="36">1.1s</text>
+      <text x="24" y="105" fill="#93C5FD" font-family="sans-serif" font-size="12">Sub-second FCP</text>
+    </g>
+
+    <!-- Code Block -->
+    <g transform="translate(40, 365)">
+      <rect width="920" height="195" rx="8" fill="#130E14" stroke="#3A283C"/>
+      <text x="24" y="35" fill="#F472B6" font-family="monospace" font-size="13">// functions.php — Optimized WooCommerce Checkout Session Bypass</text>
+      <text x="24" y="68" fill="#D1D5DB" font-family="monospace" font-size="13">add_action('woocommerce_checkout_order_review', function() {</text>
+      <text x="44" y="100" fill="#9CA3AF" font-family="monospace" font-size="13">  // Prevent full session re-query on ajax cart total updates</text>
+      <text x="44" y="132" fill="#E5E7EB" font-family="monospace" font-size="13">  wp_cache_set('cart_totals_' . WC()-&gt;session-&gt;get_customer_id(), $totals, 'wc_cache', 300);</text>
+      <text x="24" y="164" fill="#D1D5DB" font-family="monospace" font-size="13">}, 5);</text>
+    </g>
+  </g>
+</svg>
+
