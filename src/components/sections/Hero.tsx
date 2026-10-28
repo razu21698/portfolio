@@ -23,32 +23,12 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-between bg-[#09090c] text-white overflow-hidden border-b border-[#222228]">
+    <section className="relative min-h-[90vh] flex flex-col justify-between bg-[#09090c] text-white overflow-hidden border-b border-[#222228]">
       {/* 1. Full-Bleed Interactive 3D WebGL Background Animation (Lando Norris Inspired) */}
       <HeroBackgroundAnimation />
 
-      {/* 2. Top Precision Cockpit Annotation Bar */}
-      <div className="relative z-10 w-full pt-6 pb-2 border-b border-white/5">
-        <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs font-mono">
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F0FF] opacity-80" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F0FF]" />
-            </span>
-            <span className="text-[#A0A0B0] hidden sm:inline-block">OPERATIONAL STATUS:</span>
-            <span className="text-white font-semibold tracking-wider">AVAILABLE FOR INTERNATIONAL CONTRACTS</span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-4 text-[#777788] text-[11px]">
-            <span>LOC: DHAKA (GMT+6) / REMOTE</span>
-            <span>•</span>
-            <span className="text-[#315CFF] font-semibold">PHP 8.2 • LARAVEL 10 • WORDPRESS</span>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. Main Hero Content Layout */}
-      <div className="relative z-10 max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 my-auto w-full">
+      {/* 2. Main Hero Content Layout */}
+      <div className="relative z-10 max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 my-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Monumental High-Octane Headline & Positioning */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">

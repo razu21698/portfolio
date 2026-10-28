@@ -6,7 +6,6 @@ import * as THREE from 'three';
 export function HeroBackgroundAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [coords, setCoords] = useState<{ x: string; y: string }>({ x: '+0.00', y: '+0.00' });
 
   useEffect(() => {
     const container = containerRef.current;
@@ -113,11 +112,6 @@ export function HeroBackgroundAnimation() {
 
       targetCameraX = normX * 1.8;
       targetCameraY = 3.2 + normY * 0.8;
-
-      setCoords({
-        x: (normX >= 0 ? '+' : '') + normX.toFixed(2),
-        y: (normY >= 0 ? '+' : '') + normY.toFixed(2),
-      });
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -212,21 +206,7 @@ export function HeroBackgroundAnimation() {
       {/* Atmospheric Vignette Gradients for Text Contrast & High-Octane Aesthetics */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#09090c]/90 via-[#09090c]/40 to-[#09090c] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_20%,#09090c_85%)] pointer-events-none" />
-
-      {/* High-Tech Cockpit HUD Telemetry Tag in Background (Lando Norris Inspired) */}
-      <div className="absolute top-6 left-6 hidden lg:flex items-center gap-3 text-[10px] font-mono text-[#444455] tracking-widest uppercase">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#315CFF] animate-pulse" />
-        <span>SYS_COORD: [X: {coords.x} / Y: {coords.y}]</span>
-        <span>•</span>
-        <span>GRID: 70x48 MESH</span>
-        <span>•</span>
-        <span>SPEED_OPTIMIZED: 60FPS</span>
-      </div>
-
-      <div className="absolute top-6 right-6 hidden lg:flex items-center gap-2 text-[10px] font-mono text-[#444455] tracking-widest uppercase">
-        <span>EDITION: 2026.4</span>
-        <span className="text-[#315CFF]">[VERIFIED_ACTIVE]</span>
-      </div>
     </div>
   );
 }
+
