@@ -78,7 +78,7 @@ export function Hero() {
           <ScrollReveal direction="up" delay={120}>
             <h1 className="text-4xl sm:text-6xl lg:text-[4.75rem] font-black tracking-tight leading-[1.02] uppercase font-['Montserrat'] text-white">
               I build digital experiences &amp;{' '}
-              <span className="text-[#D4FF00] relative inline-block underline decoration-[#D4FF00]/40 decoration-wavy underline-offset-8">
+              <span className="text-[#D4FF00] inline-block">
                 business systems
               </span>{' '}
               that perform.

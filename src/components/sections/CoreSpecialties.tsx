@@ -113,7 +113,7 @@ export function CoreSpecialties() {
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#141413] font-['Montserrat'] tracking-tight group-hover:underline transition-all">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#141413] font-['Montserrat'] tracking-tight group-hover:text-[#059669] transition-colors">
                       <Link href={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
                         {service.title}
                       </Link>
@@ -153,7 +153,7 @@ export function CoreSpecialties() {
                     <div>
                       <Link
                         href={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold font-['Montserrat'] text-[#141413] hover:underline uppercase tracking-wider"
+                        className="inline-flex items-center gap-1 text-xs font-bold font-['Montserrat'] text-[#141413] hover:text-[#059669] transition-colors uppercase tracking-wider"
                       >
                         <span>Details</span>
                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

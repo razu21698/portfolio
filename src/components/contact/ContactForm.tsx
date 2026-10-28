@@ -126,7 +126,7 @@ export function ContactForm() {
                   website_hp: '',
                 });
               }}
-              className="text-xs font-mono text-[#5F5F58] hover:text-[#141413] underline py-2 cursor-pointer"
+              className="text-xs font-mono text-[#5F5F58] hover:text-[#141413] transition-colors py-2 cursor-pointer font-medium"
             >
               Send another message
             </button>

@@ -189,7 +189,7 @@ export function Header() {
             </div>
             <Link
               href="/contact"
-              className="text-xs font-bold text-[#141413] hover:underline font-['Montserrat'] uppercase tracking-wider"
+              className="text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors font-['Montserrat'] uppercase tracking-wider"
             >
               Get In Touch →
             </Link>

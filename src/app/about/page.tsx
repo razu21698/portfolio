@@ -37,7 +37,7 @@ export default function AboutPage() {
 
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat'] mt-2">
                 Good development is more than code.{' '}
-                <span className="underline decoration-[#141413]/30 underline-offset-8">It is engineered business value.</span>
+                <span className="text-[#5F5F58]">It is engineered business value.</span>
               </h1>
             </ScrollReveal>
 
@@ -121,14 +121,14 @@ export default function AboutPage() {
                 <div className="space-y-3 pt-4 border-t border-[#EFEFED] text-xs font-['Lato']">
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-2.5 text-[#141413] hover:underline transition-colors p-2 rounded hover:bg-[#F7F7F4]"
+                    className="flex items-center gap-2.5 text-[#141413] hover:text-[#059669] transition-colors p-2 rounded hover:bg-[#F7F7F4]"
                   >
                     <Mail className="w-4 h-4 text-[#888880] shrink-0" />
                     <span className="break-all font-mono font-medium">{siteConfig.email}</span>
                   </a>
                   <a
                     href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
-                    className="flex items-center gap-2.5 text-[#141413] hover:underline transition-colors p-2 rounded hover:bg-[#F7F7F4]"
+                    className="flex items-center gap-2.5 text-[#141413] hover:text-[#059669] transition-colors p-2 rounded hover:bg-[#F7F7F4]"
                   >
                     <Phone className="w-4 h-4 text-[#888880] shrink-0" />
                     <span className="font-mono">{siteConfig.phone}</span>

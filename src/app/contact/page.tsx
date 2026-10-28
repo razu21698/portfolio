@@ -39,7 +39,7 @@ export default function ContactPage() {
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
               Have a project in mind?{' '}
-              <span className="underline decoration-[#10B981] decoration-4 underline-offset-8">Let&apos;s engineer a solution.</span>
+              <span className="text-[#059669]">Let&apos;s engineer a solution.</span>
             </h1>
             <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
               Tell me about what you are building, where your current website or application is falling short, or what operational bottlenecks you need to solve.
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     </span>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="font-mono text-[#141413] hover:text-[#059669] underline break-all font-medium text-xs sm:text-sm transition-colors"
+                      className="font-mono text-[#141413] hover:text-[#059669] break-all font-medium text-xs sm:text-sm transition-colors"
                     >
                       {siteConfig.email}
                     </a>

@@ -54,8 +54,8 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
           </div>
 
           {/* Project Title */}
-          <h3 className="text-xl font-bold text-[#141413] tracking-tight group-hover:underline transition-all flex items-center justify-between font-['Montserrat']">
-            <Link href={`/work/${project.slug}`} className="focus-visible:outline-none focus-visible:underline">
+          <h3 className="text-xl font-bold text-[#141413] tracking-tight group-hover:text-[#059669] transition-colors flex items-center justify-between font-['Montserrat']">
+            <Link href={`/work/${project.slug}`} className="focus-visible:outline-none">
               {project.title}
             </Link>
             <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#141413] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
@@ -103,7 +103,7 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
 
           <Link
             href={`/work/${project.slug}`}
-            className="text-xs font-bold text-[#141413] hover:underline flex items-center gap-1 shrink-0 ml-auto font-['Montserrat'] uppercase tracking-wider"
+            className="text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors flex items-center gap-1 shrink-0 ml-auto font-['Montserrat'] uppercase tracking-wider"
           >
             Case Study →
           </Link>

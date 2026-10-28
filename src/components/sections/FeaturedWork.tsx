@@ -82,7 +82,7 @@ export function FeaturedWork() {
                   <span>{p1.role}</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#141413] tracking-tight font-['Montserrat']">
-                  <Link href={`/work/${p1.slug}`} className="hover:underline transition-colors">
+                  <Link href={`/work/${p1.slug}`} className="hover:text-[#059669] transition-colors">
                     {p1.title}
                   </Link>
                 </h3>
@@ -116,7 +116,7 @@ export function FeaturedWork() {
 
                 <Link
                   href={`/work/${p1.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#141413] hover:underline shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
                 >
                   <span>Read Case Study</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -136,7 +136,7 @@ export function FeaturedWork() {
                   <span>{p2.role}</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#141413] tracking-tight font-['Montserrat']">
-                  <Link href={`/work/${p2.slug}`} className="hover:underline transition-colors">
+                  <Link href={`/work/${p2.slug}`} className="hover:text-[#059669] transition-colors">
                     {p2.title}
                   </Link>
                 </h3>
@@ -170,7 +170,7 @@ export function FeaturedWork() {
 
                 <Link
                   href={`/work/${p2.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#141413] hover:underline shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors shrink-0 font-['Montserrat'] uppercase tracking-wider ml-2"
                 >
                   <span>Read Case Study</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -233,7 +233,7 @@ export function FeaturedWork() {
                       <span>{proj.role}</span>
                     </div>
                     <h4 className="text-xl sm:text-2xl font-bold text-[#141413] tracking-tight font-['Montserrat']">
-                      <Link href={`/work/${proj.slug}`} className="hover:underline transition-colors">
+                      <Link href={`/work/${proj.slug}`} className="hover:text-[#059669] transition-colors">
                         {proj.title}
                       </Link>
                     </h4>
@@ -254,7 +254,7 @@ export function FeaturedWork() {
 
                   <Link
                     href={`/work/${proj.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#141413] hover:underline font-['Montserrat'] uppercase tracking-wider"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors font-['Montserrat'] uppercase tracking-wider"
                   >
                     <span>Case Study</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

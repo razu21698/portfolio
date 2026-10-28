@@ -35,7 +35,7 @@ export function ExperienceTimeline() {
                   <GraduationCap className="w-4 h-4 text-[#141413]" />
                   <span>Formal Academic Education</span>
                 </div>
-                <h4 className="text-sm font-bold text-[#141413] font-['Montserrat'] group-hover:underline transition-colors">
+                <h4 className="text-sm font-bold text-[#141413] font-['Montserrat'] group-hover:text-[#059669] transition-colors">
                   {educationList[0].degree}
                 </h4>
                 <p className="text-xs text-[#5F5F58] font-medium font-['Lato']">

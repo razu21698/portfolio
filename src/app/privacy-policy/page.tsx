@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-lg font-bold text-[#141413] font-['Montserrat']">4. Direct Contact</h2>
           <p>
             If you have questions regarding this privacy policy or your data, you can reach out directly via email at{' '}
-            <a href={`mailto:${siteConfig.email}`} className="text-[#141413] hover:text-[#059669] underline font-mono transition-colors">
+            <a href={`mailto:${siteConfig.email}`} className="text-[#141413] hover:text-[#059669] font-mono transition-colors font-medium">
               {siteConfig.email}
             </a>
             .

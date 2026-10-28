@@ -270,7 +270,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 </h3>
                 <Link
                   href="/work"
-                  className="text-xs font-mono text-[#141413] font-bold hover:underline flex items-center gap-1"
+                  className="text-xs font-mono text-[#141413] font-bold hover:text-[#059669] transition-colors flex items-center gap-1"
                 >
                   View all projects →
                 </Link>
@@ -286,7 +286,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                     <span className="text-[11px] font-mono text-[#141413] font-bold block mb-1">
                       {rel.categoryLabel}
                     </span>
-                    <h4 className="text-base font-bold text-[#141413] group-hover:underline transition-colors flex items-center justify-between font-['Montserrat']">
+                    <h4 className="text-base font-bold text-[#141413] group-hover:text-[#059669] transition-colors flex items-center justify-between font-['Montserrat']">
                       <span>{rel.title}</span>
                       <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#141413] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </h4>

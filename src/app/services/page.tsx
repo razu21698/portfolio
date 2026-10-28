@@ -80,7 +80,7 @@ export default function ServicesPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-bold text-[#141413] tracking-tight mb-2 font-['Montserrat'] group-hover:underline transition-all">
+                      <h3 className="text-xl font-bold text-[#141413] tracking-tight mb-2 font-['Montserrat'] transition-colors">
                         {service.title}
                       </h3>
                       <p className="text-sm text-[#5F5F58] leading-relaxed font-['Lato']">
@@ -164,7 +164,7 @@ export default function ServicesPage() {
                       <span>{stage.step}</span>
                       <span className="w-2 h-2 rounded-full bg-[#E4E4DF] group-hover:bg-[#141413] transition-colors" />
                     </div>
-                    <h3 className="text-lg font-bold text-[#141413] font-['Montserrat'] group-hover:underline transition-all">
+                    <h3 className="text-lg font-bold text-[#141413] font-['Montserrat'] transition-colors">
                       {stage.title}
                     </h3>
                     <p className="text-xs text-[#5F5F58] leading-relaxed font-['Lato']">
