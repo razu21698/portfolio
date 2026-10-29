@@ -15,6 +15,7 @@ export function ProjectFilter({ initialProjects }: ProjectFilterProps) {
     { label: 'All Projects', value: 'all' },
     { label: 'WordPress Core & Themes', value: 'wordpress' },
     { label: 'Laravel Web Apps', value: 'laravel' },
+    { label: 'React Web Apps', value: 'react' },
     { label: 'WooCommerce & eCommerce', value: 'ecommerce' },
     { label: 'Performance & SEO', value: 'performance-seo' },
   ];

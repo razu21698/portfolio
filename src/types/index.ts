@@ -1,4 +1,4 @@
-export type ProjectCategory = 'all' | 'wordpress' | 'laravel' | 'ecommerce' | 'performance-seo';
+export type ProjectCategory = 'all' | 'wordpress' | 'laravel' | 'ecommerce' | 'performance-seo' | 'react';
 
 export interface ProjectResult {
   metric: string;
@@ -11,7 +11,7 @@ export interface Project {
   title: string;
   tagline: string;
   client: string;
-  category: 'wordpress' | 'laravel' | 'ecommerce' | 'performance-seo';
+  category: 'wordpress' | 'laravel' | 'ecommerce' | 'performance-seo' | 'react';
   categoryLabel: string;
   role: string;
   timeline: string;
