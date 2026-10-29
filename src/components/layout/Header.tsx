@@ -25,6 +25,18 @@ export function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const isDarkHero = !scrolled;
 
   return (
@@ -138,7 +150,7 @@ export function Header() {
 
         {/* Mobile Hamburger Toggle */}
         <div className="flex items-center gap-2 md:hidden">
-          <Button href="/contact" variant="primary" size="sm" className="text-xs px-2.5 py-1.5">
+          <Button href="/contact" variant="volt" size="sm" className="text-xs px-3 py-1.5 font-bold uppercase font-['Montserrat']">
             <span>Talk</span>
           </Button>
 
@@ -157,45 +169,111 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-[#E4E4DF] px-4 pt-4 pb-6 space-y-4 shadow-lg text-[#141413]">
-          <nav className="flex flex-col space-y-1">
+      {/* ========================================================= */}
+      {/* MOBILE DRAWER: SLIDES IN FROM THE LEFT                    */}
+      {/* ========================================================= */}
+
+      {/* Backdrop Overlay */}
+      <div
+        className={cn(
+          'fixed inset-0 bg-black/70 backdrop-blur-xs z-50 transition-opacity duration-300 md:hidden',
+          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        )}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Left-Side Drawer Panel */}
+      <aside
+        className={cn(
+          'fixed top-0 bottom-0 left-0 w-[300px] max-w-[85vw] bg-[#0c0c10] border-r border-[#222228] text-white z-50 shadow-2xl flex flex-col justify-between p-6 transition-transform duration-300 ease-in-out md:hidden',
+          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        )}
+        aria-label="Mobile Navigation Drawer"
+      >
+        <div className="space-y-6">
+          {/* Drawer Top Header Bar */}
+          <div className="flex items-center justify-between pb-4 border-b border-white/10">
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2.5"
+            >
+              <div className="w-8 h-8 rounded bg-[#D4FF00] text-[#09090c] flex items-center justify-center font-bold text-sm font-mono">
+                R
+              </div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-sm tracking-tight text-white font-['Montserrat']">
+                  AHMED RAZU
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#888899]">
+                  WordPress &amp; Laravel
+                </span>
+              </div>
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-1.5 rounded-lg text-[#A0A0B5] hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Close navigation drawer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col space-y-1.5">
             {siteConfig.navItems.map((item) => {
               const isActive =
                 pathname === item.href ||
                 (item.href !== '/' && pathname.startsWith(item.href));
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    'text-sm font-semibold py-2.5 px-3 rounded-lg transition-colors font-mono',
+                    'text-base font-bold font-["Montserrat"] py-3 px-4 rounded-xl transition-all flex items-center justify-between',
                     isActive
-                      ? 'bg-[#141413] text-white'
-                      : 'text-[#5F5F58] hover:bg-[#F7F7F4] hover:text-[#141413]'
+                      ? 'bg-white/10 text-[#D4FF00] border border-white/10'
+                      : 'text-[#A0A0B5] hover:text-white hover:bg-white/5 hover:translate-x-1'
                   )}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="w-2 h-2 rounded-full bg-[#D4FF00] animate-pulse" />
+                  )}
                 </Link>
               );
             })}
           </nav>
+        </div>
 
-          <div className="pt-2 border-t border-[#E4E4DF] flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#5F5F58]">
-              <span className="w-2 h-2 rounded-full bg-[#059669]" />
-              <span>Available for Work</span>
-            </div>
-            <Link
-              href="/contact"
-              className="text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors font-['Montserrat'] uppercase tracking-wider"
-            >
-              Get In Touch →
-            </Link>
+        {/* Drawer Bottom Telemetry & CTA */}
+        <div className="space-y-4 pt-6 border-t border-white/10">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#D0D0DD]">
+            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+            <span>Available for Q4/Q1 Contracts</span>
+          </div>
+
+          <Button
+            href="/contact"
+            variant="volt"
+            size="md"
+            className="w-full justify-center font-['Montserrat'] text-xs uppercase tracking-wider font-extrabold"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Discuss a Project</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </Button>
+
+          <div className="text-[11px] font-mono text-[#666677] text-center pt-1">
+            Dhaka (GMT+6) · Worldwide Remote
           </div>
         </div>
-      )}
+      </aside>
     </header>
   );
 }
