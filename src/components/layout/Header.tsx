@@ -44,10 +44,8 @@ export function Header() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300 border-b',
         isDarkHero
-          ? 'bg-[#09090c]/80 backdrop-blur-md border-white/10 text-white'
-          : scrolled
-          ? 'bg-[#F7F7F4]/95 backdrop-blur-md border-[#E4E4DF] shadow-xs text-[#141413]'
-          : 'bg-[#F7F7F4] border-transparent text-[#141413]'
+          ? 'bg-[#09090c] border-[#222228] text-white shadow-md'
+          : 'bg-[#F7F7F4] border-[#E4E4DF] shadow-xs text-[#141413]'
       )}
     >
       <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
@@ -92,10 +90,10 @@ export function Header() {
         <nav
           aria-label="Main Navigation"
           className={cn(
-            'hidden md:flex items-center gap-1 rounded-full px-4 py-1.5 transition-colors duration-200',
+            'hidden md:flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition-colors duration-200',
             isDarkHero
-              ? 'bg-white/10 border border-white/15 backdrop-blur-md'
-              : 'bg-white/90 border border-[#E4E4DF] shadow-2xs'
+              ? 'bg-[#14141B] border border-[#272733] shadow-inner'
+              : 'bg-white border border-[#E4E4DF] shadow-xs'
           )}
         >
           {siteConfig.navItems.map((item) => {
@@ -110,10 +108,10 @@ export function Header() {
                   'text-xs uppercase tracking-wider font-semibold px-4 py-1.5 rounded-full transition-all transition-craft relative',
                   isDarkHero
                     ? isActive
-                      ? 'text-white bg-white/20'
-                      : 'text-[#A0A0B0] hover:text-white hover:bg-white/10'
+                      ? 'text-[#09090c] bg-[#D4FF00] font-bold shadow-xs'
+                      : 'text-[#D0D0DE] hover:text-white hover:bg-white/10'
                     : isActive
-                    ? 'text-[#141413] bg-[#EFEFED] shadow-2xs'
+                    ? 'text-white bg-[#141413] font-bold shadow-xs'
                     : 'text-[#5F5F58] hover:text-[#141413] hover:bg-[#F7F7F4]'
                 )}
               >
@@ -127,13 +125,13 @@ export function Header() {
         <div className="hidden md:flex items-center gap-4">
           <div
             className={cn(
-              'hidden lg:flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-md border transition-colors',
+              'hidden lg:flex items-center gap-2 text-xs font-mono px-3.5 py-1.5 rounded-full border transition-colors',
               isDarkHero
-                ? 'bg-white/10 border-white/15 text-[#D0D0E0]'
+                ? 'bg-[#14141B] border-[#272733] text-[#D0D0E0]'
                 : 'bg-white border-[#E4E4DF] text-[#5F5F58]'
             )}
           >
-            <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
             <span>Available Q4/Q1</span>
           </div>
 
@@ -158,8 +156,10 @@ export function Header() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={cn(
-              'p-2 rounded-md transition-colors',
-              isDarkHero ? 'text-white hover:bg-white/10' : 'text-[#141413] hover:bg-[#EFEFED]'
+              'p-2 rounded-lg transition-colors border',
+              isDarkHero
+                ? 'bg-[#14141B] border-[#272733] text-white hover:bg-[#1E1E28]'
+                : 'bg-white border-[#E4E4DF] text-[#141413] hover:bg-[#F7F7F4]'
             )}
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation drawer"
