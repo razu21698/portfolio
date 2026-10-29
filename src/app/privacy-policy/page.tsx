@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="pt-8 pb-20">
-      <div className="max-w-[840px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Mandatory Visible Breadcrumb */}
-        <Breadcrumbs items={[{ label: 'Privacy Policy', href: '/privacy-policy' }]} />
+    <div className="pb-20">
+      {/* Breadcrumb Banner */}
+      <Breadcrumbs items={[{ label: 'Privacy Policy', href: '/privacy-policy' }]} />
 
+      <div className="max-w-[840px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-8">
         <div className="space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-[#059669]">
             Transparency First

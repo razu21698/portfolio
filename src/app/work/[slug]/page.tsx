@@ -61,16 +61,16 @@ export default async function CaseStudyPage({ params }: PageProps) {
     .slice(0, 2);
 
   return (
-    <div className="pt-8 pb-20">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {/* Mandatory Visible Breadcrumb */}
-        <Breadcrumbs
-          items={[
-            { label: 'Work', href: '/work' },
-            { label: project.title },
-          ]}
-        />
+    <div className="pb-20">
+      {/* Breadcrumb Banner */}
+      <Breadcrumbs
+        items={[
+          { label: 'Work', href: '/work' },
+          { label: project.title },
+        ]}
+      />
 
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-12">
         {/* Case Study Header */}
         <ScrollReveal direction="up">
           <div className="space-y-4">

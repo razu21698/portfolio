@@ -37,11 +37,11 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="pt-8 pb-20">
-      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Mandatory Visible Breadcrumb */}
-        <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
+    <div className="pb-20">
+      {/* Breadcrumb Banner */}
+      <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
 
+      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-16">
         {/* Page Header */}
         <ScrollReveal direction="up">
           <div className="max-w-3xl space-y-4">

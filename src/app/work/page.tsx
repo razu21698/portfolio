@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="pt-8 pb-20">
-      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 mb-16 space-y-8">
-        {/* Mandatory Visible Breadcrumb */}
-        <Breadcrumbs items={[{ label: 'Work', href: '/work' }]} />
+    <div className="pb-20">
+      {/* Breadcrumb Banner */}
+      <Breadcrumbs items={[{ label: 'Work', href: '/work' }]} />
 
+      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 mb-16 space-y-8">
         {/* Page Header */}
         <ScrollReveal direction="up">
           <div className="max-w-3xl space-y-4">

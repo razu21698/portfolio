@@ -25,7 +25,7 @@ export function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  const isDarkHero = pathname === '/' && !scrolled;
+  const isDarkHero = !scrolled;
 
   return (
     <header

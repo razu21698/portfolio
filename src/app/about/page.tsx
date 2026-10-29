@@ -20,11 +20,11 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export default function AboutPage() {
   return (
-    <div className="pt-8 pb-20">
-      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Mandatory Visible Breadcrumb */}
-        <Breadcrumbs items={[{ label: 'About', href: '/about' }]} />
+    <div className="pb-20">
+      {/* Breadcrumb Banner */}
+      <Breadcrumbs items={[{ label: 'About', href: '/about' }]} />
 
+      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-16">
         {/* Intro Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Bio Column */}
