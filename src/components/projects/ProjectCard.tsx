@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,9 +14,29 @@ export interface ProjectCardProps {
 
 export function ProjectCard({ project, featuredLayout = false }: ProjectCardProps) {
   return (
-    <article className="group bg-white rounded-xl border border-[#E4E4DF] hover:border-[#141413] overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
+    <article className="group bg-white rounded-2xl border border-[#E4E4DF] hover:border-[#141413] overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col h-full relative">
+      {/* Top Edge Indicator */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#141413] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+
+      {/* Browser Frame Header */}
+      <div className="bg-[#14141A] px-3.5 py-2 border-b border-[#22222E] flex items-center justify-between select-none">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-[#EF4444]/80" />
+          <span className="w-2 h-2 rounded-full bg-[#F59E0B]/80" />
+          <span className="w-2 h-2 rounded-full bg-[#10B981]/80" />
+        </div>
+
+        <span className="text-[10px] font-mono text-[#8E8EA0] max-w-[180px] truncate">
+          {project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, '') : `${project.slug}.com`}
+        </span>
+
+        <span className="text-[9px] font-mono text-[#10B981] bg-[#10B981]/10 px-1.5 py-0.2 rounded border border-[#10B981]/20">
+          PROD
+        </span>
+      </div>
+
       {/* Visual Preview Container */}
-      <div className="relative aspect-[16/10] bg-[#141416] overflow-hidden border-b border-[#E4E4DF]">
+      <div className="relative aspect-[16/10] bg-[#101014] overflow-hidden">
         <Image
           src={project.coverImage}
           alt={`${project.title} technical architecture and preview`}
@@ -22,21 +44,21 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
           className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        
+
         {/* Category Overlay Tag */}
         <div className="absolute top-3 left-3 z-10">
-          <Badge variant="dark" size="sm" className="backdrop-blur-sm bg-[#111111]/90">
+          <Badge variant="dark" size="sm" className="backdrop-blur-md bg-[#0E0E12]/90 border border-white/10 text-[10px]">
             {project.categoryLabel}
           </Badge>
         </div>
 
-        {/* Live Link Indicator if available */}
+        {/* Live Link Button */}
         {project.liveUrl && (
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute top-3 right-3 z-10 p-1.5 rounded-md bg-[#111111]/85 hover:bg-[#141413] text-white transition-colors border border-white/10"
+            className="absolute top-3 right-3 z-10 p-1.5 rounded-md bg-[#0E0E12]/85 hover:bg-[#141413] text-white transition-colors border border-white/15 shadow-sm"
             aria-label={`Visit live site for ${project.title}`}
           >
             <ExternalLink className="w-3.5 h-3.5" />
@@ -46,10 +68,10 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
 
       {/* Content Container */}
       <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
-        <div>
+        <div className="space-y-2.5">
           {/* Client & Role Subtitle */}
-          <div className="flex items-center justify-between text-xs font-mono text-[#888880] mb-2">
-            <span className="truncate max-w-[160px]">{project.client}</span>
+          <div className="flex items-center justify-between text-xs font-mono text-[#888880]">
+            <span className="truncate max-w-[160px] font-semibold text-[#141413]">{project.client}</span>
             <span>{project.role}</span>
           </div>
 
@@ -62,20 +84,20 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
           </h3>
 
           {/* Tagline / Summary */}
-          <p className="text-sm text-[#5F5F58] mt-2 line-clamp-2 leading-relaxed font-['Lato']">
+          <p className="text-sm text-[#5F5F58] line-clamp-2 leading-relaxed font-['Lato']">
             {project.tagline}
           </p>
         </div>
 
-        {/* Verified Results Metrics */}
+        {/* Verified Results Metrics HUD */}
         {project.results.length > 0 && (
-          <div className="grid grid-cols-2 gap-2 pt-2 border-t border-[#EFEFED] font-mono">
+          <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#EFEFED] font-mono">
             {project.results.slice(0, 2).map((res, i) => (
-              <div key={i} className="bg-[#F7F7F4] p-2 rounded border border-[#E4E4DF]/60">
+              <div key={i} className="bg-[#F7F7F4] p-2.5 rounded-lg border border-[#E4E4DF]/70">
                 <span className="text-base font-extrabold text-[#141413] block">
                   {res.metric}
                 </span>
-                <span className="text-[11px] text-[#5F5F58] block truncate">
+                <span className="text-[10px] text-[#5F5F58] block truncate uppercase">
                   {res.label}
                 </span>
               </div>
@@ -84,12 +106,12 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
         )}
 
         {/* Tech Stack Pills & Action Link */}
-        <div className="pt-2 border-t border-[#EFEFED] flex items-center justify-between gap-2">
+        <div className="pt-3 border-t border-[#EFEFED] flex items-center justify-between gap-2">
           <div className="flex flex-wrap gap-1.5 overflow-hidden max-h-7">
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="text-[11px] font-mono px-2 py-0.5 bg-[#EFEFED] text-[#5F5F58] rounded"
+                className="text-[11px] font-mono px-2 py-0.5 bg-[#F7F7F4] text-[#141413] rounded border border-[#E4E4DF]"
               >
                 {tech}
               </span>
@@ -105,7 +127,8 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
             href={`/work/${project.slug}`}
             className="text-xs font-bold text-[#141413] hover:text-[#059669] transition-colors flex items-center gap-1 shrink-0 ml-auto font-['Montserrat'] uppercase tracking-wider"
           >
-            Case Study →
+            <span>Case Study</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>
