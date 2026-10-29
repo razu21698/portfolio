@@ -30,16 +30,16 @@ export function Hero() {
         <div className="max-w-4xl space-y-8">
           {/* Top Status & Identity Pill */}
           <ScrollReveal direction="up" delay={50}>
-            <div className="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-mono text-[#D0D0DD]">
+            <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-mono text-[#D0D0DD]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4FF00] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4FF00]" />
               </span>
-              <span className="font-semibold text-white">Ahmed Razu</span>
+              <span className="font-bold text-white">Full-Stack WordPress &amp; Laravel Engineer</span>
               <span className="text-[#555566]">•</span>
-              <span>WordPress &amp; Laravel Developer</span>
+              <span className="text-[#D0D0DD]">Custom Themes, Plugins &amp; Web Applications</span>
               <span className="text-[#555566] hidden sm:inline">•</span>
-              <span className="text-[#D4FF00] hidden sm:inline font-bold">Available for Q4/Q1 Contracts</span>
+              <span className="text-[#D4FF00] hidden sm:inline font-semibold">Speed &amp; Core Web Vitals</span>
             </div>
           </ScrollReveal>
 
