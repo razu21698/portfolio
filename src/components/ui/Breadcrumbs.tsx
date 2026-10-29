@@ -120,8 +120,8 @@ export function Breadcrumbs({
           {/* Breadcrumb Navigation Trail */}
           <div>{breadcrumbNav}</div>
 
-          {/* Banner Title & Status Pill */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1">
+          {/* Banner Title */}
+          <div className="pt-1">
             <div className="space-y-1">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-['Montserrat'] tracking-tight leading-none">
                 {displayTitle}
@@ -131,14 +131,6 @@ export function Breadcrumbs({
                   {subtitle}
                 </p>
               )}
-            </div>
-
-            {/* Right-Hand Operational Telemetry Pill */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-[11px] font-mono text-[#D0D0DD] shrink-0 w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse" />
-              <span>AHMED RAZU</span>
-              <span className="text-[#555566]">•</span>
-              <span className="text-[#D4FF00] font-bold">PRODUCTION VERIFIED</span>
             </div>
           </div>
         </div>
