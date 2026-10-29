@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, ArrowRight, Zap, Code, Cpu, Gauge, Server, FileText } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { HeroBackgroundAnimation } from '@/components/ui/HeroBackgroundAnimation';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -18,37 +18,6 @@ export function Hero() {
     'ADVANCED ACF ARCHITECTURES',
     'ZERO PAGE-BUILDER BLOAT',
     'SECURE NGINX DEPLOYMENTS',
-  ];
-
-  const pillars = [
-    {
-      num: '01',
-      title: 'WordPress Architecture',
-      spec: 'Custom Themes & ACF Pro',
-      desc: 'Clean PHP 8.2, zero page-builder bloat, engineered from Figma.',
-      icon: Code,
-    },
-    {
-      num: '02',
-      title: 'Laravel Applications',
-      spec: 'Scalable MVC & REST APIs',
-      desc: 'Relational MySQL schemas, background workers & queue systems.',
-      icon: Cpu,
-    },
-    {
-      num: '03',
-      title: 'Performance Tuning',
-      spec: 'Core Web Vitals 98+',
-      desc: 'OPcache, Redis caching hierarchy, sub-second LCP & FCP.',
-      icon: Gauge,
-    },
-    {
-      num: '04',
-      title: 'Server Operations',
-      spec: 'Nginx, DNS & Hardening',
-      desc: 'Linux environments, SSL provisioning & automated offsite backups.',
-      icon: Server,
-    },
   ];
 
   return (
@@ -125,37 +94,6 @@ export function Hero() {
                 <FileText className="w-4 h-4 text-[#D4FF00]" />
                 <span>Verified CV</span>
               </Button>
-            </div>
-          </ScrollReveal>
-
-          {/* 4 Specialized Disciplines Grid (Horizontal Showcase) */}
-          <ScrollReveal direction="up" delay={320}>
-            <div className="pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {pillars.map((pillar) => {
-                const IconComponent = pillar.icon;
-                return (
-                  <div
-                    key={pillar.num}
-                    className="p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-[#D4FF00]/40 backdrop-blur-md transition-all duration-300 space-y-2 group"
-                  >
-                    <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-[#D4FF00] font-bold">{pillar.num}</span>
-                      <IconComponent className="w-4 h-4 text-[#777788] group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-bold text-white font-['Montserrat'] tracking-tight group-hover:text-[#D4FF00] transition-colors">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-[11px] font-mono text-[#888899] mt-0.5">
-                        {pillar.spec}
-                      </p>
-                    </div>
-                    <p className="text-xs text-[#666677] leading-relaxed font-['Lato'] pt-1">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                );
-              })}
             </div>
           </ScrollReveal>
         </div>
