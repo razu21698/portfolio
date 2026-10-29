@@ -106,14 +106,17 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${montserrat.variable} ${lato.variable} ${mono.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${lato.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F7F7F4] text-[#141413] antialiased flex flex-col min-h-screen selection:bg-[#D4FF00] selection:text-[#09090c]">
+      <body
+        suppressHydrationWarning
+        className="bg-[#F7F7F4] text-[#141413] antialiased flex flex-col min-h-screen selection:bg-[#D4FF00] selection:text-[#09090c]"
+      >
         <ScrollProgress />
         <Header />
         <main className="flex-grow">{children}</main>
