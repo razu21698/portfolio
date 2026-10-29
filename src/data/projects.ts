@@ -153,7 +153,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'dbl-group',
-    title: 'DBL Group Corporate Portal',
+    title: 'DBL Group Corporate Website',
     tagline: 'High-performance corporate web platform engineered with React, GSAP animations, and Lenis smooth scrolling.',
     client: 'DBL Group (dbl-group.com)',
     category: 'react',
