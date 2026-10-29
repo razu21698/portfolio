@@ -4,10 +4,10 @@ export const projects: Project[] = [
   {
     slug: 'cambridge-car-audio',
     title: 'Cambridge Car Audio',
-    tagline: 'High-end automotive audio showcase with custom theme architecture and speed tuning.',
+    tagline: 'Premium custom WordPress website with bespoke theme architecture and speed tuning.',
     client: 'Cambridge Car Audio (UK/International)',
     category: 'wordpress',
-    categoryLabel: 'WordPress & Speed Optimization',
+    categoryLabel: 'Premium Custom WordPress',
     role: 'Lead WordPress Developer',
     timeline: '2024 - 2025',
     featured: true,
@@ -18,7 +18,7 @@ export const projects: Project[] = [
       '/projects/cambridge-car-audio-detail.svg',
     ],
     summary:
-      'Engineered a bespoke, lightweight WordPress theme for a premium car audio specialist. Replaced heavy multipurpose page builders with clean semantic markup, custom post types for vehicle installs, and server-level caching resulting in sub-second load times.',
+      'Engineered a premium custom WordPress website for a high-end automotive audio specialist in Cambridge, UK. Replaced heavy multipurpose page builders with a bespoke custom theme, clean semantic markup, custom post types for vehicle installs, and server-level caching resulting in sub-second load times.',
     challenge:
       'The client’s legacy site was severely weighed down by uncompressed media, an overengineered commercial theme, and poor mobile responsiveness. Mobile load times exceeded 6 seconds, leading to bounce rates above 65% and poor Google search positioning.',
     solution:
@@ -30,6 +30,7 @@ export const projects: Project[] = [
       { metric: '-62%', label: 'Page Weight Reduction', verified: true },
     ],
     keyHighlights: [
+      'Bespoke custom WordPress theme engineered from scratch with zero page-builder bloat.',
       'Custom vehicle installation showcase with categorized audio upgrades.',
       'Lightweight JavaScript image galleries avoiding third-party library bloat.',
       'Structured LocalBusiness and Product JSON-LD schema for enhanced search snippets.',
@@ -114,11 +115,11 @@ export const projects: Project[] = [
   },
   {
     slug: 'malomatia',
-    title: 'Malomatia Enterprise Portal',
-    tagline: 'Enterprise corporate web architecture with multilingual support and high-security compliance.',
+    title: 'Malomatia Portfolio Website',
+    tagline: 'Corporate portfolio and showcase website engineered in WordPress.',
     client: 'Malomatia (malomatia.com)',
     category: 'wordpress',
-    categoryLabel: 'Enterprise WordPress',
+    categoryLabel: 'WordPress Portfolio',
     role: 'WordPress & Infrastructure Developer',
     timeline: '2024',
     featured: true,
@@ -129,25 +130,26 @@ export const projects: Project[] = [
       '/projects/malomatia-detail.svg',
     ],
     summary:
-      'Maintained, customized, and hardened the web portal for a premier IT solutions provider. Integrated custom Gutenberg blocks, structured corporate service hierarchies, and hardened server configurations against threats.',
+      'Engineered a modern corporate portfolio website built in WordPress for Malomatia. Developed custom showcase grids, modular portfolio templates, and hardened server configurations for international client presentations.',
     challenge:
-      'Needed to support rigorous enterprise branding standards, multi-regional content variations, and corporate security guidelines with zero downtime tolerance.',
+      'Needed to support rigorous enterprise branding standards, multi-regional portfolio content variations, and corporate security guidelines with zero downtime tolerance.',
     solution:
-      'Implemented clean modular templates, optimized Nginx server blocks, deployed SSL/TLS hardening, and instituted automated security monitoring and technical SEO schema.',
-    technologies: ['WordPress', 'PHP 8', 'Nginx', 'JavaScript', 'Technical SEO', 'Schema.org', 'Cloudflare'],
+      'Implemented clean modular templates, customized WordPress portfolio layouts, optimized Nginx server blocks, deployed SSL/TLS hardening, and instituted automated security monitoring and technical SEO schema.',
+    technologies: ['WordPress', 'PHP 8', 'Custom Theme', 'Nginx', 'JavaScript', 'Technical SEO', 'Schema.org', 'Cloudflare'],
     results: [
       { metric: '100%', label: 'Uptime Reliability SLA', verified: true },
       { metric: 'A+', label: 'SSL Labs Security Grade', verified: true },
       { metric: '+40%', label: 'Organic Search Impressions', verified: true },
     ],
     keyHighlights: [
-      'Enterprise service matrix with deep taxonomy filtering.',
+      'Bespoke WordPress portfolio architecture showcasing enterprise IT solutions.',
+      'Modular custom blocks developed with standard WordPress block APIs.',
       'Comprehensive on-page and technical SEO with structured organizational metadata.',
       'Hardened security posture including two-factor authentication and strict file permissions.',
       'Server-level reverse proxy caching for fast global delivery.',
     ],
     architectureNotes:
-      'Modular custom blocks developed with standard WordPress block APIs, reducing external script dependencies while empowering content editors.',
+      'Modular custom blocks developed with standard WordPress block APIs, reducing external script dependencies while empowering content editors to manage their project portfolio seamlessly.',
   },
   {
     slug: 'dbl-group',
