@@ -11,16 +11,27 @@ export interface BreadcrumbItem {
 
 export interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  title?: string;
+  subtitle?: string;
   className?: string;
   inline?: boolean;
 }
 
-export function Breadcrumbs({ items, className = '', inline = false }: BreadcrumbsProps) {
+export function Breadcrumbs({
+  items,
+  title,
+  subtitle,
+  className = '',
+  inline = false,
+}: BreadcrumbsProps) {
   // Ensure "Home" is always the root item
   const allItems: BreadcrumbItem[] = [
     { label: 'Home', href: '/' },
     ...items,
   ];
+
+  const currentItem = allItems[allItems.length - 1];
+  const displayTitle = title || currentItem?.label;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -36,7 +47,7 @@ export function Breadcrumbs({ items, className = '', inline = false }: Breadcrum
   const breadcrumbNav = (
     <nav
       aria-label="Breadcrumb"
-      className="inline-flex items-center text-xs font-mono text-[#9E9EAF]"
+      className="inline-flex items-center text-xs font-mono text-[#A0A0B5]"
     >
       <ol className="flex items-center flex-wrap gap-1.5 sm:gap-2.5">
         {allItems.map((item, index) => {
@@ -90,22 +101,45 @@ export function Breadcrumbs({ items, className = '', inline = false }: Breadcrum
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Full-Bleed Breadcrumb Banner Section */}
+      {/* 300px Full-Bleed Breadcrumb Banner Section with Background Image */}
       <section
-        className={`w-full bg-[#0c0c10] border-b border-[#222228] text-white py-5 sm:py-6 relative overflow-hidden select-none ${className}`}
+        className={`w-full h-[300px] border-b border-[#222228] text-white relative overflow-hidden select-none bg-cover bg-center ${className}`}
+        style={{
+          backgroundImage: "url('/images/breadcrumb-banner-bg.svg')",
+        }}
       >
-        {/* Subtle Ambient Glow */}
-        <div className="absolute top-0 right-1/4 w-[350px] h-[100px] bg-[#D4FF00]/5 rounded-full blur-[70px] pointer-events-none" />
+        {/* Subtle Ambient Contrast Overlay */}
+        <div className="absolute inset-0 bg-[#09090c]/60 backdrop-blur-[0.5px]" />
 
-        <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6">
-          {breadcrumbNav}
+        {/* Ambient Bloom Highlights */}
+        <div className="absolute top-0 right-1/4 w-[400px] h-[200px] bg-[#D4FF00]/5 rounded-full blur-[90px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[200px] bg-[#10B981]/5 rounded-full blur-[90px] pointer-events-none" />
 
-          {/* Right-Hand Operational Telemetry Badge */}
-          <div className="flex items-center gap-2 text-[11px] font-mono text-[#8E8EA0] shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-            <span className="text-[#D0D0DD]">AHMED RAZU</span>
-            <span className="text-[#555566]">•</span>
-            <span className="text-[#D4FF00] font-semibold">PRODUCTION ACTIVE</span>
+        {/* Banner Content Container */}
+        <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center relative z-10 space-y-4">
+          {/* Breadcrumb Navigation Trail */}
+          <div>{breadcrumbNav}</div>
+
+          {/* Banner Title & Status Pill */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1">
+            <div className="space-y-1">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-['Montserrat'] tracking-tight leading-none">
+                {displayTitle}
+              </h1>
+              {subtitle && (
+                <p className="text-sm font-mono text-[#A0A0B5] pt-1">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+
+            {/* Right-Hand Operational Telemetry Pill */}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-[11px] font-mono text-[#D0D0DD] shrink-0 w-fit">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse" />
+              <span>AHMED RAZU</span>
+              <span className="text-[#555566]">•</span>
+              <span className="text-[#D4FF00] font-bold">PRODUCTION VERIFIED</span>
+            </div>
           </div>
         </div>
       </section>

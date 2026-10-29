@@ -21,9 +21,9 @@ export default function PrivacyPolicyPage() {
           <span className="text-xs font-mono uppercase tracking-widest text-[#059669]">
             Transparency First
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#141413] tracking-tight font-['Montserrat']">
             Privacy Policy &amp; Data Ethics
-          </h1>
+          </h2>
           <p className="text-xs font-mono text-[#888880]">
             Last updated: October 2026
           </p>

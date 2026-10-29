@@ -26,9 +26,9 @@ export default function WorkPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
               Verified Project Archive
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
               Selected work, built to solve real problems.
-            </h1>
+            </h2>
             <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
               A comprehensive catalog of custom WordPress platforms, database-driven Laravel applications, and high-volume eCommerce optimizations delivered across international client engagements.
             </p>

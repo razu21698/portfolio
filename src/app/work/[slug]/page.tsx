@@ -85,9 +85,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
               )}
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
               {project.title}
-            </h1>
+            </h2>
 
             <p className="text-lg sm:text-xl text-[#5F5F58] leading-relaxed max-w-3xl font-['Lato']">
               {project.tagline}

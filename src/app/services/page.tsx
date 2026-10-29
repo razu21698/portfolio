@@ -49,9 +49,9 @@ export default function ServicesPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
               Technical Capabilities
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
               Specialized engineering for ambitious businesses.
-            </h1>
+            </h2>
             <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
               I help businesses transition away from fragile, slow, and bloated software. From bespoke WordPress architectures to scalable Laravel web platforms and server infrastructure, every solution is built for endurance.
             </p>

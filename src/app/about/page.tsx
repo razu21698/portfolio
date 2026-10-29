@@ -35,10 +35,10 @@ export default function AboutPage() {
                 Engineering Background
               </span>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat'] mt-2">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat'] mt-2">
                 Good development is more than code.{' '}
                 <span className="text-[#5F5F58]">It is engineered business value.</span>
-              </h1>
+              </h2>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={100}>

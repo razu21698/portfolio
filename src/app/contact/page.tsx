@@ -37,10 +37,10 @@ export default function ContactPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#059669]" />
               Direct Inquiries
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#141413] tracking-tight leading-tight font-['Montserrat']">
               Have a project in mind?{' '}
               <span className="text-[#059669]">Let&apos;s engineer a solution.</span>
-            </h1>
+            </h2>
             <p className="text-base sm:text-lg text-[#5F5F58] leading-relaxed font-['Lato']">
               Tell me about what you are building, where your current website or application is falling short, or what operational bottlenecks you need to solve.
             </p>
