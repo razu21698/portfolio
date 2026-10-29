@@ -16,9 +16,10 @@ export const siteConfig = {
     linkedin: 'https://linkedin.com/in/ahmed-razu',
   },
   navItems: [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
     { label: 'Work', href: '/work' },
     { label: 'Services', href: '/services' },
-    { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ],
   stats: [
