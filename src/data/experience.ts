@@ -18,7 +18,7 @@ export const workExperience: WorkExperience[] = [
     company: 'FRF SOFT',
     role: 'WordPress & Front-End Developer',
     period: 'Oct 2025 – Jul 2026',
-    location: 'Bangladesh',
+    location: 'Cambridge, UK (Remote)',
     highlights: [
       'Provided WordPress hosting and infrastructure support, including server configuration, DNS management, deployments, and backups.',
       'Built custom themes and plugins to client specifications and extended site functionality.',
