@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="pb-20">
+    <div>
       {/* Breadcrumb Banner */}
       <Breadcrumbs items={[{ label: 'Work', href: '/work' }]} />
 

@@ -60,7 +60,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pb-20 bg-[#FAFAF8]">
+    <div className="bg-[#FAFAF8]">
       {/* 300px Breadcrumb Banner Section with Architectural Image */}
       <Breadcrumbs items={[{ label: 'About', href: '/about' }]} title="About Md Razib Ahmed Razu" />
 

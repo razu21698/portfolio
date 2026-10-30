@@ -37,7 +37,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="pb-20">
+    <div>
       {/* Breadcrumb Banner */}
       <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
 

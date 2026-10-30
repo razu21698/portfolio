@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     .slice(0, 2);
 
   return (
-    <div className="pb-20">
+    <div>
       {/* Breadcrumb Banner */}
       <Breadcrumbs
         items={[
