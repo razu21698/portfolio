@@ -27,6 +27,8 @@ const mono = JetBrains_Mono({
   display: 'swap',
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.NODE_ENV === 'production' ? '/portfolio' : '');
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: '/projects/cambridge-car-audio.svg',
+        url: `${siteConfig.url}/projects/cambridge-car-audio.svg`,
         width: 1200,
         height: 750,
         alt: `${siteConfig.name} Developer Portfolio`,
@@ -71,10 +73,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${siteConfig.name} — ${siteConfig.title}`,
     description: siteConfig.description,
-    images: ['/projects/cambridge-car-audio.svg'],
+    images: [`${siteConfig.url}/projects/cambridge-car-audio.svg`],
   },
   icons: {
-    icon: '/icon.svg',
+    icon: `${basePath}/icon.svg`,
   },
 };
 

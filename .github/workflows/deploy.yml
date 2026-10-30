@@ -36,7 +36,7 @@ jobs:
 
       - name: Build static site with Next.js
         env:
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_BASE_PATH: '/portfolio'
         run: npm run build
 
       - name: Upload artifact
@@ -54,3 +54,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

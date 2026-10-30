@@ -1,3 +1,5 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.NODE_ENV === 'production' ? '/portfolio' : '');
+
 export const siteConfig = {
   name: 'Md Razib Ahmed Razu',
   fullName: 'Md Razib Ahmed Razu',
@@ -5,7 +7,7 @@ export const siteConfig = {
   tagline: 'High-performing WordPress architectures, scalable Laravel applications, and intelligent automation systems.',
   description:
     'Md Razib Ahmed Razu is a professional WordPress and Laravel developer with 3+ years of production experience engineering custom themes, plugins, high-speed WooCommerce platforms, and robust web applications for international clients.',
-  url: 'https://ahmedrazu.dev',
+  url: 'https://razu21698.github.io/portfolio',
   email: 'md.razib.ahmed.razu5337@gmail.com',
   phone: '+880 1302-221426',
   whatsapp: '+880 1302-221426',
@@ -13,7 +15,7 @@ export const siteConfig = {
   location: 'Bangladesh',
   timezone: 'GMT+6 (Flexible overlap with US, UK & European business hours)',
   availability: 'Available for contract roles & select client projects',
-  cvUrl: '/documents/Razib-Ahmed-Razu-CV.pdf',
+  cvUrl: `${basePath}/documents/Razib-Ahmed-Razu-CV.pdf`,
   social: {
     github: 'https://github.com/razu21698',
     linkedin: 'https://linkedin.com/in/ahmed-razu',

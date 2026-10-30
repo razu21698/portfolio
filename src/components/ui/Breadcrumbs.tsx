@@ -17,6 +17,8 @@ export interface BreadcrumbsProps {
   inline?: boolean;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.NODE_ENV === 'production' ? '/portfolio' : '');
+
 export function Breadcrumbs({
   items,
   title,
@@ -105,7 +107,7 @@ export function Breadcrumbs({
       <section
         className={`w-full h-[300px] border-b border-[#222228] text-white relative overflow-hidden select-none bg-cover bg-center ${className}`}
         style={{
-          backgroundImage: "url('/images/breadcrumb-banner-bg.svg')",
+          backgroundImage: `url('${basePath}/images/breadcrumb-banner-bg.svg')`,
         }}
       >
         {/* Subtle Ambient Contrast Overlay */}
