@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, ExternalLink, Play, Pause, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ExternalLink, Play, Pause, Zap } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -120,9 +120,9 @@ export function FeaturedWork() {
         <div className="space-y-6 sm:space-y-8">
           {/* Track 1: Left to Right Marquee */}
           <div
-            className="flex w-max animate-shimmer-marquee space-x-6 select-none"
+            className="flex w-max animate-shimmer-marquee space-x-6 sm:space-x-8 select-none"
             style={{
-              animationDuration: '52s',
+              animationDuration: '65s',
               animationPlayState: isPaused ? 'paused' : undefined,
             }}
           >
@@ -133,9 +133,9 @@ export function FeaturedWork() {
 
           {/* Track 2: Reverse Direction Marquee */}
           <div
-            className="flex w-max animate-shimmer-marquee space-x-6 select-none"
+            className="flex w-max animate-shimmer-marquee space-x-6 sm:space-x-8 select-none"
             style={{
-              animationDuration: '56s',
+              animationDuration: '72s',
               animationDirection: 'reverse',
               animationPlayState: isPaused ? 'paused' : undefined,
             }}
@@ -152,122 +152,138 @@ export function FeaturedWork() {
 
 /**
  * Individual Project Showcase Card
- * Features browser window mockup, cover image, category badge, title, short description, and tech tags.
+ * Horizontal layout: Left side contains browser mockup + image; Right side contains meta, title, description, and specs.
+ * Card width increased to ~640px-740px for comfortable reading and prominent visuals.
  */
 function ProjectCard({ project }: { project: Project }) {
+  const primaryResult = project.results && project.results[0];
+
   return (
-    <article className="group w-[340px] sm:w-[420px] md:w-[460px] bg-[#121218] hover:bg-[#161622] rounded-2xl border border-[#22222E] hover:border-[#D4FF00]/60 p-4 sm:p-5 shadow-xl hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)] transition-all duration-300 shrink-0 flex flex-col justify-between relative overflow-hidden">
+    <article className="group w-[540px] sm:w-[620px] md:w-[680px] lg:w-[740px] bg-[#121218] hover:bg-[#161622] rounded-2xl border border-[#22222E] hover:border-[#D4FF00]/60 p-3.5 sm:p-4.5 shadow-xl hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)] transition-all duration-300 shrink-0 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-5 relative overflow-hidden">
       {/* Subtle top edge highlight */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4FF00]/20 to-transparent group-hover:via-[#D4FF00]/60 transition-all duration-300" />
 
-      <div className="space-y-4">
-        {/* Browser Mockup Container */}
-        <div className="relative rounded-xl overflow-hidden border border-[#262633] bg-[#0E0E14] group/mockup">
-          {/* Browser Chrome Header */}
-          <div className="bg-[#15151E] border-b border-[#242432] px-3.5 py-2 flex items-center justify-between select-none">
-            <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]/80" />
-            </div>
-
-            <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0C0C10] border border-white/5 text-[10px] font-mono text-[#8E8EA0] max-w-[200px] truncate">
-              <span className="text-[#10B981]">https://</span>
-              <span>{project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, '') : `${project.slug}.com`}</span>
-            </div>
-
-            <div className="text-[9px] font-mono text-[#D4FF00] font-bold uppercase tracking-wider">
-              VERIFIED
-            </div>
+      {/* ========================================================= */}
+      {/* LEFT SIDE: BROWSER MOCKUP & IMAGE SURFACE                */}
+      {/* ========================================================= */}
+      <div className="w-full sm:w-[46%] lg:w-[48%] shrink-0 flex flex-col rounded-xl overflow-hidden border border-[#262633] bg-[#0E0E14] group/mockup">
+        {/* Browser Chrome Header */}
+        <div className="bg-[#15151E] border-b border-[#242432] px-3 py-2 flex items-center justify-between select-none">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]/80" />
           </div>
 
-          {/* Project Image Surface */}
-          <div className="relative aspect-[16/10] bg-[#0B0B0E] overflow-hidden">
-            <Image
-              src={project.coverImage}
-              alt={`${project.title} cover preview`}
-              fill
-              className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-              sizes="(max-width: 640px) 340px, (max-width: 768px) 420px, 460px"
-            />
+          <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#0C0C10] border border-white/5 text-[10px] font-mono text-[#8E8EA0] max-w-[150px] sm:max-w-[180px] truncate">
+            <span className="text-[#10B981]">https://</span>
+            <span>{project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, '') : `${project.slug}.com`}</span>
+          </div>
 
-            {/* Quick Action Overlay on Hover */}
-            <div className="absolute inset-0 bg-[#09090D]/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2.5 backdrop-blur-[2px]">
-              <Link
-                href={`/work/${project.slug}`}
-                className="px-3.5 py-2 rounded-md bg-[#D4FF00] text-[#09090D] font-mono text-xs font-bold flex items-center gap-1.5 hover:bg-white transition-colors shadow-lg"
-              >
-                <span>Inspect System</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </Link>
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3.5 py-2 rounded-md bg-[#161622] border border-white/20 text-white font-mono text-xs font-bold flex items-center gap-1.5 hover:border-[#D4FF00] hover:text-[#D4FF00] transition-colors"
-                >
-                  <span>Live Site</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
-            </div>
+          <div className="text-[9px] font-mono text-[#D4FF00] font-bold uppercase tracking-wider">
+            PROD
           </div>
         </div>
 
-        {/* Card Body: Meta, Title, Short Description */}
-        <div className="space-y-2.5 pt-1">
-          {/* Category Badge & Client */}
-          <div className="flex items-center justify-between text-xs font-mono">
-            <span className="px-2 py-0.5 rounded bg-[#181822] text-[#10B981] border border-[#10B981]/25 text-[10px] font-semibold flex items-center gap-1">
+        {/* Project Image Surface */}
+        <div className="relative aspect-[16/11] sm:aspect-auto sm:flex-1 min-h-[190px] sm:min-h-[220px] bg-[#0B0B0E] overflow-hidden">
+          <Image
+            src={project.coverImage}
+            alt={`${project.title} cover preview`}
+            fill
+            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+            sizes="(max-width: 640px) 500px, 360px"
+          />
+
+          {/* Quick Action Overlay on Hover */}
+          <div className="absolute inset-0 bg-[#09090D]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 backdrop-blur-[2px] p-2">
+            <Link
+              href={`/work/${project.slug}`}
+              className="px-3 py-1.5 rounded-md bg-[#D4FF00] text-[#09090D] font-mono text-xs font-bold flex items-center gap-1 hover:bg-white transition-colors shadow-lg"
+            >
+              <span>Inspect</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 rounded-md bg-[#161622] border border-white/20 text-white font-mono text-xs font-bold flex items-center gap-1 hover:border-[#D4FF00] hover:text-[#D4FF00] transition-colors"
+              >
+                <span>Live</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================================= */}
+      {/* RIGHT SIDE: METADATA, TITLE, SHORT DESCRIPTION & SPECS    */}
+      {/* ========================================================= */}
+      <div className="flex-1 flex flex-col justify-between py-1 sm:py-1.5 pr-1 space-y-3">
+        <div className="space-y-2.5">
+          {/* Top Meta: Category Badge & Client */}
+          <div className="flex items-center justify-between text-xs font-mono gap-2">
+            <span className="px-2.5 py-0.5 rounded bg-[#181822] text-[#10B981] border border-[#10B981]/25 text-[10px] font-semibold flex items-center gap-1.5 shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
               {project.categoryLabel}
             </span>
-            <span className="text-[#78788C] text-[11px] truncate max-w-[160px]">
+            <span className="text-[#78788C] text-[11px] truncate font-mono">
               {project.client}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-lg sm:text-xl font-bold font-['Montserrat'] tracking-tight text-white group-hover:text-[#D4FF00] transition-colors line-clamp-1">
+          <h3 className="text-lg sm:text-xl font-bold font-['Montserrat'] tracking-tight text-white group-hover:text-[#D4FF00] transition-colors leading-snug line-clamp-1">
             <Link href={`/work/${project.slug}`}>
               {project.title}
             </Link>
           </h3>
 
           {/* Short Description */}
-          <p className="text-xs sm:text-sm text-[#9E9EAF] font-['Lato'] line-clamp-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#9E9EAF] font-['Lato'] line-clamp-3 leading-relaxed">
             {project.tagline || project.summary}
           </p>
-        </div>
-      </div>
 
-      {/* Bottom Footer: Tech Stack Chips & Direct Case Study Link */}
-      <div className="pt-4 mt-4 border-t border-[#1E1E28] flex items-center justify-between gap-2 text-xs font-mono">
-        <div className="flex items-center gap-1.5 overflow-hidden">
-          {project.technologies.slice(0, 3).map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-0.5 rounded bg-[#181824] text-[#A0A0B5] border border-[#252536] text-[10px] truncate"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.technologies.length > 3 && (
-            <span className="text-[10px] text-[#666677]">
-              +{project.technologies.length - 3}
-            </span>
+          {/* Verified Engineering Metric Highlight */}
+          {primaryResult && (
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#161620] border border-[#242432] text-xs font-mono">
+              <Zap className="w-3 h-3 text-[#D4FF00]" />
+              <span className="font-extrabold text-[#D4FF00]">{primaryResult.metric}</span>
+              <span className="text-[#8E8EA0] text-[11px]">{primaryResult.label}</span>
+            </div>
           )}
         </div>
 
-        <Link
-          href={`/work/${project.slug}`}
-          className="text-[#D4FF00] hover:text-white font-bold flex items-center gap-1 shrink-0 text-xs transition-colors"
-          aria-label={`View ${project.title} case study`}
-        >
-          <span>Case Study</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-        </Link>
+        {/* Bottom Specs & Action Link */}
+        <div className="pt-3 border-t border-[#1E1E28] flex items-center justify-between gap-2 text-xs font-mono">
+          <div className="flex items-center gap-1.5 overflow-hidden">
+            {project.technologies.slice(0, 3).map((tech) => (
+              <span
+                key={tech}
+                className="px-2 py-0.5 rounded bg-[#181824] text-[#A0A0B5] border border-[#252536] text-[10px] truncate"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.technologies.length > 3 && (
+              <span className="text-[10px] text-[#666677]">
+                +{project.technologies.length - 3}
+              </span>
+            )}
+          </div>
+
+          <Link
+            href={`/work/${project.slug}`}
+            className="text-[#D4FF00] hover:text-white font-bold flex items-center gap-1 shrink-0 text-xs transition-colors"
+            aria-label={`View ${project.title} case study`}
+          >
+            <span>Details</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
       </div>
     </article>
   );
