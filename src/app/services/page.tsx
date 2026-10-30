@@ -111,11 +111,11 @@ export default function ServicesPage() {
                       <span className="text-[#5F5F58] font-['Lato']">{service.businessValue}</span>
                     </div>
 
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-1.5">
                       {service.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="text-[10px] font-mono px-2 py-0.5 bg-[#EFEFED] text-[#5F5F58] rounded"
+                          className="text-xs font-mono font-medium px-2.5 py-0.5 bg-[#EFEFED] text-[#3F3F46] rounded border border-[#E4E4DF]"
                         >
                           {tech}
                         </span>
@@ -167,12 +167,12 @@ export default function ServicesPage() {
                     <h3 className="text-lg font-bold text-[#141413] font-['Montserrat'] transition-colors">
                       {stage.title}
                     </h3>
-                    <p className="text-xs text-[#5F5F58] leading-relaxed font-['Lato']">
+                    <p className="text-sm text-[#52525B] leading-relaxed font-['Lato']">
                       {stage.summary}
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-[#EFEFED] space-y-1">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#888880] block">
+                  <div className="pt-3 border-t border-[#EFEFED] space-y-1.5">
+                    <span className="text-xs font-mono uppercase tracking-wider text-[#52525B] font-semibold block">
                       Key Outputs:
                     </span>
                     {stage.deliverables.map((item, i) => (

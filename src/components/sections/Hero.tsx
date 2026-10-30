@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, ArrowRight, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { siteConfig } from '@/data/siteConfig';
 import { HeroBackgroundAnimation } from '@/components/ui/HeroBackgroundAnimation';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
@@ -81,7 +82,7 @@ export function Hero() {
               </Button>
 
               <Button
-                href="/documents/Ahmed_Razu_CV.pdf"
+                href={siteConfig.cvUrl}
                 external
                 variant="ghost"
                 size="lg"

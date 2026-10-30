@@ -21,16 +21,16 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
       {/* Browser Frame Header */}
       <div className="bg-[#14141A] px-3.5 py-2 border-b border-[#22222E] flex items-center justify-between select-none">
         <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-[#EF4444]/80" />
-          <span className="w-2 h-2 rounded-full bg-[#F59E0B]/80" />
-          <span className="w-2 h-2 rounded-full bg-[#10B981]/80" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]/80" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]/80" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]/80" />
         </div>
 
-        <span className="text-[10px] font-mono text-[#8E8EA0] max-w-[180px] truncate">
+        <span className="text-xs font-mono text-[#A8A8C0] max-w-[180px] truncate">
           {project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, '') : `${project.slug}.com`}
         </span>
 
-        <span className="text-[9px] font-mono text-[#10B981] bg-[#10B981]/10 px-1.5 py-0.2 rounded border border-[#10B981]/20">
+        <span className="text-xs font-mono font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-0.5 rounded border border-[#10B981]/25">
           PROD
         </span>
       </div>
@@ -47,7 +47,7 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
 
         {/* Category Overlay Tag */}
         <div className="absolute top-3 left-3 z-10">
-          <Badge variant="dark" size="sm" className="backdrop-blur-md bg-[#0E0E12]/90 border border-white/10 text-[10px]">
+          <Badge variant="dark" size="md" className="backdrop-blur-md bg-[#0E0E12]/90 border border-white/10 text-xs font-semibold">
             {project.categoryLabel}
           </Badge>
         </div>
@@ -84,7 +84,7 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
           </h3>
 
           {/* Tagline / Summary */}
-          <p className="text-sm text-[#5F5F58] line-clamp-2 leading-relaxed font-['Lato']">
+          <p className="text-sm text-[#475569] font-medium line-clamp-2 leading-relaxed font-['Lato']">
             {project.tagline}
           </p>
         </div>
@@ -97,7 +97,7 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
                 <span className="text-base font-extrabold text-[#141413] block">
                   {res.metric}
                 </span>
-                <span className="text-[10px] text-[#5F5F58] block truncate uppercase">
+                <span className="text-xs text-[#52525B] font-semibold block truncate uppercase mt-0.5">
                   {res.label}
                 </span>
               </div>
@@ -111,13 +111,13 @@ export function ProjectCard({ project, featuredLayout = false }: ProjectCardProp
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="text-[11px] font-mono px-2 py-0.5 bg-[#F7F7F4] text-[#141413] rounded border border-[#E4E4DF]"
+                className="text-xs font-mono font-medium px-2 py-0.5 bg-[#F7F7F4] text-[#141413] rounded border border-[#E4E4DF]"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className="text-[10px] font-mono text-[#888880] self-center">
+              <span className="text-xs font-mono font-bold text-[#71717A] self-center">
                 +{project.technologies.length - 3}
               </span>
             )}

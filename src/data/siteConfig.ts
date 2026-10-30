@@ -8,9 +8,12 @@ export const siteConfig = {
   url: 'https://ahmedrazu.dev',
   email: 'md.razib.ahmed.razu5337@gmail.com',
   phone: '+880 1302-221426',
+  whatsapp: '+880 1302-221426',
+  whatsappUrl: 'https://wa.me/8801302221426',
   location: 'Bangladesh',
   timezone: 'GMT+6 (Flexible overlap with US, UK & European business hours)',
   availability: 'Available for contract roles & select client projects',
+  cvUrl: '/documents/Razib-Ahmed-Razu-CV.pdf',
   social: {
     github: 'https://github.com/razu21698',
     linkedin: 'https://linkedin.com/in/ahmed-razu',

@@ -430,12 +430,12 @@ export function TechStackCarousel() {
 
         <div className="space-y-4">
           {/* Top Status Header */}
-          <div className="flex items-center justify-between text-xs font-mono text-[#8E8EA0] px-2">
+          <div className="flex items-center justify-between text-xs font-mono text-[#A0A0B5] px-2 font-medium">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-ping" />
               <span>PRODUCTION TOOLING ECOSYSTEM (PAUSE ON HOVER)</span>
             </span>
-            <span className="hidden sm:inline text-[11px] text-[#666677]">100% PRODUCTION VERIFIED</span>
+            <span className="hidden sm:inline text-xs font-mono font-semibold text-[#8E8EA0]">100% PRODUCTION VERIFIED</span>
           </div>
 
           {/* Marquee Row 1 (Left to Right) */}
@@ -443,10 +443,10 @@ export function TechStackCarousel() {
             {[...row1, ...row1, ...row1].map((item, idx) => (
               <div
                 key={`${item.id}-r1-${idx}`}
-                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#D4FF00]/60 transition-all duration-200 text-white shrink-0 min-w-[210px]"
+                className="group flex items-center gap-3.5 px-4.5 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#D4FF00]/60 transition-all duration-200 text-white shrink-0 min-w-[220px]"
               >
                 <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
                   style={{
                     backgroundColor: `${item.color || '#D4FF00'}15`,
                     color: item.color || '#D4FF00',
@@ -455,10 +455,10 @@ export function TechStackCarousel() {
                   <TechLogoIcon iconType={item.iconType} className="w-5 h-5" />
                 </div>
                 <div className="space-y-0.5 text-left">
-                  <span className="text-xs font-bold font-['Montserrat'] tracking-tight block text-white group-hover:text-[#D4FF00] transition-colors">
+                  <span className="text-sm font-bold font-['Montserrat'] tracking-tight block text-white group-hover:text-[#D4FF00] transition-colors">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#8E8EA0] block uppercase tracking-wider">
+                  <span className="text-xs font-mono font-medium text-[#A0A0B5] block uppercase tracking-wider">
                     {item.versionOrSub || item.categoryLabel}
                   </span>
                 </div>
@@ -471,10 +471,10 @@ export function TechStackCarousel() {
             {[...row2, ...row2, ...row2].map((item, idx) => (
               <div
                 key={`${item.id}-r2-${idx}`}
-                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#10B981]/60 transition-all duration-200 text-white shrink-0 min-w-[210px]"
+                className="group flex items-center gap-3.5 px-4.5 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#10B981]/60 transition-all duration-200 text-white shrink-0 min-w-[220px]"
               >
                 <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
                   style={{
                     backgroundColor: `${item.color || '#10B981'}15`,
                     color: item.color || '#10B981',
@@ -483,10 +483,10 @@ export function TechStackCarousel() {
                   <TechLogoIcon iconType={item.iconType} className="w-5 h-5" />
                 </div>
                 <div className="space-y-0.5 text-left">
-                  <span className="text-xs font-bold font-['Montserrat'] tracking-tight block text-white group-hover:text-[#10B981] transition-colors">
+                  <span className="text-sm font-bold font-['Montserrat'] tracking-tight block text-white group-hover:text-[#10B981] transition-colors">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#8E8EA0] block uppercase tracking-wider">
+                  <span className="text-xs font-mono font-medium text-[#A0A0B5] block uppercase tracking-wider">
                     {item.versionOrSub || item.categoryLabel}
                   </span>
                 </div>

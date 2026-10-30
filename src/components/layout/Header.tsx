@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
@@ -77,8 +77,8 @@ export function Header() {
             </span>
             <span
               className={cn(
-                'text-[10px] font-mono uppercase tracking-widest mt-0.5',
-                isDarkHero ? 'text-[#888899]' : 'text-[#696969]'
+                'text-xs font-mono font-medium uppercase tracking-wider mt-1',
+                isDarkHero ? 'text-[#A0A0B5]' : 'text-[#52525B]'
               )}
             >
               WordPress &amp; Laravel
@@ -123,17 +123,22 @@ export function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <div
+          {/* Desktop CV Download Link */}
+          <a
+            href={siteConfig.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
-              'hidden lg:flex items-center gap-2 text-xs font-mono px-3.5 py-1.5 rounded-full border transition-colors',
+              'hidden lg:flex items-center gap-2 text-xs font-mono font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 cursor-pointer',
               isDarkHero
-                ? 'bg-[#14141B] border-[#272733] text-[#D0D0E0]'
-                : 'bg-white border-[#E4E4DF] text-[#5F5F58]'
+                ? 'bg-[#14141B] hover:bg-[#1E1E28] border-[#272733] hover:border-[#D4FF00]/60 text-[#D0D0E0] hover:text-[#D4FF00]'
+                : 'bg-white hover:bg-[#F7F7F4] border-[#E4E4DF] hover:border-[#141413] text-[#141413]'
             )}
+            title="Download Md Razib Ahmed Razu CV (PDF)"
           >
-            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-            <span>Available Q4/Q1</span>
-          </div>
+            <FileText className="w-3.5 h-3.5 text-[#D4FF00]" />
+            <span>Download CV</span>
+          </a>
 
           <Button
             href="/contact"
@@ -206,7 +211,7 @@ export function Header() {
                 <span className="font-extrabold text-sm tracking-tight text-white font-['Montserrat']">
                   MD RAZIB AHMED RAZU
                 </span>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#888899]">
+                <span className="text-xs font-mono font-medium uppercase tracking-wider text-[#A0A0B5] mt-0.5">
                   WordPress &amp; Laravel
                 </span>
               </div>
@@ -252,11 +257,17 @@ export function Header() {
         </div>
 
         {/* Drawer Bottom Telemetry & CTA */}
-        <div className="space-y-4 pt-6 border-t border-white/10">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#D0D0DD]">
-            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-            <span>Available for Q4/Q1 Contracts</span>
-          </div>
+        <div className="space-y-3 pt-6 border-t border-white/10">
+          <a
+            href={siteConfig.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#D4FF00] bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2.5 rounded-xl transition-colors w-full"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FileText className="w-4 h-4 text-[#D4FF00]" />
+            <span>Download CV (PDF)</span>
+          </a>
 
           <Button
             href="/contact"
@@ -269,7 +280,7 @@ export function Header() {
             <ArrowUpRight className="w-4 h-4" />
           </Button>
 
-          <div className="text-[11px] font-mono text-[#666677] text-center pt-1">
+          <div className="text-xs font-mono text-[#8E8EA0] text-center pt-1 font-medium">
             Dhaka (GMT+6) · Worldwide Remote
           </div>
         </div>

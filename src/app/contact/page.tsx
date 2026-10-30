@@ -5,7 +5,7 @@ import { ShieldCheck } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ContactForm } from '@/components/contact/ContactForm';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/Icons';
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from '@/components/ui/Icons';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export default function ContactPage() {
@@ -80,13 +80,16 @@ export default function ContactPage() {
 
                   <div>
                     <span className="text-xs font-mono uppercase tracking-wider text-[#888880] block mb-1">
-                      Direct Phone / WhatsApp
+                      Direct WhatsApp
                     </span>
                     <a
-                      href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
-                      className="font-mono text-[#141413] hover:text-[#059669] text-xs sm:text-sm transition-colors"
+                      href={siteConfig.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-[#141413] hover:text-[#059669] text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-colors"
                     >
-                      {siteConfig.phone}
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                      <span>{siteConfig.whatsapp}</span>
                     </a>
                   </div>
 

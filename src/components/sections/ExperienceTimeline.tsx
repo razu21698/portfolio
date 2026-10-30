@@ -51,7 +51,7 @@ export function ExperienceTimeline() {
                     <GraduationCap className="w-4 h-4 text-[#059669]" />
                     <span>Academic Qualification</span>
                   </div>
-                  <span className="text-[11px] font-mono text-[#059669] bg-[#ECFDF5] px-2.5 py-0.5 rounded-full border border-[#A7F3D0] font-semibold">
+                  <span className="text-xs font-mono text-[#059669] bg-[#ECFDF5] px-2.5 py-0.5 rounded-full border border-[#A7F3D0] font-bold">
                     Class of {primaryEdu.year}
                   </span>
                 </div>
@@ -60,13 +60,13 @@ export function ExperienceTimeline() {
                   <h4 className="text-base font-bold text-[#141413] font-['Montserrat'] leading-snug">
                     {primaryEdu.degree}
                   </h4>
-                  <p className="text-xs font-semibold text-[#5F5F58] font-['Montserrat']">
+                  <p className="text-sm font-semibold text-[#3F3F46] font-['Montserrat']">
                     {primaryEdu.institution}
                   </p>
                 </div>
 
                 {primaryEdu.details && (
-                  <p className="text-xs text-[#71717A] leading-relaxed font-['Lato'] pt-2 border-t border-[#EFEFED]">
+                  <p className="text-sm text-[#52525B] leading-relaxed font-['Lato'] pt-2 border-t border-[#EFEFED]">
                     {primaryEdu.details}
                   </p>
                 )}
@@ -79,13 +79,13 @@ export function ExperienceTimeline() {
                 <div className="grid grid-cols-2 gap-3 text-center font-mono">
                   <div className="p-4 rounded-xl bg-white border border-[#E4E4DF]">
                     <span className="text-2xl font-black text-[#141413] block">4 Roles</span>
-                    <span className="text-[11px] text-[#888880] block uppercase mt-0.5">
+                    <span className="text-xs text-[#71717A] font-semibold block uppercase mt-0.5">
                       Agency &amp; Software Co.
                     </span>
                   </div>
                   <div className="p-4 rounded-xl bg-white border border-[#E4E4DF]">
                     <span className="text-2xl font-black text-[#059669] block">100%</span>
-                    <span className="text-[11px] text-[#888880] block uppercase mt-0.5">
+                    <span className="text-xs text-[#71717A] font-semibold block uppercase mt-0.5">
                       Production Verified
                     </span>
                   </div>
@@ -160,7 +160,7 @@ export function ExperienceTimeline() {
 
                         <div className="flex items-center gap-2 shrink-0 self-start sm:self-center">
                           {isCurrent && (
-                            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#D4FF00] bg-[#D4FF00]/10 px-2.5 py-1 rounded-full border border-[#D4FF00]/30 tracking-wider">
+                            <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#D4FF00] bg-[#D4FF00]/10 px-2.5 py-1 rounded-full border border-[#D4FF00]/30 tracking-wider">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse" />
                               CURRENT ROLE
                             </span>
@@ -210,10 +210,10 @@ export function ExperienceTimeline() {
                         {item.techUsed.map((tech) => (
                           <span
                             key={tech}
-                            className={`text-[11px] font-mono px-2.5 py-1 rounded-md transition-colors ${
+                            className={`text-xs font-mono font-medium px-2.5 py-1 rounded-md transition-colors ${
                               isCurrent
-                                ? 'bg-white/5 text-[#E4E4E7] border border-white/10 hover:border-white/25'
-                                : 'bg-[#F7F7F4] text-[#52525B] border border-[#E4E4DF] hover:border-[#141413]'
+                                ? 'bg-white/10 text-white border border-white/15 hover:border-white/30'
+                                : 'bg-[#F7F7F4] text-[#3F3F46] border border-[#E4E4DF] hover:border-[#141413]'
                             }`}
                           >
                             {tech}

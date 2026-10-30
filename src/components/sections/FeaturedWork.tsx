@@ -103,7 +103,7 @@ export function FeaturedWork() {
                 : 'DUAL-TRACK LIVE CAROUSEL • HOVER TO PAUSE & READ'}
             </span>
           </span>
-          <span className="hidden sm:inline text-[11px] text-[#555566]">
+          <span className="hidden sm:inline text-xs font-mono font-medium text-[#8E8EA0]">
             {projects.length} CLIENT DEPLOYMENTS
           </span>
         </div>
@@ -167,19 +167,19 @@ function ProjectCard({ project }: { project: Project }) {
       {/* ========================================================= */}
       <div className="col-span-3 flex flex-col rounded-xl overflow-hidden border border-[#262633] bg-[#0E0E14] group/mockup min-w-0">
         {/* Browser Chrome Header */}
-        <div className="bg-[#15151E] border-b border-[#242432] px-3 py-2 flex items-center justify-between select-none">
+        <div className="bg-[#15151E] border-b border-[#242432] px-3.5 py-2 flex items-center justify-between select-none">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]/80" />
           </div>
 
-          <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#0C0C10] border border-white/5 text-[10px] font-mono text-[#8E8EA0] max-w-[150px] sm:max-w-[200px] truncate">
-            <span className="text-[#10B981]">https://</span>
+          <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#0C0C10] border border-white/10 text-xs font-mono text-[#B0B0C4] max-w-[160px] sm:max-w-[220px] truncate">
+            <span className="text-[#10B981] font-semibold">https://</span>
             <span>{project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, '') : `${project.slug}.com`}</span>
           </div>
 
-          <div className="text-[9px] font-mono text-[#D4FF00] font-bold uppercase tracking-wider">
+          <div className="text-xs font-mono text-[#D4FF00] font-bold uppercase tracking-wider">
             PROD
           </div>
         </div>
@@ -221,54 +221,54 @@ function ProjectCard({ project }: { project: Project }) {
       {/* ========================================================= */}
       {/* RIGHT SIDE (40%): METADATA, TITLE, SHORT DESCRIPTION      */}
       {/* ========================================================= */}
-      <div className="col-span-2 flex flex-col justify-between py-1 sm:py-1.5 pr-0.5 min-w-0 space-y-3">
-        <div className="space-y-2">
+      <div className="col-span-2 flex flex-col justify-between py-1 sm:py-2 pr-1 min-w-0 space-y-3.5">
+        <div className="space-y-2.5">
           {/* Top Meta: Category Badge & Client */}
-          <div className="flex items-center justify-between text-xs font-mono gap-1.5">
-            <span className="px-2 py-0.5 rounded bg-[#181822] text-[#10B981] border border-[#10B981]/25 text-[10px] font-semibold flex items-center gap-1 shrink-0 truncate max-w-[140px]">
+          <div className="flex items-center justify-between text-xs font-mono gap-2">
+            <span className="px-2.5 py-1 rounded bg-[#181824] text-[#10B981] border border-[#10B981]/30 text-xs font-semibold flex items-center gap-1.5 shrink-0 truncate max-w-[160px]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] shrink-0" />
               <span className="truncate">{project.categoryLabel}</span>
             </span>
-            <span className="text-[#78788C] text-[10px] sm:text-[11px] truncate font-mono">
+            <span className="text-[#A0A0B5] text-xs font-medium truncate font-mono">
               {project.client}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-base sm:text-lg lg:text-xl font-bold font-['Montserrat'] tracking-tight text-white group-hover:text-[#D4FF00] transition-colors leading-snug line-clamp-2">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold font-['Montserrat'] tracking-tight text-white group-hover:text-[#D4FF00] transition-colors leading-snug line-clamp-2">
             <Link href={`/work/${project.slug}`}>
               {project.title}
             </Link>
           </h3>
 
           {/* Short Description */}
-          <p className="text-xs sm:text-[13px] text-[#9E9EAF] font-['Lato'] line-clamp-3 leading-relaxed">
+          <p className="text-sm text-[#C4C4D4] font-['Lato'] font-normal line-clamp-3 leading-relaxed">
             {project.tagline || project.summary}
           </p>
 
           {/* Verified Engineering Metric Highlight */}
           {primaryResult && (
-            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#161620] border border-[#242432] text-[11px] font-mono max-w-full truncate">
-              <Zap className="w-3 h-3 text-[#D4FF00] shrink-0" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#161622] border border-[#282838] text-xs font-mono max-w-full truncate">
+              <Zap className="w-3.5 h-3.5 text-[#D4FF00] shrink-0" />
               <span className="font-extrabold text-[#D4FF00] shrink-0">{primaryResult.metric}</span>
-              <span className="text-[#8E8EA0] truncate text-[10px] sm:text-[11px]">{primaryResult.label}</span>
+              <span className="text-[#A0A0B5] truncate text-xs font-medium">{primaryResult.label}</span>
             </div>
           )}
         </div>
 
         {/* Bottom Specs & Action Link */}
-        <div className="pt-2.5 border-t border-[#1E1E28] flex items-center justify-between gap-1.5 text-xs font-mono">
-          <div className="flex items-center gap-1 overflow-hidden">
+        <div className="pt-3 border-t border-[#1E1E28] flex items-center justify-between gap-2 text-xs font-mono">
+          <div className="flex items-center gap-1.5 overflow-hidden">
             {project.technologies.slice(0, 2).map((tech) => (
               <span
                 key={tech}
-                className="px-1.5 py-0.5 rounded bg-[#181824] text-[#A0A0B5] border border-[#252536] text-[9px] sm:text-[10px] truncate"
+                className="px-2 py-0.5 rounded bg-[#181824] text-[#C4C4D4] border border-[#28283A] text-xs font-medium truncate"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 2 && (
-              <span className="text-[9px] sm:text-[10px] text-[#666677]">
+              <span className="text-xs text-[#8E8EA0] font-semibold">
                 +{project.technologies.length - 2}
               </span>
             )}
@@ -276,11 +276,11 @@ function ProjectCard({ project }: { project: Project }) {
 
           <Link
             href={`/work/${project.slug}`}
-            className="text-[#D4FF00] hover:text-white font-bold flex items-center gap-1 shrink-0 text-[11px] sm:text-xs transition-colors"
+            className="text-[#D4FF00] hover:text-white font-bold flex items-center gap-1 shrink-0 text-xs sm:text-sm transition-colors"
             aria-label={`View ${project.title} case study`}
           >
             <span>Details</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

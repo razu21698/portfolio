@@ -69,9 +69,14 @@ export function ConsultationCta() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <span>Phone:</span>
-                <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} className="text-white hover:text-[#D4FF00] transition-colors">
-                  {siteConfig.phone}
+                <span>WhatsApp:</span>
+                <a
+                  href={siteConfig.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#25D366] transition-colors"
+                >
+                  {siteConfig.whatsapp}
                 </a>
               </div>
             </div>

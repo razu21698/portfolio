@@ -2,15 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, FileText } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/Icons';
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from '@/components/ui/Icons';
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="w-full bg-[#111111] text-[#EAEAEA] border-t border-[#262626] mt-auto">
       <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
@@ -51,6 +47,17 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                <a
+                  href={siteConfig.cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4FF00] hover:text-white transition-colors text-xs font-mono font-semibold flex items-center gap-1.5 pt-1"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Download CV (PDF)</span>
+                </a>
+              </li>
+              <li>
                 <Link
                   href="/privacy-policy"
                   className="text-[#888888] hover:text-white transition-colors text-xs"
@@ -90,11 +97,14 @@ export function Footer() {
                 <span className="break-all font-mono">{siteConfig.email}</span>
               </a>
               <a
-                href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-2 text-[#D4D4D4] hover:text-white transition-colors"
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#D4D4D4] hover:text-[#25D366] transition-colors"
+                title="Chat on WhatsApp"
               >
-                <Phone className="w-4 h-4 text-[#737373]" />
-                <span className="font-mono">{siteConfig.phone}</span>
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                <span className="font-mono">{siteConfig.whatsapp}</span>
               </a>
               <div className="flex items-center gap-2 text-[#888888]">
                 <MapPin className="w-4 h-4 text-[#737373]" />
@@ -126,18 +136,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#737373] font-mono">
+        <div className="pt-8 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8E8EA0] font-mono">
           <p>© {new Date().getFullYear()} Md Razib Ahmed Razu. All rights reserved. Engineered for business.</p>
-
-          <button
-            type="button"
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D4FF00]"
-            aria-label="Back to top"
-          >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
+          <span className="text-[#555566]">Dhaka (GMT+6) • Global Remote Delivery</span>
         </div>
       </div>
     </footer>

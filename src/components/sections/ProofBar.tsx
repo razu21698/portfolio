@@ -48,7 +48,7 @@ export function ProofBar() {
                     <span className="w-1.5 h-1.5 rounded-full bg-[#141413] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     {item.num}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#888880] px-2 py-0.5 rounded bg-[#F7F7F4] border border-[#E4E4DF] group-hover:border-[#141413]/40 transition-colors">
+                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#52525B] px-2.5 py-0.5 rounded bg-[#F7F7F4] border border-[#E4E4DF] group-hover:border-[#141413]/40 transition-colors">
                     {item.badge}
                   </span>
                 </div>
@@ -57,7 +57,7 @@ export function ProofBar() {
                   {item.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#5F5F58] leading-relaxed font-['Lato']">
+                <p className="text-sm text-[#52525B] leading-relaxed font-['Lato']">
                   {item.desc}
                 </p>
               </div>

@@ -94,7 +94,7 @@ export function EngineeringPhilosophy() {
                       <div className="w-10 h-10 rounded-lg bg-[#222222] text-[#D4FF00] flex items-center justify-center border border-[#333333] group-hover:bg-[#D4FF00] group-hover:text-[#09090c] transition-all duration-300">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-[#555555] group-hover:text-[#D4FF00] transition-colors">
+                      <span className="text-xs font-mono font-bold text-[#8E8EA0] group-hover:text-[#D4FF00] transition-colors">
                         RULE {p.num}
                       </span>
                     </div>
@@ -103,12 +103,12 @@ export function EngineeringPhilosophy() {
                       {p.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed font-['Lato']">
+                    <p className="text-sm text-[#C4C4D4] leading-relaxed font-['Lato'] font-normal">
                       {p.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#222222] text-[11px] font-mono text-[#555555] flex items-center justify-between">
+                  <div className="pt-4 border-t border-[#222222] text-xs font-mono text-[#8E8EA0] font-medium flex items-center justify-between">
                     <span>Verified Production Standard</span>
                     <span className="text-[#D4FF00] font-bold">Active</span>
                   </div>

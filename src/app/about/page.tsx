@@ -24,7 +24,7 @@ import { siteConfig } from '@/data/siteConfig';
 import { workExperience, educationList, skillCategories } from '@/data/experience';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/Icons';
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from '@/components/ui/Icons';
 import { TechStackCarousel } from '@/components/sections/TechStackCarousel';
 import { ConsultationCta } from '@/components/sections/ConsultationCta';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -104,19 +104,19 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-white border border-[#E4E4DF] shadow-xs text-center font-mono">
                 <div className="space-y-1">
                   <span className="text-2xl font-black text-[#141413] block">3+</span>
-                  <span className="text-[10px] text-[#71717A] uppercase tracking-wider block">Years Prod.</span>
+                  <span className="text-xs font-semibold text-[#52525B] uppercase tracking-wider block">Years Prod.</span>
                 </div>
                 <div className="space-y-1 border-l border-[#EFEFED]">
-                  <span className="text-2xl font-black text-[#059669] block">9+</span>
-                  <span className="text-[10px] text-[#71717A] uppercase tracking-wider block">Client Sites</span>
+                  <span className="text-2xl font-black text-[#059669] block">100+</span>
+                  <span className="text-xs font-semibold text-[#52525B] uppercase tracking-wider block">Client Sites</span>
                 </div>
                 <div className="space-y-1 border-l border-[#EFEFED]">
                   <span className="text-2xl font-black text-[#141413] block">98/100</span>
-                  <span className="text-[10px] text-[#71717A] uppercase tracking-wider block">Avg Lighthouse</span>
+                  <span className="text-xs font-semibold text-[#52525B] uppercase tracking-wider block">Avg Lighthouse</span>
                 </div>
                 <div className="space-y-1 border-l border-[#EFEFED]">
                   <span className="text-2xl font-black text-[#141413] block">B.Sc.</span>
-                  <span className="text-[10px] text-[#71717A] uppercase tracking-wider block">CSE Graduate</span>
+                  <span className="text-xs font-semibold text-[#52525B] uppercase tracking-wider block">CSE Graduate</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={160}>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Button
-                  href="/documents/Ahmed_Razu_CV.pdf"
+                  href={siteConfig.cvUrl}
                   external
                   variant="primary"
                   size="md"
@@ -196,12 +196,14 @@ export default function AboutPage() {
                   </a>
 
                   <a
-                    href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
-                    className="flex items-center justify-between p-3 rounded-lg bg-[#181820] hover:bg-[#20202C] border border-[#252533] text-[#D0D0DD] hover:text-[#D4FF00] transition-colors"
+                    href={siteConfig.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-lg bg-[#181820] hover:bg-[#20202C] border border-[#252533] text-[#D0D0DD] hover:text-[#25D366] transition-colors"
                   >
                     <span className="flex items-center gap-2.5">
-                      <Phone className="w-4 h-4 text-[#8E8EA0] shrink-0" />
-                      <span>{siteConfig.phone}</span>
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
+                      <span>WhatsApp: {siteConfig.whatsapp}</span>
                     </span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-[#8E8EA0] shrink-0" />
                   </a>
@@ -244,7 +246,7 @@ export default function AboutPage() {
                     <GraduationCap className="w-4 h-4 text-[#059669]" />
                     <span>Academic Qualification</span>
                   </div>
-                  <span className="text-[11px] font-mono text-[#059669] bg-[#ECFDF5] px-2.5 py-0.5 rounded-full border border-[#A7F3D0] font-semibold">
+                  <span className="text-xs font-mono text-[#059669] bg-[#ECFDF5] px-2.5 py-0.5 rounded-full border border-[#A7F3D0] font-bold">
                     Class of {primaryEdu.year}
                   </span>
                 </div>
@@ -396,7 +398,7 @@ export default function AboutPage() {
 
                         <div className="flex items-center gap-2 shrink-0 self-start sm:self-center">
                           {isCurrent && (
-                            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#D4FF00] bg-[#D4FF00]/10 px-2.5 py-1 rounded-full border border-[#D4FF00]/30 tracking-wider">
+                            <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#D4FF00] bg-[#D4FF00]/10 px-2.5 py-1 rounded-full border border-[#D4FF00]/30 tracking-wider">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse" />
                               CURRENT ROLE
                             </span>
@@ -445,10 +447,10 @@ export default function AboutPage() {
                         {exp.techUsed.map((tech) => (
                           <span
                             key={tech}
-                            className={`text-[11px] font-mono px-2.5 py-1 rounded-md transition-colors ${
+                            className={`text-xs font-mono font-medium px-2.5 py-1 rounded-md transition-colors ${
                               isCurrent
-                                ? 'bg-white/5 text-[#E4E4E7] border border-white/10 hover:border-white/25'
-                                : 'bg-[#F7F7F4] text-[#52525B] border border-[#E4E4DF] hover:border-[#141413]'
+                                ? 'bg-white/10 text-white border border-white/15 hover:border-white/30'
+                                : 'bg-[#F7F7F4] text-[#3F3F46] border border-[#E4E4DF] hover:border-[#141413]'
                             }`}
                           >
                             {tech}

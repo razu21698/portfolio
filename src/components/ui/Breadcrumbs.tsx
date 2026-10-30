@@ -47,7 +47,7 @@ export function Breadcrumbs({
   const breadcrumbNav = (
     <nav
       aria-label="Breadcrumb"
-      className="inline-flex items-center text-xs font-mono text-[#A0A0B5]"
+      className="inline-flex items-center text-xs sm:text-sm font-mono text-[#B0B0C4] font-medium"
     >
       <ol className="flex items-center flex-wrap gap-1.5 sm:gap-2.5">
         {allItems.map((item, index) => {
@@ -56,7 +56,7 @@ export function Breadcrumbs({
           return (
             <li key={index} className="flex items-center gap-1.5 sm:gap-2.5">
               {index > 0 && (
-                <span className="text-[#555566] select-none text-[11px]" aria-hidden="true">
+                <span className="text-[#666677] select-none text-xs" aria-hidden="true">
                   /
                 </span>
               )}

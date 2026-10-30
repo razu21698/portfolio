@@ -346,7 +346,7 @@ export function HeroCanvas3D({ className = '' }: HeroCanvas3DProps) {
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(49,92,255,0.12),transparent_70%)]" />
 
       {/* Top Floating HUD: Telemetry & Status Bar */}
-      <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono pointer-events-none z-10">
+      <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-xs font-mono font-medium pointer-events-none z-10">
         <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#181818]/80 backdrop-blur-md border border-[#2e2e2e] text-[#D4D4D4]">
           <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
           <span className="font-semibold text-white">ENGINEERING CORE</span>
@@ -367,7 +367,7 @@ export function HeroCanvas3D({ className = '' }: HeroCanvas3DProps) {
       </div>
 
       {/* Bottom Floating Controls & Engineering Legend */}
-      <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono z-10">
+      <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 text-xs font-mono font-medium z-10">
         <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#181818]/90 backdrop-blur-md border border-[#2e2e2e] text-[#A0A0A0]">
           <Sparkles className="w-3.5 h-3.5 text-[#D4FF00]" />
           <span>Interactive 3D Matrix • Drag to Orbit</span>
@@ -386,10 +386,10 @@ export function HeroCanvas3D({ className = '' }: HeroCanvas3DProps) {
       </div>
 
       {/* Corner Grid Crosshairs for Swiss Architectural feel */}
-      <div className="absolute top-2 left-2 text-[#444444] font-mono text-[9px] pointer-events-none">+</div>
-      <div className="absolute top-2 right-2 text-[#444444] font-mono text-[9px] pointer-events-none">+</div>
-      <div className="absolute bottom-2 left-2 text-[#444444] font-mono text-[9px] pointer-events-none">+</div>
-      <div className="absolute bottom-2 right-2 text-[#444444] font-mono text-[9px] pointer-events-none">+</div>
+      <div className="absolute top-2 left-2 text-[#444444] font-mono text-xs pointer-events-none">+</div>
+      <div className="absolute top-2 right-2 text-[#444444] font-mono text-xs pointer-events-none">+</div>
+      <div className="absolute bottom-2 left-2 text-[#444444] font-mono text-xs pointer-events-none">+</div>
+      <div className="absolute bottom-2 right-2 text-[#444444] font-mono text-xs pointer-events-none">+</div>
     </div>
   );
 }

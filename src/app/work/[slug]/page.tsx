@@ -283,14 +283,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
                     href={`/work/${rel.slug}`}
                     className="p-5 rounded-xl bg-white border border-[#E4E4DF] hover:border-[#141413] hover:shadow-md transition-all group block"
                   >
-                    <span className="text-[11px] font-mono text-[#141413] font-bold block mb-1">
+                    <span className="text-xs font-mono text-[#059669] font-bold block mb-1">
                       {rel.categoryLabel}
                     </span>
                     <h4 className="text-base font-bold text-[#141413] group-hover:text-[#059669] transition-colors flex items-center justify-between font-['Montserrat']">
                       <span>{rel.title}</span>
                       <ArrowUpRight className="w-4 h-4 text-[#888880] group-hover:text-[#141413] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </h4>
-                    <p className="text-xs text-[#5F5F58] mt-1 line-clamp-2 font-['Lato']">
+                    <p className="text-sm text-[#52525B] mt-1.5 line-clamp-2 font-['Lato']">
                       {rel.tagline}
                     </p>
                   </Link>

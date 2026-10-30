@@ -4,6 +4,7 @@ import '@/styles/globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
+import { FloatingActions } from '@/components/ui/FloatingActions';
 import { siteConfig } from '@/data/siteConfig';
 
 const montserrat = Montserrat({
@@ -120,8 +121,9 @@ export default function RootLayout({
       >
         <ScrollProgress />
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow w-full overflow-x-clip">{children}</main>
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );
