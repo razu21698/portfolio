@@ -61,7 +61,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 bg-[#FAFAF8]">
       {/* 300px Breadcrumb Banner Section with Architectural Image */}
-      <Breadcrumbs items={[{ label: 'About', href: '/about' }]} title="About Ahmed Razu" />
+      <Breadcrumbs items={[{ label: 'About', href: '/about' }]} title="About Md Razib Ahmed Razu" />
 
       <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 space-y-20">
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={80}>
               <div className="space-y-5 text-base sm:text-lg text-[#52525B] leading-relaxed font-['Lato']">
                 <p>
-                  I am <strong className="text-[#141413] font-semibold">Ahmed Razu (Md. Razib Ahmed Razu)</strong>, a Full-Stack WordPress &amp; Laravel Engineer with 3+ years of active production experience engineering bespoke themes, custom plugins, high-concurrency eCommerce platforms, and robust web applications for clients across the UK, Europe, and Asia.
+                  I am <strong className="text-[#141413] font-semibold">Md Razib Ahmed Razu</strong>, a Full-Stack WordPress &amp; Laravel Engineer with 3+ years of active production experience engineering bespoke themes, custom plugins, high-concurrency eCommerce platforms, and robust web applications for clients across the UK, Europe, and Asia.
                 </p>
                 <p>
                   My engineering background bridges system-level server orchestration with pixel-perfect interface development. I specialize in replacing bloated, fragile commercial page-builder themes with clean semantic PHP, modular Tailwind styling, and resilient database queries that consistently deliver sub-second response times.
@@ -161,7 +161,7 @@ export default function AboutPage() {
                   </div>
                   <div className="space-y-0.5">
                     <h3 className="text-lg font-bold text-white font-['Montserrat'] tracking-tight">
-                      Md. Razib Ahmed Razu
+                      Md Razib Ahmed Razu
                     </h3>
                     <p className="text-xs font-mono text-[#D4FF00] font-semibold">
                       WordPress &amp; Laravel Engineer

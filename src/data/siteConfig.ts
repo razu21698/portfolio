@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: 'Ahmed Razu',
-  fullName: 'Md. Razib Ahmed Razu',
+  name: 'Md Razib Ahmed Razu',
+  fullName: 'Md Razib Ahmed Razu',
   title: 'WordPress & Laravel Developer | Software Engineer',
   tagline: 'High-performing WordPress architectures, scalable Laravel applications, and intelligent automation systems.',
   description:
-    'Ahmed Razu is a professional WordPress and Laravel developer with 3+ years of production experience engineering custom themes, plugins, high-speed WooCommerce platforms, and robust web applications for international clients.',
+    'Md Razib Ahmed Razu is a professional WordPress and Laravel developer with 3+ years of production experience engineering custom themes, plugins, high-speed WooCommerce platforms, and robust web applications for international clients.',
   url: 'https://ahmedrazu.dev',
   email: 'md.razib.ahmed.razu5337@gmail.com',
   phone: '+880 1302-221426',

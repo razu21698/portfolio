@@ -1,9 +1,9 @@
-# Project Plan — Ahmed Razu Developer Portfolio
+# Project Plan — Md Razib Ahmed Razu Developer Portfolio
 
 ## 1. Project Goals & Strategic Intent
 
 ### 1.1 Primary Objective
-Position **Ahmed Razu (Md. Razib Ahmed Razu)** as a premier WordPress & Laravel Developer and Software Engineer capable of engineering robust, scalable web platforms, high-speed custom themes/plugins, and intelligent automations for discerning international clients (US, UK, Canada, Europe).
+Position **Md Razib Ahmed Razu** as a premier WordPress & Laravel Developer and Software Engineer capable of engineering robust, scalable web platforms, high-speed custom themes/plugins, and intelligent automations for discerning international clients (US, UK, Canada, Europe).
 
 ### 1.2 Key Results & Conversion Metrics
 1. **Inquiry Quality:** Facilitate high-ticket, qualified client inquiries for custom WordPress and Laravel development.

@@ -22,7 +22,7 @@ export function Footer() {
                 R
               </div>
               <span className="font-extrabold tracking-tight text-xl text-white font-['Montserrat']">
-                AHMED RAZU
+                MD RAZIB AHMED RAZU
               </span>
             </div>
             <p className="text-sm text-[#A0A0A0] max-w-sm leading-relaxed font-['Lato']">
@@ -127,7 +127,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#737373] font-mono">
-          <p>© {new Date().getFullYear()} Ahmed Razu. All rights reserved. Engineered for business.</p>
+          <p>© {new Date().getFullYear()} Md Razib Ahmed Razu. All rights reserved. Engineered for business.</p>
 
           <button
             type="button"

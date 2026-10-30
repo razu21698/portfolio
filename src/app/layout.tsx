@@ -34,8 +34,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    'Md Razib Ahmed Razu',
     'Ahmed Razu',
-    'Md. Razib Ahmed Razu',
+    'Razib Ahmed',
     'WordPress Developer',
     'Laravel Developer',
     'Custom WordPress Themes',

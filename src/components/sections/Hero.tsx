@@ -36,10 +36,6 @@ export function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4FF00]" />
               </span>
               <span className="font-bold text-white">Full-Stack WordPress &amp; Laravel Engineer</span>
-              <span className="text-[#555566]">•</span>
-              <span className="text-[#D0D0DD]">Custom Themes, Plugins &amp; Web Applications</span>
-              <span className="text-[#555566] hidden sm:inline">•</span>
-              <span className="text-[#D4FF00] hidden sm:inline font-semibold">Speed &amp; Core Web Vitals</span>
             </div>
           </ScrollReveal>
 

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${project.title} — Case Study`,
     description: project.summary,
     openGraph: {
-      title: `${project.title} — Case Study by Ahmed Razu`,
+      title: `${project.title} — Case Study by Md Razib Ahmed Razu`,
       description: project.summary,
       images: [{ url: project.coverImage }],
     },

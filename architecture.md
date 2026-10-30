@@ -1,4 +1,4 @@
-# System Architecture — Ahmed Razu Developer Portfolio
+# System Architecture — Md Razib Ahmed Razu Developer Portfolio
 
 ## 1. Technology Stack & Framework Selection
 

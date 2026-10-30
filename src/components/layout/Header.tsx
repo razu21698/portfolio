@@ -53,7 +53,7 @@ export function Header() {
         <Link
           href="/"
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#141413] rounded py-1"
-          aria-label="Ahmed Razu — Homepage"
+          aria-label="Md Razib Ahmed Razu — Homepage"
         >
           <div
             className={cn(
@@ -72,7 +72,7 @@ export function Header() {
                 isDarkHero ? 'text-white' : 'text-[#141413]'
               )}
             >
-              AHMED RAZU
+              MD RAZIB AHMED RAZU
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
             </span>
             <span
@@ -204,7 +204,7 @@ export function Header() {
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-sm tracking-tight text-white font-['Montserrat']">
-                  AHMED RAZU
+                  MD RAZIB AHMED RAZU
                 </span>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#888899]">
                   WordPress &amp; Laravel

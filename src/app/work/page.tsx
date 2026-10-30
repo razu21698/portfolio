@@ -9,7 +9,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Selected Work & Technical Case Studies',
   description:
-    'Browse production WordPress themes, scalable Laravel web applications, and high-concurrency eCommerce platforms built by Ahmed Razu.',
+    'Browse production WordPress themes, scalable Laravel web applications, and high-concurrency eCommerce platforms built by Md Razib Ahmed Razu.',
 };
 
 export default function WorkPage() {

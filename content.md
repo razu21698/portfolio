@@ -1,9 +1,9 @@
-# Website Copy & Content Blueprint — Ahmed Razu Portfolio
+# Website Copy & Content Blueprint — Md Razib Ahmed Razu Portfolio
 
 ## 1. Brand Identity & Header Elements
 
-- **Display Name:** Ahmed Razu
-- **Full Legal / Academic Name:** Md. Razib Ahmed Razu
+- **Display Name:** Md Razib Ahmed Razu
+- **Full Legal / Academic Name:** Md Razib Ahmed Razu
 - **Professional Title:** WordPress Developer | Software Engineer
 - **Availability Status:** "Available for select client projects & engineering contracts"
 - **Primary Navigation Links:**

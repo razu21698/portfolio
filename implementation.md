@@ -1,4 +1,4 @@
-# Implementation Guidelines & Engineering Standards — Ahmed Razu Portfolio
+# Implementation Guidelines & Engineering Standards — Md Razib Ahmed Razu Portfolio
 
 ## 1. Naming Conventions & Code Formatting
 
@@ -86,7 +86,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
 
 - **Page-Level Metadata:** Every route provides custom `title`, `description`, `canonical`, and Open Graph parameters.
 - **JSON-LD Schema Markup:** Injected into the document `<head>`:
-  - `Person` schema specifying Ahmed Razu's professional title, employer history, and social profiles.
+  - `Person` schema specifying Md Razib Ahmed Razu's professional title, employer history, and social profiles.
   - `WebSite` schema for search index ranking.
 - **Semantic URLs:** Clean, descriptive slugs (e.g., `/work/cambridge-car-audio`, `/services`).
 

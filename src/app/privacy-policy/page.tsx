@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy and data handling statement for Ahmed Razu portfolio.',
+  description: 'Privacy policy and data handling statement for Md Razib Ahmed Razu portfolio.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-lg font-bold text-[#141413] font-['Montserrat']">2. Use of Information</h2>
           <p>
-            Information provided through this website is never sold, leased, or distributed to third-party marketing services. It is solely used by Ahmed Razu for direct professional communication regarding web development projects and contracts.
+            Information provided through this website is never sold, leased, or distributed to third-party marketing services. It is solely used by Md Razib Ahmed Razu for direct professional communication regarding web development projects and contracts.
           </p>
 
           <h2 className="text-lg font-bold text-[#141413] font-['Montserrat']">3. Cookies &amp; Local Storage</h2>

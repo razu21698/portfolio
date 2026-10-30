@@ -1,9 +1,9 @@
-# Design System & Creative Direction — Ahmed Razu Portfolio
+# Design System & Creative Direction — Md Razib Ahmed Razu Portfolio
 
 ## 1. Brand Personality & Positioning
 
 ### 1.1 Brand Identity
-- **Name:** Ahmed Razu (Md. Razib Ahmed Razu)
+- **Name:** Md Razib Ahmed Razu
 - **Professional Title:** WordPress & Laravel Developer | Software Engineer
 - **Core Value Proposition:** "I build digital experiences and business systems that perform."
 - **Brand Positioning Statement:** "I build high-performing WordPress websites, powerful Laravel applications, and intelligent automation systems that help businesses scale."

@@ -1,4 +1,4 @@
-# Quality Assurance & Testing Plan — Ahmed Razu Portfolio
+# Quality Assurance & Testing Plan — Md Razib Ahmed Razu Portfolio
 
 ## 1. Quality Gates & Execution Status
 
