@@ -25,6 +25,7 @@ import { workExperience, educationList, skillCategories } from '@/data/experienc
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/Icons';
+import { TechStackCarousel } from '@/components/sections/TechStackCarousel';
 import { ConsultationCta } from '@/components/sections/ConsultationCta';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
@@ -463,66 +464,10 @@ export default function AboutPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* 4. TECHNICAL COMPETENCY MATRIX                             */}
+        {/* 4. TECHNICAL COMPETENCY MATRIX & LOGO CAROUSEL            */}
         {/* ========================================================= */}
-        <section className="pt-16 border-t border-[#E4E4DF] space-y-10">
-          <ScrollReveal direction="up">
-            <div className="max-w-2xl space-y-2">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#888880] flex items-center gap-2">
-                <span className="w-6 h-[1px] bg-[#141413]" />
-                Technical Stack
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-[#141413] tracking-tight font-['Montserrat']">
-                Disciplines &amp; Applied Tooling
-              </h2>
-              <p className="text-base text-[#52525B] font-['Lato']">
-                No arbitrary percentage bars. Every technology listed corresponds to production code deployed and maintained in client systems.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map((cat, idx) => (
-              <ScrollReveal key={idx} direction="up" delay={idx * 100}>
-                <div className="p-8 rounded-2xl bg-white border border-[#E4E4DF] hover:border-[#141413] transition-all duration-300 shadow-xs hover:shadow-md space-y-6 h-full flex flex-col justify-between">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between pb-3 border-b border-[#EFEFED]">
-                      <h3 className="text-xl font-bold text-[#141413] font-['Montserrat'] tracking-tight">
-                        {cat.title}
-                      </h3>
-                      <span className="text-[10px] font-mono text-[#71717A] bg-[#F7F7F4] px-2.5 py-0.5 rounded-full border border-[#E4E4DF]">
-                        {cat.skills.length} Tools
-                      </span>
-                    </div>
-                    <p className="text-xs text-[#52525B] font-['Lato'] leading-relaxed">
-                      {cat.description}
-                    </p>
-                  </div>
-
-                  <div className="space-y-2.5">
-                    {cat.skills.map((skill, sIdx) => (
-                      <div
-                        key={sIdx}
-                        className="p-3 rounded-xl bg-[#FAFAF8] border border-[#E4E4DF] hover:border-[#141413] transition-colors space-y-1"
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-[#141413] font-mono">
-                            {skill.name}
-                          </span>
-                          <span className="text-[10px] font-mono text-[#059669] bg-[#ECFDF5] px-2 py-0.5 rounded border border-[#A7F3D0] font-semibold">
-                            Production Active
-                          </span>
-                        </div>
-                        <p className="text-[11px] text-[#71717A] font-['Lato'] leading-relaxed">
-                          {skill.verifiedUse}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+        <section className="pt-16 border-t border-[#E4E4DF]">
+          <TechStackCarousel />
         </section>
 
       </div>
