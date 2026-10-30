@@ -1,20 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import {
-  Code2,
-  Server,
-  Zap,
-  Layers,
-  Palette,
-  CheckCircle2,
-  Cpu,
-  Database,
-  Globe,
-  Gauge,
-  Workflow,
-  Sparkles,
-} from 'lucide-react';
+import React from 'react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export interface TechItem {
@@ -23,112 +9,54 @@ export interface TechItem {
   category: 'cms' | 'frameworks' | 'devops' | 'performance' | 'design';
   categoryLabel: string;
   versionOrSub?: string;
-  useCase: string;
   iconType: string;
   color?: string;
 }
 
 export const allTechItems: TechItem[] = [
-  // CMS & eCommerce
+  // Row 1 items
   {
     id: 'wordpress',
     name: 'WordPress',
     category: 'cms',
-    categoryLabel: 'WordPress & CMS',
-    versionOrSub: 'Core & Theme Architecture',
-    useCase: 'Clean PHP 8.2 architectures, bespoke theme development from Figma without builder bloat.',
+    categoryLabel: 'CMS & Theme Architecture',
+    versionOrSub: 'Custom Themes & Core',
     iconType: 'wordpress',
     color: '#00749C',
+  },
+  {
+    id: 'laravel',
+    name: 'Laravel',
+    category: 'frameworks',
+    categoryLabel: 'Framework',
+    versionOrSub: 'v10 / v11 MVC',
+    iconType: 'laravel',
+    color: '#FF2D20',
+  },
+  {
+    id: 'php',
+    name: 'PHP 8.2 / 8.3',
+    category: 'frameworks',
+    categoryLabel: 'Language',
+    versionOrSub: 'Typed Modern PHP',
+    iconType: 'php',
+    color: '#777BB4',
   },
   {
     id: 'woocommerce',
     name: 'WooCommerce',
     category: 'cms',
-    categoryLabel: 'WordPress & CMS',
-    versionOrSub: 'High-Traffic eCommerce',
-    useCase: 'Streamlined checkout funnels, Redis object cache, and custom payment gateway hooks.',
+    categoryLabel: 'eCommerce',
+    versionOrSub: 'High-Traffic Scale',
     iconType: 'woocommerce',
     color: '#96588A',
-  },
-  {
-    id: 'acf-pro',
-    name: 'ACF Pro',
-    category: 'cms',
-    categoryLabel: 'WordPress & CMS',
-    versionOrSub: 'Flexible Content Fields',
-    useCase: 'Modular content systems, structured repeater fields, and JSON sync schema.',
-    iconType: 'acf',
-    color: '#2271B1',
-  },
-  {
-    id: 'elementor-pro',
-    name: 'Elementor Pro',
-    category: 'cms',
-    categoryLabel: 'WordPress & CMS',
-    versionOrSub: 'Widget Development',
-    useCase: 'Custom dynamic widgets, loop builders, and responsive container tuning.',
-    iconType: 'elementor',
-    color: '#92003B',
-  },
-  {
-    id: 'custom-plugins',
-    name: 'Custom Plugins',
-    category: 'cms',
-    categoryLabel: 'WordPress & CMS',
-    versionOrSub: 'Proprietary Logic',
-    useCase: 'Secure REST endpoints, cron background jobs, and third-party webhook receivers.',
-    iconType: 'plugin',
-    color: '#10B981',
-  },
-  {
-    id: 'magento-2',
-    name: 'Magento 2',
-    category: 'cms',
-    categoryLabel: 'WordPress & CMS',
-    versionOrSub: 'Maintenance & Triage',
-    useCase: 'Enterprise store support, catalog maintenance, and critical bug remediation.',
-    iconType: 'magento',
-    color: '#EE672F',
-  },
-
-  // Languages & Frameworks
-  {
-    id: 'php',
-    name: 'PHP 8.2 / 8.3',
-    category: 'frameworks',
-    categoryLabel: 'Languages & Frameworks',
-    versionOrSub: 'Typed Modern PHP',
-    useCase: 'Object-oriented programming, modern match expressions, typed properties, and PSR-12 standards.',
-    iconType: 'php',
-    color: '#777BB4',
-  },
-  {
-    id: 'laravel',
-    name: 'Laravel 10 / 11',
-    category: 'frameworks',
-    categoryLabel: 'Languages & Frameworks',
-    versionOrSub: 'MVC & REST APIs',
-    useCase: 'Eloquent query tuning, database migrations, Sanctum auth, and Redis queue workers.',
-    iconType: 'laravel',
-    color: '#FF2D20',
-  },
-  {
-    id: 'javascript',
-    name: 'JavaScript (ES6+)',
-    category: 'frameworks',
-    categoryLabel: 'Languages & Frameworks',
-    versionOrSub: 'Modern Async ECMAScript',
-    useCase: 'Native fetch pipelines, asynchronous events, DOM animations without jQuery dependencies.',
-    iconType: 'javascript',
-    color: '#F7DF1E',
   },
   {
     id: 'react',
     name: 'React.js',
     category: 'frameworks',
-    categoryLabel: 'Languages & Frameworks',
-    versionOrSub: 'v18 / Component Architecture',
-    useCase: 'Declarative component states, hooks, custom context, and fluid interactive UIs.',
+    categoryLabel: 'Front-End',
+    versionOrSub: 'Component Architecture',
     iconType: 'react',
     color: '#61DAFB',
   },
@@ -136,31 +64,17 @@ export const allTechItems: TechItem[] = [
     id: 'nextjs',
     name: 'Next.js',
     category: 'frameworks',
-    categoryLabel: 'Languages & Frameworks',
-    versionOrSub: 'App Router & SSR',
-    useCase: 'Server-side rendering, static site generation, API edge routes, and image optimization.',
+    categoryLabel: 'SSR & Jamstack',
+    versionOrSub: 'App Router',
     iconType: 'nextjs',
     color: '#FFFFFF',
   },
   {
-    id: 'tailwind',
-    name: 'Tailwind CSS',
-    category: 'frameworks',
-    categoryLabel: 'Languages & Frameworks',
-    versionOrSub: 'v3 / v4 Utility Engine',
-    useCase: 'Modern CSS tokens, responsive flex/grid layouts, zero stylesheet bloat.',
-    iconType: 'tailwind',
-    color: '#38BDF8',
-  },
-
-  // Hosting & Infrastructure
-  {
     id: 'mysql',
-    name: 'MySQL Database',
+    name: 'MySQL',
     category: 'devops',
-    categoryLabel: 'Hosting & Server Ops',
-    versionOrSub: 'Relational Schemas',
-    useCase: 'Normalized schemas, composite index profiling, transactions, and deadlock prevention.',
+    categoryLabel: 'Database',
+    versionOrSub: 'Normalized Schemas',
     iconType: 'mysql',
     color: '#4479A1',
   },
@@ -168,113 +82,136 @@ export const allTechItems: TechItem[] = [
     id: 'nginx',
     name: 'Nginx',
     category: 'devops',
-    categoryLabel: 'Hosting & Server Ops',
+    categoryLabel: 'Web Server',
     versionOrSub: 'Reverse Proxy & FastCGI',
-    useCase: 'Virtual hosts, microcaching, SSL/TLS termination, and PHP-FPM socket tuning.',
     iconType: 'nginx',
     color: '#009639',
   },
   {
-    id: 'apache',
-    name: 'Apache HTTP',
-    category: 'devops',
-    categoryLabel: 'Hosting & Server Ops',
-    versionOrSub: 'Web Server Config',
-    useCase: 'Directory security directives, mod_rewrite rules, and header caching optimization.',
-    iconType: 'apache',
-    color: '#D22128',
+    id: 'tailwind',
+    name: 'Tailwind CSS',
+    category: 'frameworks',
+    categoryLabel: 'Styling',
+    versionOrSub: 'Utility-First Engine',
+    iconType: 'tailwind',
+    color: '#38BDF8',
+  },
+  {
+    id: 'acf-pro',
+    name: 'ACF Pro',
+    category: 'cms',
+    categoryLabel: 'WordPress Tooling',
+    versionOrSub: 'Flexible Content Fields',
+    iconType: 'acf',
+    color: '#2271B1',
   },
   {
     id: 'cloudflare',
     name: 'Cloudflare',
     category: 'devops',
-    categoryLabel: 'Hosting & Server Ops',
-    versionOrSub: 'DNS, CDN & WAF',
-    useCase: 'A/CNAME records, SSL edge certificates, Page Rules, DDoS mitigation, and edge caching.',
+    categoryLabel: 'Security & CDN',
+    versionOrSub: 'DNS & Edge Caching',
     iconType: 'cloudflare',
     color: '#F38020',
+  },
+  {
+    id: 'figma',
+    name: 'Figma',
+    category: 'design',
+    categoryLabel: 'Design & UX',
+    versionOrSub: 'Design System & Tokens',
+    iconType: 'figma',
+    color: '#F24E1E',
+  },
+
+  // Row 2 items
+  {
+    id: 'javascript',
+    name: 'JavaScript',
+    category: 'frameworks',
+    categoryLabel: 'Language',
+    versionOrSub: 'Modern ES6+ Async',
+    iconType: 'javascript',
+    color: '#F7DF1E',
   },
   {
     id: 'redis',
     name: 'Redis',
     category: 'devops',
-    categoryLabel: 'Hosting & Server Ops',
-    versionOrSub: 'In-Memory Cache & Queues',
-    useCase: 'WordPress Object Cache drop-in and asynchronous Laravel queue processing.',
+    categoryLabel: 'In-Memory Cache',
+    versionOrSub: 'Object Cache & Queues',
     iconType: 'redis',
     color: '#DC382D',
   },
   {
     id: 'git-cicd',
-    name: 'Git & Deployments',
+    name: 'Git & CI/CD',
     category: 'devops',
-    categoryLabel: 'Hosting & Server Ops',
-    versionOrSub: 'Version Control',
-    useCase: 'Git branching workflows, automated atomic deployments, staging environments, and offsite backups.',
+    categoryLabel: 'DevOps & Versioning',
+    versionOrSub: 'Atomic Deployments',
     iconType: 'git',
     color: '#F05032',
   },
-
-  // Performance & SEO
   {
     id: 'core-web-vitals',
     name: 'Core Web Vitals',
     category: 'performance',
-    categoryLabel: 'Performance & SEO',
+    categoryLabel: 'Performance',
     versionOrSub: 'LCP, INP, CLS Tuning',
-    useCase: 'Targeting sub-1.2s Largest Contentful Paint and zero Cumulative Layout Shifts.',
     iconType: 'vitals',
     color: '#10B981',
+  },
+  {
+    id: 'elementor-pro',
+    name: 'Elementor Pro',
+    category: 'cms',
+    categoryLabel: 'Page Builder',
+    versionOrSub: 'Custom Widget Dev',
+    iconType: 'elementor',
+    color: '#92003B',
   },
   {
     id: 'lighthouse',
     name: 'Google Lighthouse',
     category: 'performance',
-    categoryLabel: 'Performance & SEO',
-    versionOrSub: 'Audit Benchmark 95+',
-    useCase: 'Asset compression, WebP conversion, font-display swap, and critical CSS inlining.',
+    categoryLabel: 'Benchmarking',
+    versionOrSub: '95+ Score Adherence',
     iconType: 'lighthouse',
     color: '#F59E0B',
   },
   {
-    id: 'schema-org',
-    name: 'Schema.org JSON-LD',
-    category: 'performance',
-    categoryLabel: 'Performance & SEO',
-    versionOrSub: 'Structured Search Snippets',
-    useCase: 'Rich snippets for Organization, LocalBusiness, FAQ, Product, and Article schemas.',
-    iconType: 'schema',
-    color: '#D4FF00',
+    id: 'apache',
+    name: 'Apache HTTP',
+    category: 'devops',
+    categoryLabel: 'Web Server',
+    versionOrSub: 'Virtual Hosts & Headers',
+    iconType: 'apache',
+    color: '#D22128',
   },
   {
-    id: 'rest-webhooks',
-    name: 'REST APIs & Webhooks',
-    category: 'performance',
-    categoryLabel: 'Performance & SEO',
-    versionOrSub: 'Integration & Sync',
-    useCase: 'Custom endpoints, authenticated payloads, rate limiting, and third-party webhook receivers.',
-    iconType: 'api',
-    color: '#38BDF8',
+    id: 'custom-plugins',
+    name: 'Custom Plugins',
+    category: 'cms',
+    categoryLabel: 'WordPress Logic',
+    versionOrSub: 'Proprietary Extensions',
+    iconType: 'plugin',
+    color: '#10B981',
   },
-
-  // Design Tools
   {
-    id: 'figma',
-    name: 'Figma',
-    category: 'design',
-    categoryLabel: 'Design & Prototyping',
-    versionOrSub: 'Design System Inspection',
-    useCase: 'Inspecting auto-layouts, typography scales, design tokens, and pixel-perfect UI translation.',
-    iconType: 'figma',
-    color: '#F24E1E',
+    id: 'magento-2',
+    name: 'Magento 2',
+    category: 'cms',
+    categoryLabel: 'eCommerce',
+    versionOrSub: 'Maintenance & Triage',
+    iconType: 'magento',
+    color: '#EE672F',
   },
   {
     id: 'adobe-xd',
     name: 'Adobe XD',
     category: 'design',
-    categoryLabel: 'Design & Prototyping',
-    versionOrSub: 'Asset Extraction',
-    useCase: 'Exporting vector SVG assets, layout grid measurement, and interactive prototype review.',
+    categoryLabel: 'Design & UX',
+    versionOrSub: 'Vector Asset Extraction',
     iconType: 'xd',
     color: '#FF61F6',
   },
@@ -282,11 +219,19 @@ export const allTechItems: TechItem[] = [
     id: 'photoshop',
     name: 'Photoshop',
     category: 'design',
-    categoryLabel: 'Design & Prototyping',
-    versionOrSub: 'Asset Optimization',
-    useCase: 'High-fidelity raster retouching, WebP asset compression, and visual asset preparation.',
+    categoryLabel: 'Design & UX',
+    versionOrSub: 'Raster Optimization',
     iconType: 'photoshop',
     color: '#31A8FF',
+  },
+  {
+    id: 'rest-webhooks',
+    name: 'REST APIs & Webhooks',
+    category: 'performance',
+    categoryLabel: 'Integration',
+    versionOrSub: 'Event-Driven Payloads',
+    iconType: 'api',
+    color: '#38BDF8',
   },
 ];
 
@@ -387,6 +332,39 @@ function TechLogoIcon({ iconType, className = 'w-6 h-6' }: { iconType: string; c
           <path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 3.3l6.5 3.6-2.5 1.4L12 8.2 7.9 10.4 5.5 9l6.5-3.7zm-6.8 6.5l2.4 1.3V16l-2.4-1.3V11.8zm7.8 7.3l-2.5-1.4v-4.5l2.5 1.4v4.5zm6.8-4.5l-2.4 1.3v-2.9l2.4-1.3v2.9z" />
         </svg>
       );
+    case 'elementor':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+          <path d="M8 7v10M12 7v10M16 7v3M16 14v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      );
+    case 'magento':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L3 7.2v9.6L6 18.5V9.8l6-3.5 6 3.5v8.7l3-1.7V7.2L12 2zm0 8.3L9 12v6.8l3 1.7 3-1.7V12l-3-1.7z" />
+        </svg>
+      );
+    case 'apache':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.5 2.5c-.8 2.3-2.5 6.2-4.5 9-1.5 2.1-3.2 4.1-4.8 5.8-1.2 1.3-2.5 2.4-3.5 3.2L5 22c1.2-1.5 2.8-3.2 4.2-5 2.2-2.8 4.3-6 5.8-9.2.8-1.7 1.4-3.3 1.8-4.7l2.7-.6z" />
+        </svg>
+      );
+    case 'xd':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M6.5 8l3.5 8M10 8l-3.5 8M13.5 8h2c1.9 0 3.5 1.8 3.5 4s-1.6 4-3.5 4h-2V8z" stroke="currentColor" strokeWidth="1.5" fill="none" />
+        </svg>
+      );
+    case 'photoshop':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M6.5 16.5V7.5h3c1.7 0 3 1.3 3 3s-1.3 3-3 3h-1.5v3M14.5 16.5c1.5 0 2.5-.8 2.5-2 0-2.5-3.5-1.5-3.5-3.5 0-.8.8-1.5 2-1.5.8 0 1.5.3 1.8.6" stroke="currentColor" strokeWidth="1.5" fill="none" />
+        </svg>
+      );
     case 'vitals':
       return (
         <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -401,34 +379,20 @@ function TechLogoIcon({ iconType, className = 'w-6 h-6' }: { iconType: string; c
       );
     default:
       return (
-        <Code2 className={className} />
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       );
   }
 }
 
 export function TechStackCarousel() {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [selectedTech, setSelectedTech] = useState<TechItem | null>(null);
-
-  const categories = [
-    { id: 'all', label: 'Complete Ecosystem' },
-    { id: 'cms', label: 'WordPress & CMS' },
-    { id: 'frameworks', label: 'Languages & Frameworks' },
-    { id: 'devops', label: 'Hosting & Server Ops' },
-    { id: 'performance', label: 'Speed & SEO' },
-    { id: 'design', label: 'Design & UX' },
-  ];
-
-  const filteredItems = activeCategory === 'all'
-    ? allTechItems
-    : allTechItems.filter((item) => item.category === activeCategory);
-
   // Divide into two alternating rows for dual-scroll marquee
-  const row1 = allTechItems.filter((_, idx) => idx % 2 === 0);
-  const row2 = allTechItems.filter((_, idx) => idx % 2 !== 0);
+  const row1 = allTechItems.slice(0, 12);
+  const row2 = allTechItems.slice(12, 24);
 
   return (
-    <section className="space-y-10">
+    <section className="space-y-8">
       {/* Section Headline */}
       <ScrollReveal direction="up">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E4E4DF] pb-6">
@@ -453,7 +417,7 @@ export function TechStackCarousel() {
       </ScrollReveal>
 
       {/* ========================================================= */}
-      {/* 1. DUAL-ROW INFINITE LOGO CAROUSEL                         */}
+      {/* DUAL-ROW INFINITE LOGO CAROUSEL                           */}
       {/* ========================================================= */}
       <div className="relative rounded-2xl bg-[#0c0c10] border border-[#222228] p-6 sm:p-8 overflow-hidden shadow-xl">
         {/* Subtle Ambient Glow */}
@@ -465,11 +429,11 @@ export function TechStackCarousel() {
         <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#0c0c10] to-transparent z-20 pointer-events-none" />
 
         <div className="space-y-4">
-          {/* Top Label */}
+          {/* Top Status Header */}
           <div className="flex items-center justify-between text-xs font-mono text-[#8E8EA0] px-2">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-ping" />
-              <span>LIVE TECH MATRIX (PAUSE ON HOVER TO INSPECT)</span>
+              <span>PRODUCTION TOOLING ECOSYSTEM (PAUSE ON HOVER)</span>
             </span>
             <span className="hidden sm:inline text-[11px] text-[#666677]">100% PRODUCTION VERIFIED</span>
           </div>
@@ -479,17 +443,16 @@ export function TechStackCarousel() {
             {[...row1, ...row1, ...row1].map((item, idx) => (
               <div
                 key={`${item.id}-r1-${idx}`}
-                onClick={() => setSelectedTech(item)}
-                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#D4FF00]/60 transition-all duration-200 cursor-pointer text-white shrink-0 min-w-[200px]"
+                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#D4FF00]/60 transition-all duration-200 text-white shrink-0 min-w-[210px]"
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
                   style={{
                     backgroundColor: `${item.color || '#D4FF00'}15`,
                     color: item.color || '#D4FF00',
                   }}
                 >
-                  <TechLogoIcon iconType={item.iconType} className="w-4 h-4" />
+                  <TechLogoIcon iconType={item.iconType} className="w-5 h-5" />
                 </div>
                 <div className="space-y-0.5 text-left">
                   <span className="text-xs font-bold font-['Montserrat'] tracking-tight block text-white group-hover:text-[#D4FF00] transition-colors">
@@ -503,22 +466,21 @@ export function TechStackCarousel() {
             ))}
           </div>
 
-          {/* Marquee Row 2 (Right to Left / Offset) */}
+          {/* Marquee Row 2 (Right to Left / Reverse Direction) */}
           <div className="flex w-max animate-shimmer-marquee space-x-4 select-none" style={{ animationDirection: 'reverse' }}>
             {[...row2, ...row2, ...row2].map((item, idx) => (
               <div
                 key={`${item.id}-r2-${idx}`}
-                onClick={() => setSelectedTech(item)}
-                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#10B981]/60 transition-all duration-200 cursor-pointer text-white shrink-0 min-w-[200px]"
+                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-[#14141B] hover:bg-[#1E1E28] border border-[#262633] hover:border-[#10B981]/60 transition-all duration-200 text-white shrink-0 min-w-[210px]"
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
                   style={{
                     backgroundColor: `${item.color || '#10B981'}15`,
                     color: item.color || '#10B981',
                   }}
                 >
-                  <TechLogoIcon iconType={item.iconType} className="w-4 h-4" />
+                  <TechLogoIcon iconType={item.iconType} className="w-5 h-5" />
                 </div>
                 <div className="space-y-0.5 text-left">
                   <span className="text-xs font-bold font-['Montserrat'] tracking-tight block text-white group-hover:text-[#10B981] transition-colors">
@@ -531,76 +493,6 @@ export function TechStackCarousel() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* ========================================================= */}
-      {/* 2. INTERACTIVE CATEGORY TABS & DETAILED CARDS             */}
-      {/* ========================================================= */}
-      <div className="space-y-6 pt-4">
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => setActiveCategory(cat.id)}
-              className={`text-xs font-mono px-4 py-2 rounded-xl transition-all cursor-pointer border ${
-                activeCategory === cat.id
-                  ? 'bg-[#141413] text-white border-[#141413] font-bold shadow-xs'
-                  : 'bg-white text-[#52525B] border-[#E4E4DF] hover:border-[#141413] hover:text-[#141413]'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Detailed Grid of Active Category Tools */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="p-5 rounded-2xl bg-white border border-[#E4E4DF] hover:border-[#141413] hover:shadow-md transition-all duration-200 space-y-3 group flex flex-col justify-between"
-            >
-              <div className="space-y-2.5">
-                <div className="flex items-center justify-between pb-2.5 border-b border-[#EFEFED]">
-                  <div className="flex items-center gap-2.5">
-                    <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border border-black/5"
-                      style={{
-                        backgroundColor: `${item.color || '#141413'}12`,
-                        color: item.color || '#141413',
-                      }}
-                    >
-                      <TechLogoIcon iconType={item.iconType} className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-[#141413] font-['Montserrat'] tracking-tight">
-                        {item.name}
-                      </h4>
-                      <span className="text-[10px] font-mono text-[#888880] block">
-                        {item.versionOrSub || item.categoryLabel}
-                      </span>
-                    </div>
-                  </div>
-
-                  <span className="text-[10px] font-mono text-[#059669] bg-[#ECFDF5] px-2 py-0.5 rounded-full border border-[#A7F3D0] font-semibold whitespace-nowrap">
-                    Active
-                  </span>
-                </div>
-
-                <p className="text-xs text-[#52525B] font-['Lato'] leading-relaxed">
-                  {item.useCase}
-                </p>
-              </div>
-
-              <div className="pt-2 text-[10px] font-mono text-[#888880] flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" />
-                <span>Verified in Client Production</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
