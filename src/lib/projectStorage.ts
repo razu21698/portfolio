@@ -111,3 +111,4 @@ export function downloadFile(filename: string, content: string, contentType = 't
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+

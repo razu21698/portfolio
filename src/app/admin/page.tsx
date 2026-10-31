@@ -27,6 +27,10 @@ import {
   Globe,
   SlidersHorizontal,
   FolderGit2,
+  Upload,
+  Image as ImageIcon,
+  CheckCircle2,
+  FileImage,
 } from 'lucide-react';
 import { Project, ProjectCategory } from '@/types';
 import {
@@ -42,6 +46,7 @@ import {
   exportToTypeScriptCode,
   downloadFile,
 } from '@/lib/projectStorage';
+import { processImageFile, ProcessedImageResult } from '@/lib/imageUpload';
 import { Badge } from '@/components/ui/Badge';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 
@@ -133,6 +138,67 @@ export default function AdminPage() {
   const [formData, setFormData] = useState<Project>(initialFormState);
   const [techInput, setTechInput] = useState('');
 
+  // Image Upload State
+  const [coverSourceTab, setCoverSourceTab] = useState<'upload' | 'url' | 'presets'>('upload');
+  const [isProcessingCover, setIsProcessingCover] = useState(false);
+  const [coverDragActive, setCoverDragActive] = useState(false);
+  const [coverMeta, setCoverMeta] = useState<ProcessedImageResult | null>(null);
+
+  const [galleryDragActive, setGalleryDragActive] = useState(false);
+  const [isProcessingGallery, setIsProcessingGallery] = useState(false);
+
+  const handleCoverFileSelect = async (file: File) => {
+    if (!file || !file.type.startsWith('image/')) {
+      alert('Please select a valid image file (PNG, JPG, WebP, SVG)');
+      return;
+    }
+    try {
+      setIsProcessingCover(true);
+      const res = await processImageFile(file);
+      setFormData((prev) => ({
+        ...prev,
+        coverImage: res.dataUrl,
+        galleryImages:
+          prev.galleryImages.length === 0 || prev.galleryImages[0]?.startsWith('/projects/')
+            ? [res.dataUrl]
+            : prev.galleryImages,
+      }));
+      setCoverMeta(res);
+    } catch (err) {
+      console.error('Failed to process image:', err);
+      alert('Could not process this image file. Please try another format.');
+    } finally {
+      setIsProcessingCover(false);
+    }
+  };
+
+  const handleGalleryFilesSelect = async (files: FileList | File[]) => {
+    const validFiles = Array.from(files).filter((f) => f.type.startsWith('image/'));
+    if (validFiles.length === 0) return;
+
+    try {
+      setIsProcessingGallery(true);
+      const processed = await Promise.all(validFiles.map((f) => processImageFile(f)));
+      const newUrls = processed.map((p) => p.dataUrl);
+      setFormData((prev) => ({
+        ...prev,
+        galleryImages: [...prev.galleryImages, ...newUrls],
+      }));
+    } catch (err) {
+      console.error('Failed to process gallery images:', err);
+      alert('Could not process one or more gallery images.');
+    } finally {
+      setIsProcessingGallery(false);
+    }
+  };
+
+  const handleRemoveGalleryImage = (indexToRemove: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      galleryImages: prev.galleryImages.filter((_, i) => i !== indexToRemove),
+    }));
+  };
+
   useEffect(() => {
     setIsAuthenticated(isAdminAuthenticated());
     setProjectsList(getStoredProjects());
@@ -170,6 +236,8 @@ export default function AdminPage() {
   const handleOpenAdd = () => {
     setFormData(initialFormState);
     setEditingSlug(null);
+    setCoverMeta(null);
+    setCoverSourceTab('upload');
     setIsFormOpen(true);
   };
 
@@ -177,6 +245,14 @@ export default function AdminPage() {
   const handleOpenEdit = (project: Project) => {
     setFormData({ ...project });
     setEditingSlug(project.slug);
+    setCoverMeta(null);
+    setCoverSourceTab(
+      project.coverImage.startsWith('data:')
+        ? 'upload'
+        : project.coverImage.startsWith('/projects/')
+        ? 'presets'
+        : 'url'
+    );
     setIsFormOpen(true);
   };
 
@@ -895,41 +971,256 @@ export default function AdminPage() {
 
               {/* SECTION: MEDIA */}
               <div className="space-y-4">
-                <h4 className="font-mono uppercase tracking-wider text-[#141413] font-bold pb-1 border-b border-[#E4E4DF]">
-                  2. Media & Mockup Cover
-                </h4>
+                <div className="flex items-center justify-between pb-1 border-b border-[#E4E4DF]">
+                  <h4 className="font-mono uppercase tracking-wider text-[#141413] font-bold">
+                    2. Project Artwork & Screenshots
+                  </h4>
+                  <span className="text-[11px] font-mono text-[#5F5F58]">
+                    PNG, JPG, WebP, SVG
+                  </span>
+                </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-[#141413] mb-1">
-                    Cover Image Path / URL *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.coverImage}
-                    onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
-                    placeholder="/projects/cambridge-car-audio.svg or https://..."
-                    className="w-full bg-[#F7F7F4] border border-[#E4E4DF] rounded-lg px-3 py-2 text-xs font-mono text-[#141413] focus:outline-none focus:border-[#141413]"
-                  />
+                {/* Primary Cover Image Preview & Selector */}
+                <div className="bg-[#FAFAF8] border border-[#E4E4DF] rounded-xl p-4 space-y-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                    <label className="text-xs font-bold text-[#141413] font-mono uppercase tracking-wider">
+                      Cover Image / Browser Mockup *
+                    </label>
 
-                  {/* Preset Quick Select */}
-                  <div className="pt-2 flex items-center gap-1.5 flex-wrap">
-                    <span className="text-[11px] text-[#8C8C84]">Presets:</span>
-                    {PRESET_IMAGES.map((img) => (
+                    {/* Source Tabs */}
+                    <div className="flex items-center gap-1 bg-[#EAEAE6] p-1 rounded-lg">
                       <button
-                        key={img.path}
                         type="button"
-                        onClick={() => setFormData({ ...formData, coverImage: img.path })}
-                        className={`text-[10px] font-mono px-2 py-0.5 rounded border transition-colors cursor-pointer ${
-                          formData.coverImage === img.path
-                            ? 'bg-[#141413] text-white border-[#141413]'
-                            : 'bg-white text-[#5F5F58] border-[#E4E4DF] hover:bg-[#F0F0EC]'
+                        onClick={() => setCoverSourceTab('upload')}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono transition-colors cursor-pointer ${
+                          coverSourceTab === 'upload'
+                            ? 'bg-[#141413] text-white font-bold shadow-xs'
+                            : 'text-[#5F5F58] hover:text-[#141413]'
                         }`}
                       >
-                        {img.label}
+                        <Upload className="w-3 h-3" />
+                        <span>Upload File</span>
                       </button>
-                    ))}
+                      <button
+                        type="button"
+                        onClick={() => setCoverSourceTab('url')}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono transition-colors cursor-pointer ${
+                          coverSourceTab === 'url'
+                            ? 'bg-[#141413] text-white font-bold shadow-xs'
+                            : 'text-[#5F5F58] hover:text-[#141413]'
+                        }`}
+                      >
+                        <Globe className="w-3 h-3" />
+                        <span>Image URL</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setCoverSourceTab('presets')}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono transition-colors cursor-pointer ${
+                          coverSourceTab === 'presets'
+                            ? 'bg-[#141413] text-white font-bold shadow-xs'
+                            : 'text-[#5F5F58] hover:text-[#141413]'
+                        }`}
+                      >
+                        <Sparkles className="w-3 h-3" />
+                        <span>Presets</span>
+                      </button>
+                    </div>
                   </div>
+
+                  {/* TAB 1: UPLOAD FROM DEVICE */}
+                  {coverSourceTab === 'upload' && (
+                    <div
+                      onDragOver={(e) => {
+                        e.preventDefault();
+                        setCoverDragActive(true);
+                      }}
+                      onDragLeave={() => setCoverDragActive(false)}
+                      onDrop={(e) => {
+                        e.preventDefault();
+                        setCoverDragActive(false);
+                        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                          handleCoverFileSelect(e.dataTransfer.files[0]);
+                        }
+                      }}
+                      className={`relative border-2 border-dashed rounded-xl p-6 text-center transition-all ${
+                        coverDragActive
+                          ? 'border-[#141413] bg-[#ECFDF5]'
+                          : 'border-[#D4D4CE] hover:border-[#141413] bg-white'
+                      }`}
+                    >
+                      <input
+                        type="file"
+                        accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files[0]) {
+                            handleCoverFileSelect(e.target.files[0]);
+                          }
+                        }}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                      />
+
+                      <div className="space-y-2 pointer-events-none">
+                        <div className="w-10 h-10 rounded-full bg-[#F7F7F4] border border-[#E4E4DF] flex items-center justify-center mx-auto text-[#141413]">
+                          {isProcessingCover ? (
+                            <RefreshCw className="w-5 h-5 animate-spin text-[#10B981]" />
+                          ) : (
+                            <Upload className="w-5 h-5" />
+                          )}
+                        </div>
+                        <p className="text-xs font-bold text-[#141413] font-['Montserrat']">
+                          {isProcessingCover ? 'Optimizing image...' : 'Click to browse or drag & drop image here'}
+                        </p>
+                        <p className="text-[11px] text-[#71717A] font-mono">
+                          PNG, JPG, WebP, or SVG • Auto-resizes and optimizes for instant page loads
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* TAB 2: URL INPUT */}
+                  {coverSourceTab === 'url' && (
+                    <div>
+                      <input
+                        type="text"
+                        required
+                        value={formData.coverImage}
+                        onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
+                        placeholder="https://images.unsplash.com/... or /projects/my-artwork.svg"
+                        className="w-full bg-white border border-[#E4E4DF] rounded-lg px-3 py-2 text-xs font-mono text-[#141413] focus:outline-none focus:border-[#141413]"
+                      />
+                      <p className="text-[11px] text-[#71717A] mt-1 font-mono">
+                        Supports external HTTPS images, Unsplash URLs, or local paths.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* TAB 3: PRESETS */}
+                  {coverSourceTab === 'presets' && (
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      {PRESET_IMAGES.map((img) => (
+                        <button
+                          key={img.path}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, coverImage: img.path })}
+                          className={`text-[10px] font-mono px-2 py-1 rounded border transition-colors cursor-pointer ${
+                            formData.coverImage === img.path
+                              ? 'bg-[#141413] text-white border-[#141413]'
+                              : 'bg-white text-[#5F5F58] border-[#E4E4DF] hover:bg-[#F0F0EC]'
+                          }`}
+                        >
+                          {img.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Live Thumbnail Preview */}
+                  {formData.coverImage && (
+                    <div className="pt-2 flex flex-col sm:flex-row items-center gap-4 bg-white p-3 rounded-lg border border-[#E4E4DF]">
+                      <div className="relative w-28 h-20 rounded-md overflow-hidden bg-[#101014] border border-[#22222E] shrink-0">
+                        <Image
+                          src={formData.coverImage}
+                          alt="Cover preview"
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                      </div>
+
+                      <div className="space-y-1 flex-1 text-left w-full">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold text-[#141413] flex items-center gap-1 font-mono">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
+                            <span>Active Cover Selected</span>
+                          </span>
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#F0F0EC] text-[#55554E]">
+                            {formData.coverImage.startsWith('data:')
+                              ? 'Direct Upload'
+                              : formData.coverImage.startsWith('/projects/')
+                              ? 'Preset SVG'
+                              : 'Remote URL'}
+                          </span>
+                        </div>
+                        {coverMeta && (
+                          <p className="text-[11px] text-[#71717A] font-mono">
+                            Resolution: {coverMeta.dimensions} • Optimized: {coverMeta.sizeKb} KB ({coverMeta.format})
+                          </p>
+                        )}
+                        <p className="text-[10px] text-[#8C8C84] truncate font-mono max-w-md">
+                          {formData.coverImage.slice(0, 80)}...
+                        </p>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setFormData({ ...formData, coverImage: '/projects/cambridge-car-audio.svg' });
+                          setCoverMeta(null);
+                        }}
+                        className="text-xs font-mono text-red-600 hover:underline cursor-pointer shrink-0"
+                      >
+                        Reset Cover
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Additional Gallery Screenshots */}
+                <div className="bg-[#FAFAF8] border border-[#E4E4DF] rounded-xl p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <label className="text-xs font-bold text-[#141413] font-mono uppercase tracking-wider block">
+                        Gallery Screenshots (Optional)
+                      </label>
+                      <span className="text-[11px] text-[#71717A] font-mono">
+                        Additional project screenshots shown on the case study page
+                      </span>
+                    </div>
+
+                    <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#E4E4DF] text-xs font-mono text-[#141413] hover:bg-[#F0F0EC] transition-colors cursor-pointer">
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>{isProcessingGallery ? 'Uploading...' : 'Upload Screenshots'}</span>
+                      <input
+                        type="file"
+                        multiple
+                        accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                        onChange={(e) => {
+                          if (e.target.files) {
+                            handleGalleryFilesSelect(e.target.files);
+                          }
+                        }}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+
+                  {formData.galleryImages.length > 0 && (
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+                      {formData.galleryImages.map((imgUrl, gIdx) => (
+                        <div
+                          key={gIdx}
+                          className="group relative aspect-[16/10] rounded-lg overflow-hidden border border-[#E4E4DF] bg-[#101014]"
+                        >
+                          <Image
+                            src={imgUrl}
+                            alt={`Gallery ${gIdx + 1}`}
+                            fill
+                            className="object-cover"
+                            unoptimized
+                          />
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveGalleryImage(gIdx)}
+                            className="absolute top-1.5 right-1.5 p-1 rounded bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600 cursor-pointer"
+                            title="Remove screenshot"
+                          >
+                            <Trash2 className="w-3 h-3" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -1292,3 +1583,4 @@ export default function AdminPage() {
     </div>
   );
 }
+
