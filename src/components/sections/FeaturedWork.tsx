@@ -1,33 +1,41 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ArrowUpRight, ExternalLink, Play, Pause, Zap } from 'lucide-react';
 import { projects } from '@/data/projects';
+import { getStoredProjects } from '@/lib/projectStorage';
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Project } from '@/types';
 
 export function FeaturedWork() {
   const [isPaused, setIsPaused] = useState(false);
+  const [allProjects, setAllProjects] = useState<Project[]>(projects);
 
-  // Partition all 9 production projects across 2 complementary carousel tracks
-  const track1Projects: Project[] = [
-    projects.find((p) => p.slug === 'cambridge-car-audio')!,
-    projects.find((p) => p.slug === 'stc360-lms')!,
-    projects.find((p) => p.slug === 'bd-budget-beauty')!,
-    projects.find((p) => p.slug === 'malomatia')!,
-    projects.find((p) => p.slug === 'dbl-group')!,
-  ].filter(Boolean);
+  useEffect(() => {
+    setAllProjects(getStoredProjects());
 
-  const track2Projects: Project[] = [
-    projects.find((p) => p.slug === 'auko-tex-group')!,
-    projects.find((p) => p.slug === 'ispahani-bd')!,
-    projects.find((p) => p.slug === 'pos-enterprise-system')!,
-    projects.find((p) => p.slug === 'singer-bd-maintenance')!,
-    projects.find((p) => p.slug === 'cambridge-car-audio')!, // Balances track lengths
-  ].filter(Boolean);
+    const handleUpdate = (e: Event) => {
+      const customEvent = e as CustomEvent<Project[]>;
+      if (customEvent.detail) {
+        setAllProjects(customEvent.detail);
+      } else {
+        setAllProjects(getStoredProjects());
+      }
+    };
+
+    window.addEventListener('projects_updated', handleUpdate);
+    return () => window.removeEventListener('projects_updated', handleUpdate);
+  }, []);
+
+  // Filter featured projects; fallback to all projects if fewer than 4 are featured
+  const featured = allProjects.filter((p) => p.featured);
+  const activeList = featured.length >= 4 ? featured : allProjects;
+  const half = Math.ceil(activeList.length / 2);
+  const track1Projects = activeList.slice(0, half);
+  const track2Projects = activeList.slice(half);
 
   // Duplicate arrays for endless, zero-jump infinite marquee loop (0% -> -50%)
   const row1 = [...track1Projects, ...track1Projects];

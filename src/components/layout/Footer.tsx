@@ -138,7 +138,13 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8E8EA0] font-mono">
           <p>© {new Date().getFullYear()} Md Razib Ahmed Razu. All rights reserved. Engineered for business.</p>
-          <span className="text-[#555566]">Dhaka (GMT+6) • Global Remote Delivery</span>
+          <div className="flex items-center gap-3 text-[#555566]">
+            <span>Dhaka (GMT+6) • Global Remote Delivery</span>
+            <span>•</span>
+            <Link href="/admin" className="hover:text-white transition-colors text-[11px]" title="CMS Admin Dashboard">
+              Admin CMS
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

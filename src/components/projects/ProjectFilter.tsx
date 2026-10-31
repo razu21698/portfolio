@@ -1,15 +1,33 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Project, ProjectCategory } from '@/types';
 import { ProjectCard } from '@/components/projects/ProjectCard';
+import { getStoredProjects } from '@/lib/projectStorage';
 
 interface ProjectFilterProps {
   initialProjects: Project[];
 }
 
 export function ProjectFilter({ initialProjects }: ProjectFilterProps) {
+  const [allProjects, setAllProjects] = useState<Project[]>(initialProjects);
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all');
+
+  useEffect(() => {
+    setAllProjects(getStoredProjects());
+
+    const handleUpdate = (e: Event) => {
+      const customEvent = e as CustomEvent<Project[]>;
+      if (customEvent.detail) {
+        setAllProjects(customEvent.detail);
+      } else {
+        setAllProjects(getStoredProjects());
+      }
+    };
+
+    window.addEventListener('projects_updated', handleUpdate);
+    return () => window.removeEventListener('projects_updated', handleUpdate);
+  }, []);
 
   const categories: { label: string; value: ProjectCategory }[] = [
     { label: 'All Projects', value: 'all' },
@@ -20,7 +38,7 @@ export function ProjectFilter({ initialProjects }: ProjectFilterProps) {
     { label: 'Performance & SEO', value: 'performance-seo' },
   ];
 
-  const filtered = initialProjects.filter((p) => {
+  const filtered = allProjects.filter((p) => {
     if (activeCategory === 'all') return true;
     return p.category === activeCategory;
   });
