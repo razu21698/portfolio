@@ -1,4 +1,4 @@
-:HL["/portfolio/_next/static/chunks/3n-k5hoav8hhu.css","style"]
+:HL["/portfolio/_next/static/chunks/43pn1emewq3x7.css","style"]
 :HL["/portfolio/_next/static/media/0393adb6c4b80dbd-s.p.0zem_9y19rte6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/portfolio/_next/static/media/278a9fa4a156c562-s.p.27vw08z6_vw0m.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/portfolio/_next/static/media/53897e768d329f66-s.p.3t6q91iet4nsy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -6,4 +6,4 @@
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"auko-tex-group","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"work","h":96,"c":"$Q2"}]]
-0:{"b":"FHq_pQei0truMHrrdAJbY","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"_kaSKZLb5D90RvRRkVePZ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
