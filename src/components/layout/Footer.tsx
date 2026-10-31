@@ -140,10 +140,6 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Md Razib Ahmed Razu. All rights reserved. Engineered for business.</p>
           <div className="flex items-center gap-3 text-[#555566]">
             <span>Dhaka (GMT+6) • Global Remote Delivery</span>
-            <span>•</span>
-            <Link href="/admin" className="hover:text-white transition-colors text-[11px]" title="CMS Admin Dashboard">
-              Admin CMS
-            </Link>
           </div>
         </div>
       </div>
