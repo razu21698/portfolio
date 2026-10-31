@@ -100,21 +100,6 @@ export function FeaturedWork() {
             </div>
           </div>
         </ScrollReveal>
-
-        {/* Operational Telemetry Sub-bar */}
-        <div className="flex items-center justify-between text-xs font-mono text-[#78788C] px-1">
-          <span className="flex items-center gap-2">
-            <span className={`w-1.5 h-1.5 rounded-full ${isPaused ? 'bg-[#F59E0B]' : 'bg-[#10B981] animate-pulse'}`} />
-            <span>
-              {isPaused
-                ? 'CAROUSEL PAUSED • CLICK CARD TO INSPECT ARCHITECTURE'
-                : 'DUAL-TRACK LIVE CAROUSEL • HOVER TO PAUSE & READ'}
-            </span>
-          </span>
-          <span className="hidden sm:inline text-xs font-mono font-medium text-[#8E8EA0]">
-            {projects.length} CLIENT DEPLOYMENTS
-          </span>
-        </div>
       </div>
 
       {/* ========================================================= */}
