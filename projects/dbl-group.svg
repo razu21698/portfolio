@@ -1,0 +1,51 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#14181E"/>
+  <rect x="100" y="75" width="1000" height="600" rx="12" fill="#1B212B" stroke="#2D3748" stroke-width="2"/>
+  
+  <rect x="100" y="75" width="1000" height="44" rx="12" fill="#252E3C"/>
+  <circle cx="128" cy="97" r="6" fill="#EF4444"/>
+  <circle cx="148" cy="97" r="6" fill="#F59E0B"/>
+  <circle cx="168" cy="97" r="6" fill="#10B981"/>
+  <rect x="350" y="85" width="500" height="24" rx="6" fill="#14181E"/>
+  <text x="600" y="101" fill="#A0AEC0" font-family="monospace" font-size="12" text-anchor="middle">https://dbl-group.com • Global Conglomerate Architecture</text>
+
+  <!-- Hero Content -->
+  <g transform="translate(140, 150)">
+    <text x="0" y="40" fill="#3B82F6" font-family="sans-serif" font-weight="700" font-size="14" letter-spacing="2">MULTI-SUBSIDIARY CORPORATE ARCHITECTURE</text>
+    <text x="0" y="85" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="34">DBL Group Corporate Web Ecosystem</text>
+    <text x="0" y="125" fill="#CBD5E0" font-family="sans-serif" font-size="16">Unifying apparel manufacturing, ceramics, telecom, and pharmaceuticals across 12+ international divisions.</text>
+  </g>
+
+  <!-- Subsidiary Grid -->
+  <g transform="translate(140, 310)">
+    <g transform="translate(0, 0)">
+      <rect width="210" height="130" rx="8" fill="#14181E" stroke="#2D3748"/>
+      <text x="20" y="45" fill="#FFFFFF" font-family="sans-serif" font-weight="700" font-size="18">Textiles &amp; Apparel</text>
+      <text x="20" y="85" fill="#718096" font-family="sans-serif" font-size="13">Export supply chains</text>
+    </g>
+    <g transform="translate(235, 0)">
+      <rect width="210" height="130" rx="8" fill="#14181E" stroke="#2D3748"/>
+      <text x="20" y="45" fill="#FFFFFF" font-family="sans-serif" font-weight="700" font-size="18">Ceramics</text>
+      <text x="20" y="85" fill="#718096" font-family="sans-serif" font-size="13">Architectural tiles</text>
+    </g>
+    <g transform="translate(470, 0)">
+      <rect width="210" height="130" rx="8" fill="#14181E" stroke="#2D3748"/>
+      <text x="20" y="45" fill="#FFFFFF" font-family="sans-serif" font-weight="700" font-size="18">Telecom &amp; Tech</text>
+      <text x="20" y="85" fill="#718096" font-family="sans-serif" font-size="13">Digital infrastructure</text>
+    </g>
+    <g transform="translate(705, 0)">
+      <rect width="210" height="130" rx="8" fill="#14181E" stroke="#2D3748"/>
+      <text x="20" y="45" fill="#FFFFFF" font-family="sans-serif" font-weight="700" font-size="18">Investor Portal</text>
+      <text x="20" y="85" fill="#718096" font-family="sans-serif" font-size="13">Financial statements</text>
+    </g>
+  </g>
+
+  <!-- Metric highlight -->
+  <g transform="translate(140, 480)">
+    <rect width="920" height="140" rx="8" fill="#14181E" stroke="#2D3748"/>
+    <text x="30" y="40" fill="#3B82F6" font-family="sans-serif" font-weight="700" font-size="15">Delivered Engineering Outcomes</text>
+    <text x="30" y="75" fill="#CBD5E0" font-family="sans-serif" font-size="14">• Developed custom post taxonomies and modular templates allowing rapid creation of subsidiary microsites.</text>
+    <text x="30" y="105" fill="#CBD5E0" font-family="sans-serif" font-size="14">• Optimized DNS routing and media asset handling across global traffic zones with sub-1.4s average response.</text>
+  </g>
+</svg>
+
